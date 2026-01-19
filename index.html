@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Invoice Chaser — Tradie Payment Follow-Up Service</title>
-  <meta name="description" content="We personally chase unpaid invoices so tradies get paid faster. No Xero? No problem. You do the work you love — we handle payment follow-ups by phone and email." />
+  <meta name="description" content="We personally chase unpaid invoices so tradies get paid faster. No accounting software? No problem. You do the work you love — we handle payment follow-ups by phone and email." />
 
   <link rel="stylesheet" href="/styles.css" />
 </head>
@@ -15,11 +15,11 @@
     <!-- NAV -->
     <header class="nav">
       <div class="brandRow">
-        <div class="logo"></div>
+        <div class="logo" aria-hidden="true"></div>
         <div>Invoice Chaser</div>
       </div>
 
-      <nav class="navlinks">
+      <nav class="navlinks" aria-label="Primary">
         <a href="#how-it-works">How it Works</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
@@ -28,52 +28,51 @@
       </nav>
     </header>
 
- <!-- HERO (replace your current hero section with this) -->
-<section class="hero" id="top">
-  <div class="heroCard">
-    <div class="tagline">HUMAN-RUN SERVICE • NOT SOFTWARE</div>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="heroCard">
+        <div class="tagline">HUMAN-RUN SERVICE • NOT SOFTWARE</div>
 
-    <h1>We chase the payments.<br> You do the work you love.</h1>
+        <h1>We chase the payments.<br />You do the work you love.</h1>
 
-    <p class="sub">
-      Late invoices hurt cashflow. We handle polite follow-ups by phone and email, keep records tidy, and escalate disputes back to you.
-    </p>
+        <p class="sub">
+          Late invoices hurt cashflow. We handle polite follow-ups by phone and email, keep records tidy, and stop immediately if a job is disputed.
+        </p>
 
-    <div class="heroPoints">
-      <span class="pill">We call and email for you</span>
-      <span class="pill">Works with or without Xero</span>
-      <span class="pill">We stop on disputes</span>
-    </div>
+        <div class="heroPoints">
+          <span class="pill">We call and email for you</span>
+          <span class="pill">Works with or without Xero</span>
+          <span class="pill">Stop on disputes</span>
+        </div>
 
-    <div class="ctaRow">
-      <a class="btn btnSolid" href="#contact">Free setup call</a>
-      <a class="btn" href="#pricing">See pricing</a>
-    </div>
+        <div class="ctaRow">
+          <a class="btn btnSolid" href="#contact">Free setup call</a>
+          <a class="btn" href="#pricing">See pricing</a>
+        </div>
 
-    <p class="fine">
-      Simple promise: <b>you stop chasing invoices</b> and cashflow becomes predictable.
-    </p>
-  </div>
+        <p class="fine">
+          Simple promise: <b>you stop chasing invoices</b> and cashflow becomes predictable.
+        </p>
+      </div>
 
-  <aside class="side">
-    <div class="sideCard">
-      <h3>What we do</h3>
-      <ul class="list">
-        <li>Confirm payment details early (when needed)</li>
-        <li>Follow up due + overdue invoices on schedule</li>
-        <li>Log outcomes so nothing slips</li>
-      </ul>
-    </div>
+      <aside class="side" aria-label="Highlights">
+        <div class="sideCard">
+          <h3>What we do</h3>
+          <ul class="list">
+            <li>Confirm payment details early (when needed)</li>
+            <li>Follow up due + overdue invoices on a clear schedule</li>
+            <li>Log outcomes so nothing slips</li>
+          </ul>
+        </div>
 
-    <div class="sideCard">
-      <h3>No Xero? No problem.</h3>
-      <p class="mutedText">
-        We can run from Xero, MYOB, PDFs, Excel, or a simple invoice list. You don’t need new software.
-      </p>
-    </div>
-  </aside>
-</section>
-
+        <div class="sideCard">
+          <h3>No accounting software? No problem.</h3>
+          <p class="mutedText">
+            We can run from Xero, MYOB, PDFs, Excel, or a simple invoice list. You don’t need new software.
+          </p>
+        </div>
+      </aside>
+    </section>
 
     <!-- HOW IT WORKS -->
     <section id="how-it-works">
@@ -81,411 +80,209 @@
 
       <div class="grid">
         <div class="card">
-          <h3>Step 1 – Provide Your Invoice List</h3>
-          <p>We work with Xero reports, spreadsheets, PDFs — whatever you use.</p>
+          <h3>Step 1 — Send your invoice list</h3>
+          <p>We work with Xero exports, spreadsheets, PDFs — whatever you use.</p>
         </div>
 
         <div class="card">
-          <h3>Step 2 – We Follow Up</h3>
-          <p>We call and email on your behalf, using scripts proven to get responses. Live follow-ups are more effective than email alone.:contentReference[oaicite:1]{index=1}</p>
+          <h3>Step 2 — We follow up</h3>
+          <p>We call and email on your behalf and log every outcome so nothing gets missed.</p>
         </div>
 
         <div class="card">
-          <h3>Step 3 – You Get Paid</h3>
-          <p>Most late payments respond to personal contact — not automation. We log every outcome so you see progress.</p>
+          <h3>Step 3 — You get paid</h3>
+          <p>You stay on the tools. We keep the pressure polite and consistent until it’s resolved or disputed.</p>
         </div>
       </div>
     </section>
 
-<!-- PRICING (Toggle + Job Slider + Gold vs Platinum comparison) -->
-<section id="pricing" class="pricingSection">
-  <h2>Pricing</h2>
-  <p class="pricingIntro">Pick a payment model, set your monthly job volume, and we’ll show the total.</p>
+    <!-- PRICING (Toggle + Job Slider + Gold vs Platinum comparison) -->
+    <section id="pricing" class="pricingSection">
+      <h2>Pricing</h2>
+      <p class="pricingIntro">Pick a payment model, set your monthly job volume, and we’ll show the total.</p>
 
-  <!-- Toggle -->
-  <div class="pricingToggle" role="tablist" aria-label="Pricing model toggle">
-    <button type="button" class="toggleBtn isActive" id="btnFlat" role="tab" aria-selected="true">
-      Flat rate + Fair Use
-    </button>
-    <button type="button" class="toggleBtn" id="btnPerJob" role="tab" aria-selected="false">
-      Per Job
-    </button>
-  </div>
-
-  <!-- Slider -->
-  <div class="sliderWrap">
-    <div class="sliderTop">
-      <div>
-        <div class="sliderLabel">Jobs per month</div>
-        <div class="sliderValue"><span id="jobsValue">20</span> jobs</div>
-      </div>
-      <div class="sliderMeta" id="sliderMeta">Flat rate + fair use. Extras adjust automatically.</div>
-    </div>
-
-    <input id="jobsSlider" class="slider" type="range" min="0" max="120" step="1" value="20" />
-
-    <div class="sliderTicks">
-      <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span><span>120</span>
-    </div>
-  </div>
-
-  <!-- Totals -->
-  <div class="planTotals">
-    <div class="totalCard highlight">
-      <div class="totalTitle">Gold</div>
-      <div class="totalPrice">$<span id="goldPrice">395</span><span class="per">/mo</span></div>
-      <div class="totalSub" id="goldSub">Includes 20 jobs. Extra jobs $12 each.</div>
-    </div>
-
-    <div class="totalCard">
-      <div class="totalTitle">Platinum</div>
-      <div class="totalPrice">$<span id="platPrice">695</span><span class="per">/mo</span></div>
-      <div class="totalSub" id="platSub">Includes 35 jobs. Extra jobs $10 each.</div>
-    </div>
-  </div>
-
-  <!-- Comparison -->
-  <div class="compareWrap">
-    <div class="compareHeader">
-      <div class="compareCol featureCol">What’s included</div>
-      <div class="compareCol planCol">Gold</div>
-      <div class="compareCol planCol">Platinum</div>
-    </div>
-
-    <div class="compareRow">
-      <div class="compareCol featureCol">Human follow-ups by phone + email</div>
-      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-    </div>
-
-    <div class="compareRow">
-      <div class="compareCol featureCol">Payment issue check call (when needed)</div>
-      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-    </div>
-
-    <div class="compareRow">
-      <div class="compareCol featureCol">Day-before due reminder (when needed)</div>
-      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-    </div>
-
-    <div class="compareRow">
-      <div class="compareCol featureCol">3 days overdue follow-up</div>
-      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-    </div>
-
-    <div class="compareRow">
-      <div class="compareCol featureCol">7 days overdue follow-up</div>
-      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-    </div>
-
-    <div class="compareRow">
-      <div class="compareCol featureCol">Extra follow-ups beyond 7 days</div>
-      <div class="compareCol planCol"><span class="mark no">✕</span></div>
-      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-    </div>
-
-    <div class="compareRow">
-      <div class="compareCol featureCol">Final reminder calls/emails</div>
-      <div class="compareCol planCol"><span class="mark no">✕</span></div>
-      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-    </div>
-
-    <div class="compareRow">
-      <div class="compareCol featureCol">Pre-handover pack (if external collections needed)</div>
-      <div class="compareCol planCol"><span class="mark no">✕</span></div>
-      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-    </div>
-
-    <div class="compareRow">
-      <div class="compareCol featureCol">Priority handling</div>
-      <div class="compareCol planCol"><span class="mark no">✕</span></div>
-      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-    </div>
-
-    <div class="compareNote">
-      We stop immediately if a job is disputed. No threats. No drama.
-    </div>
-
-    <div class="compareCTA">
-      <a class="btn btnSolid" href="#contact">Get started</a>
-      <a class="btn" href="#contact">Ask a question</a>
-    </div>
-  </div>
-</section>
-
-<script>
-  // ===== CONFIG =====
-  const MODE_FLAT = "flat";
-  const MODE_PER  = "per";
-
-  const models = {
-    [MODE_FLAT]: {
-      sliderMeta: "Flat rate + fair use. Extras adjust automatically.",
-      gold: { base: 395, included: 20, extraRate: 12, label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
-      plat: { base: 695, included: 35, extraRate: 10, label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
-      calc: (jobs, plan) => {
-        const extraJobs = Math.max(0, jobs - plan.included);
-        return plan.base + (extraJobs * plan.extraRate);
-      }
-    },
-
-    [MODE_PER]: {
-      sliderMeta: "Per job pricing. Slider shows monthly estimate.",
-      gold: { perJob: 25, minimum: 150, label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
-      plat: { perJob: 35, minimum: 250, label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
-      calc: (jobs, plan) => Math.max(plan.minimum, jobs * plan.perJob)
-    }
-  };
-
-  // ===== ELEMENTS =====
-  const btnFlat = document.getElementById("btnFlat");
-  const btnPer  = document.getElementById("btnPerJob");
-
-  const jobsSlider = document.getElementById("jobsSlider");
-  const jobsValue  = document.getElementById("jobsValue");
-  const sliderMeta = document.getElementById("sliderMeta");
-
-  const goldPrice = document.getElementById("goldPrice");
-  const platPrice = document.getElementById("platPrice");
-  const goldSub   = document.getElementById("goldSub");
-  const platSub   = document.getElementById("platSub");
-
-  let currentMode = MODE_FLAT;
-
-  function money(n){ return Math.round(n).toString(); }
-
-  function setActive(mode){
-    currentMode = mode;
-    const isFlat = mode === MODE_FLAT;
-    btnFlat.classList.toggle("isActive", isFlat);
-    btnPer.classList.toggle("isActive", !isFlat);
-    btnFlat.setAttribute("aria-selected", isFlat ? "true" : "false");
-    btnPer.setAttribute("aria-selected", !isFlat ? "true" : "false");
-    updateUI();
-  }
-
-  function updateUI(){
-    const jobs = parseInt(jobsSlider.value, 10);
-    jobsValue.textContent = jobs;
-
-    const m = models[currentMode];
-    sliderMeta.textContent = m.sliderMeta;
-
-    // Gold
-    goldPrice.textContent = money(m.calc(jobs, m.gold));
-    goldSub.innerHTML = m.gold.label(m.gold);
-
-    // Platinum
-    platPrice.textContent = money(m.calc(jobs, m.plat));
-    platSub.innerHTML = m.plat.label(m.plat);
-  }
-
-  btnFlat.addEventListener("click", () => setActive(MODE_FLAT));
-  btnPer.addEventListener("click", () => setActive(MODE_PER));
-  jobsSlider.addEventListener("input", updateUI);
-
-  updateUI();
-</script>
-
-
-
-  <!-- Cards -->
-  <div class="pricingGrid">
-    <div class="priceCard highlight">
-      <div class="cardHeader">
-        <h3 id="planName">Gold — Done-for-you follow-up</h3>
-        <div class="priceBig">$<span id="priceTotal">395</span><span class="per">/mo</span></div>
-        <div class="priceSmall" id="priceSub">Includes <b>20</b> jobs. Extra jobs: <b>$<span id="extraRate">12</span></b> each.</div>
+      <!-- Toggle -->
+      <div class="pricingToggle" role="tablist" aria-label="Pricing model toggle">
+        <button type="button" class="toggleBtn isActive" id="btnFlat" role="tab" aria-selected="true">
+          Flat rate + Fair Use
+        </button>
+        <button type="button" class="toggleBtn" id="btnPerJob" role="tab" aria-selected="false">
+          Per Job
+        </button>
       </div>
 
-      <ul class="priceList" id="featureList">
-        <li>We call + email for you (human-run)</li>
-        <li>Reminder before due date (if needed)</li>
-        <li>Follow-up at 3 days overdue</li>
-        <li>Follow-up at 7 days overdue</li>
-        <li>Notes logged + monthly summary</li>
-        <li>Stop immediately if disputed</li>
-      </ul>
+      <!-- Slider -->
+      <div class="sliderWrap">
+        <div class="sliderTop">
+          <div>
+            <div class="sliderLabel">Jobs per month</div>
+            <div class="sliderValue"><span id="jobsValue">20</span> jobs</div>
+          </div>
+          <div class="sliderMeta" id="sliderMeta">Flat rate + fair use. Extras adjust automatically.</div>
+        </div>
 
-      <div class="calcBox" id="calcBox">
-        <div class="calcRow">
-          <span>Base</span><b>$<span id="basePrice">395</span></b>
-        </div>
-        <div class="calcRow">
-          <span>Included jobs</span><b><span id="includedJobs">20</span></b>
-        </div>
-        <div class="calcRow">
-          <span>Extra jobs</span><b><span id="extraJobs">0</span></b>
-        </div>
-        <div class="calcRow">
-          <span>Extras cost</span><b>$<span id="extrasCost">0</span></b>
-        </div>
-        <div class="calcRow total">
-          <span>Total</span><b>$<span id="totalPrice">395</span></b>
+        <input id="jobsSlider" class="slider" type="range" min="0" max="120" step="1" value="20" />
+
+        <div class="sliderTicks" aria-hidden="true">
+          <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span><span>120</span>
         </div>
       </div>
 
-      <a class="btn btnSolid" href="#contact">Get started</a>
-      <div class="tinyNote">No lock-in. Month to month.</div>
-    </div>
-  </div>
-</section>
+      <!-- Totals -->
+      <div class="planTotals">
+        <div class="totalCard highlight">
+          <div class="totalTitle">Gold</div>
+          <div class="totalPrice">$<span id="goldPrice">395</span><span class="per">/mo</span></div>
+          <div class="totalSub" id="goldSub">Includes 20 jobs. Extra jobs $12 each.</div>
+        </div>
 
-<script>
-  // ====== CONFIG ======
-  const MODE_FLAT = "flat";
-  const MODE_PER = "per";
+        <div class="totalCard">
+          <div class="totalTitle">Platinum</div>
+          <div class="totalPrice">$<span id="platPrice">695</span><span class="per">/mo</span></div>
+          <div class="totalSub" id="platSub">Includes 35 jobs. Extra jobs $10 each.</div>
+        </div>
+      </div>
 
-  // Flat-rate config (Gold example)
-  const flatConfig = {
-    mode: MODE_FLAT,
-    planName: "Gold — Done-for-you follow-up",
-    basePrice: 395,
-    includedJobs: 20,
-    extraRate: 12, // $ per job above included
-    sliderDefault: 20,
-    sliderMeta: "Includes 20 jobs. Extras billed per job.",
-    priceSubTemplate: (included, rate) => `Includes <b>${included}</b> jobs. Extra jobs: <b>$${rate}</b> each.`,
-    features: [
-      "We call + email for you (human-run)",
-      "Reminder before due date (if needed)",
-      "Follow-up at 3 days overdue",
-      "Follow-up at 7 days overdue",
-      "Notes logged + monthly summary",
-      "Stop immediately if disputed"
-    ]
-  };
+      <!-- Comparison -->
+      <div class="compareWrap">
+        <div class="compareHeader">
+          <div class="compareCol featureCol">What’s included</div>
+          <div class="compareCol planCol">Gold</div>
+          <div class="compareCol planCol">Platinum</div>
+        </div>
 
-  // Per-invoice config
-  const perConfig = {
-    mode: MODE_PER,
-    planName: "Per invoice — Pay as you go",
-    basePrice: 0,           // no base by default
-    includedJobs: 0,
-    extraRate: 25,          // $ per invoice
-    sliderDefault: 10,
-    sliderMeta: "You pay per invoice. No base fee shown here (add a minimum if you want).",
-    priceSubTemplate: (included, rate) => `Price: <b>$${rate}</b> per invoice.`,
-    features: [
-      "We call + email for you (human-run)",
-      "3-day overdue follow-up included",
-      "7-day overdue follow-up included",
-      "Clear action log + monthly summary",
-      "Stop immediately if disputed"
-    ]
-  };
+        <div class="compareRow">
+          <div class="compareCol featureCol">Human follow-ups by phone + email</div>
+          <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+          <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+        </div>
 
-  // Optional: minimum monthly spend (set to 0 if you don't want it)
-  const MIN_MONTHLY = 150;
+        <div class="compareRow">
+          <div class="compareCol featureCol">Payment issue check call (when needed)</div>
+          <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+          <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+        </div>
 
-  // ====== ELEMENTS ======
-  const btnFlat = document.getElementById("btnFlat");
-  const btnPer = document.getElementById("btnPerInvoice");
-  const jobsSlider = document.getElementById("jobsSlider");
-  const jobsValue = document.getElementById("jobsValue");
-  const sliderMeta = document.getElementById("sliderMeta");
+        <div class="compareRow">
+          <div class="compareCol featureCol">3 days overdue follow-up</div>
+          <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+          <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+        </div>
 
-  const planName = document.getElementById("planName");
-  const priceTotal = document.getElementById("priceTotal");
-  const priceSub = document.getElementById("priceSub");
-  const extraRateEl = document.getElementById("extraRate");
-  const basePriceEl = document.getElementById("basePrice");
-  const includedJobsEl = document.getElementById("includedJobs");
-  const extraJobsEl = document.getElementById("extraJobs");
-  const extrasCostEl = document.getElementById("extrasCost");
-  const totalPriceEl = document.getElementById("totalPrice");
-  const featureList = document.getElementById("featureList");
+        <div class="compareRow">
+          <div class="compareCol featureCol">7 days overdue follow-up</div>
+          <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+          <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+        </div>
 
-  let current = flatConfig;
+        <div class="compareRow">
+          <div class="compareCol featureCol">Extra follow-ups beyond 7 days</div>
+          <div class="compareCol planCol"><span class="mark no">✕</span></div>
+          <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+        </div>
 
-  // ====== HELPERS ======
-  function money(n){ return Math.round(n).toString(); }
+        <div class="compareRow">
+          <div class="compareCol featureCol">Final reminder calls/emails</div>
+          <div class="compareCol planCol"><span class="mark no">✕</span></div>
+          <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+        </div>
 
-  function setActive(mode){
-    const isFlat = mode === MODE_FLAT;
-    btnFlat.classList.toggle("isActive", isFlat);
-    btnPer.classList.toggle("isActive", !isFlat);
-    btnFlat.setAttribute("aria-selected", isFlat ? "true" : "false");
-    btnPer.setAttribute("aria-selected", !isFlat ? "true" : "false");
-  }
+        <div class="compareRow">
+          <div class="compareCol featureCol">Pre-handover pack (if external collections needed)</div>
+          <div class="compareCol planCol"><span class="mark no">✕</span></div>
+          <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+        </div>
 
-  function renderFeatures(items){
-    featureList.innerHTML = items.map(x => `<li>${x}</li>`).join("");
-  }
+        <div class="compareRow">
+          <div class="compareCol featureCol">Priority handling</div>
+          <div class="compareCol planCol"><span class="mark no">✕</span></div>
+          <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+        </div>
 
-  function calculateTotal(jobs){
-    if(current.mode === MODE_FLAT){
-      const extraJobs = Math.max(0, jobs - current.includedJobs);
-      const extrasCost = extraJobs * current.extraRate;
-      const total = current.basePrice + extrasCost;
-      return { extraJobs, extrasCost, total, base: current.basePrice, included: current.includedJobs };
-    }
+        <div class="compareNote">
+          We stop immediately if a job is disputed. No threats. No drama.
+        </div>
 
-    // Per-invoice
-    const extrasCost = jobs * current.extraRate;
-    const total = Math.max(MIN_MONTHLY, extrasCost); // remove MIN_MONTHLY if you don't want it
-    const extraJobs = jobs; // all jobs are billable in this model
-    return { extraJobs, extrasCost, total, base: current.basePrice, included: current.includedJobs };
-  }
+        <div class="compareCTA">
+          <a class="btn btnSolid" href="#contact">Get started</a>
+          <a class="btn" href="#contact">Ask a question</a>
+        </div>
+      </div>
 
-  function updateUI(){
-    const jobs = parseInt(jobsSlider.value, 10);
-    jobsValue.textContent = jobs;
+      <script>
+        // ===== CONFIG =====
+        const MODE_FLAT = "flat";
+        const MODE_PER  = "per";
 
-    planName.textContent = current.planName;
-    sliderMeta.textContent = current.sliderMeta;
+        const models = {
+          [MODE_FLAT]: {
+            sliderMeta: "Flat rate + fair use. Extras adjust automatically.",
+            gold: { base: 395, included: 20, extraRate: 12, label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
+            plat: { base: 695, included: 35, extraRate: 10, label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
+            calc: (jobs, plan) => {
+              const extraJobs = Math.max(0, jobs - plan.included);
+              return plan.base + (extraJobs * plan.extraRate);
+            }
+          },
 
-    // Pricing copy
-    extraRateEl.textContent = money(current.extraRate);
-    priceSub.innerHTML = current.priceSubTemplate(current.includedJobs, current.extraRate);
+          [MODE_PER]: {
+            sliderMeta: "Per job pricing. Slider shows monthly estimate.",
+            gold: { perJob: 25, minimum: 150, label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
+            plat: { perJob: 35, minimum: 250, label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
+            calc: (jobs, plan) => Math.max(plan.minimum, jobs * plan.perJob)
+          }
+        };
 
-    // Card calc
-    const calc = calculateTotal(jobs);
+        // ===== ELEMENTS =====
+        const btnFlat = document.getElementById("btnFlat");
+        const btnPer  = document.getElementById("btnPerJob");
 
-    basePriceEl.textContent = money(calc.base);
-    includedJobsEl.textContent = calc.included;
-    extraJobsEl.textContent = calc.extraJobs;
-    extrasCostEl.textContent = money(calc.extrasCost);
-    totalPriceEl.textContent = money(calc.total);
+        const jobsSlider = document.getElementById("jobsSlider");
+        const jobsValue  = document.getElementById("jobsValue");
+        const sliderMeta = document.getElementById("sliderMeta");
 
-    // Big price display
-    priceTotal.textContent = money(calc.total);
+        const goldPrice = document.getElementById("goldPrice");
+        const platPrice = document.getElementById("platPrice");
+        const goldSub   = document.getElementById("goldSub");
+        const platSub   = document.getElementById("platSub");
 
-    // Features
-    renderFeatures(current.features);
+        let currentMode = MODE_FLAT;
 
-    // Per-invoice: adjust labels a bit
-    if(current.mode === MODE_PER){
-      document.getElementById("calcBox").classList.add("isPerInvoice");
-      document.querySelector(".per").textContent = "/mo";
-    } else {
-      document.getElementById("calcBox").classList.remove("isPerInvoice");
-      document.querySelector(".per").textContent = "/mo";
-    }
-  }
+        function money(n){ return Math.round(n).toString(); }
 
-  function switchMode(next){
-    current = next;
+        function setActive(mode){
+          currentMode = mode;
+          const isFlat = mode === MODE_FLAT;
+          btnFlat.classList.toggle("isActive", isFlat);
+          btnPer.classList.toggle("isActive", !isFlat);
+          btnFlat.setAttribute("aria-selected", isFlat ? "true" : "false");
+          btnPer.setAttribute("aria-selected", !isFlat ? "true" : "false");
+          updateUI();
+        }
 
-    // Match slider defaults per model
-    jobsSlider.value = next.sliderDefault;
-    setActive(next.mode);
-    updateUI();
-  }
+        function updateUI(){
+          const jobs = parseInt(jobsSlider.value, 10);
+          jobsValue.textContent = jobs;
 
-  // ====== EVENTS ======
-  btnFlat.addEventListener("click", () => switchMode(flatConfig));
-  btnPer.addEventListener("click", () => switchMode(perConfig));
-  jobsSlider.addEventListener("input", updateUI);
+          const m = models[currentMode];
+          sliderMeta.textContent = m.sliderMeta;
 
-  // Init
-  switchMode(flatConfig);
-</script>
+          // Gold
+          goldPrice.textContent = money(m.calc(jobs, m.gold));
+          goldSub.textContent = m.gold.label(m.gold);
 
+          // Platinum
+          platPrice.textContent = money(m.calc(jobs, m.plat));
+          platSub.textContent = m.plat.label(m.plat);
+        }
+
+        btnFlat.addEventListener("click", () => setActive(MODE_FLAT));
+        btnPer.addEventListener("click", () => setActive(MODE_PER));
+        jobsSlider.addEventListener("input", updateUI);
+
+        updateUI();
+      </script>
+    </section>
 
     <!-- FAQ -->
     <section id="faq">
@@ -493,17 +290,12 @@
 
       <details>
         <summary>Do I need Xero?</summary>
-        <p>No. We can work from Xero reports, MYOB, Excel or PDFs — whatever you’re using.</p>
-      </details>
-
-      <details>
-        <summary>Why phone calls matter?</summary>
-        <p>Phone outreach recovers significantly more overdue payments than mail alone, because it forces real, two-way engagement.:contentReference[oaicite:2]{index=2}</p>
+        <p>No. We can work from Xero exports, MYOB, Excel or PDFs — whatever you’re using.</p>
       </details>
 
       <details>
         <summary>Is this automated software?</summary>
-        <p>No. This is a human-run follow-up service combining phone & email outreach — humans get responses that automation alone often misses.</p>
+        <p>No. This is a human-run follow-up service combining phone &amp; email outreach.</p>
       </details>
 
       <details>
