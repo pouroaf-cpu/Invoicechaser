@@ -97,12 +97,10 @@
       </div>
     </section>
 
-<!-- PRICING (Gold + Platinum, Toggle + Job Slider) -->
+<!-- PRICING (Toggle + Job Slider + Gold vs Platinum comparison) -->
 <section id="pricing" class="pricingSection">
   <h2>Pricing</h2>
-  <p class="pricingIntro">
-    Two ways to pay. Same outcome: we do the follow-up work so you can stay on the tools.
-  </p>
+  <p class="pricingIntro">Pick a payment model, set your monthly job volume, and we’ll show the total.</p>
 
   <!-- Toggle -->
   <div class="pricingToggle" role="tablist" aria-label="Pricing model toggle">
@@ -121,7 +119,7 @@
         <div class="sliderLabel">Jobs per month</div>
         <div class="sliderValue"><span id="jobsValue">20</span> jobs</div>
       </div>
-      <div class="sliderMeta" id="sliderMeta">Pick your monthly job volume to see pricing.</div>
+      <div class="sliderMeta" id="sliderMeta">Flat rate + fair use. Extras adjust automatically.</div>
     </div>
 
     <input id="jobsSlider" class="slider" type="range" min="0" max="120" step="1" value="20" />
@@ -129,83 +127,94 @@
     <div class="sliderTicks">
       <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span><span>120</span>
     </div>
+  </div>
 
-    <!-- Time savings -->
-    <div class="savingsBox">
-      <div class="savingsTitle">Time & labour saved</div>
-      <div class="savingsText">
-        Estimated admin saved: <b><span id="hoursSaved">4.0</span> hours</b> / month
-        (worth about <b>$<span id="valueSaved">146</span></b> of your time).
-      </div>
-      <div class="savingsTiny">
-        Based on ~12 minutes of chasing/admin per job. We do that work so you don’t have to.
-      </div>
+  <!-- Totals -->
+  <div class="planTotals">
+    <div class="totalCard highlight">
+      <div class="totalTitle">Gold</div>
+      <div class="totalPrice">$<span id="goldPrice">395</span><span class="per">/mo</span></div>
+      <div class="totalSub" id="goldSub">Includes 20 jobs. Extra jobs $12 each.</div>
+    </div>
+
+    <div class="totalCard">
+      <div class="totalTitle">Platinum</div>
+      <div class="totalPrice">$<span id="platPrice">695</span><span class="per">/mo</span></div>
+      <div class="totalSub" id="platSub">Includes 35 jobs. Extra jobs $10 each.</div>
     </div>
   </div>
 
-  <!-- Plans -->
-  <div class="plansGrid">
-
-    <!-- GOLD -->
-    <div class="planCard highlight">
-      <div class="planTop">
-        <h3>Gold</h3>
-        <div class="planPrice">$<span id="goldPrice">395</span><span class="per">/mo</span></div>
-        <div class="planSub" id="goldSub">Includes 20 jobs. Extra jobs $12 each.</div>
-      </div>
-
-      <ul class="planList">
-        <li>Human follow-ups by phone + email</li>
-        <li>Payment issue check call (when needed)</li>
-        <li>Day-before due reminder (when needed)</li>
-        <li>3 days overdue follow-up</li>
-        <li>7 days overdue follow-up</li>
-        <li>Clear notes + monthly summary</li>
-        <li>Stop immediately if disputed</li>
-      </ul>
-
-      <div class="miniCalc" id="goldCalc">
-        <div class="calcRow"><span>Jobs set</span><b><span id="goldJobs">20</span></b></div>
-        <div class="calcRow"><span>Included jobs</span><b><span id="goldIncluded">20</span></b></div>
-        <div class="calcRow"><span>Extra jobs</span><b><span id="goldExtra">0</span></b></div>
-        <div class="calcRow total"><span>Total</span><b>$<span id="goldTotal">395</span></b></div>
-      </div>
-
-      <a class="btn btnSolid" href="#contact">Get started</a>
+  <!-- Comparison -->
+  <div class="compareWrap">
+    <div class="compareHeader">
+      <div class="compareCol featureCol">What’s included</div>
+      <div class="compareCol planCol">Gold</div>
+      <div class="compareCol planCol">Platinum</div>
     </div>
 
-    <!-- PLATINUM -->
-    <div class="planCard">
-      <div class="planTop">
-        <h3>Platinum</h3>
-        <div class="planPrice">$<span id="platPrice">695</span><span class="per">/mo</span></div>
-        <div class="planSub" id="platSub">Includes 35 jobs. Extra jobs $10 each.</div>
-      </div>
-
-      <ul class="planList">
-        <li>Everything in Gold</li>
-        <li>More aggressive follow-up cadence (still professional)</li>
-        <li>Extra follow-ups beyond 7 days</li>
-        <li>Final reminder calls/emails</li>
-        <li>Pre-handover pack (if external collections needed)</li>
-        <li>Priority handling</li>
-      </ul>
-
-      <div class="miniCalc" id="platCalc">
-        <div class="calcRow"><span>Jobs set</span><b><span id="platJobs">20</span></b></div>
-        <div class="calcRow"><span>Included jobs</span><b><span id="platIncluded">35</span></b></div>
-        <div class="calcRow"><span>Extra jobs</span><b><span id="platExtra">0</span></b></div>
-        <div class="calcRow total"><span>Total</span><b>$<span id="platTotal">695</span></b></div>
-      </div>
-
-      <a class="btn btnSolid" href="#contact">Get started</a>
+    <div class="compareRow">
+      <div class="compareCol featureCol">Human follow-ups by phone + email</div>
+      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
     </div>
 
+    <div class="compareRow">
+      <div class="compareCol featureCol">Payment issue check call (when needed)</div>
+      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+    </div>
+
+    <div class="compareRow">
+      <div class="compareCol featureCol">Day-before due reminder (when needed)</div>
+      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+    </div>
+
+    <div class="compareRow">
+      <div class="compareCol featureCol">3 days overdue follow-up</div>
+      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+    </div>
+
+    <div class="compareRow">
+      <div class="compareCol featureCol">7 days overdue follow-up</div>
+      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+    </div>
+
+    <div class="compareRow">
+      <div class="compareCol featureCol">Extra follow-ups beyond 7 days</div>
+      <div class="compareCol planCol"><span class="mark no">✕</span></div>
+      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+    </div>
+
+    <div class="compareRow">
+      <div class="compareCol featureCol">Final reminder calls/emails</div>
+      <div class="compareCol planCol"><span class="mark no">✕</span></div>
+      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+    </div>
+
+    <div class="compareRow">
+      <div class="compareCol featureCol">Pre-handover pack (if external collections needed)</div>
+      <div class="compareCol planCol"><span class="mark no">✕</span></div>
+      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+    </div>
+
+    <div class="compareRow">
+      <div class="compareCol featureCol">Priority handling</div>
+      <div class="compareCol planCol"><span class="mark no">✕</span></div>
+      <div class="compareCol planCol"><span class="mark yes">✓</span></div>
+    </div>
+
+    <div class="compareNote">
+      We stop immediately if a job is disputed. No threats. No drama.
+    </div>
+
+    <div class="compareCTA">
+      <a class="btn btnSolid" href="#contact">Get started</a>
+      <a class="btn" href="#contact">Ask a question</a>
+    </div>
   </div>
-
-  <p class="pricingFooter">
-    You’re not buying software. You’re buying time back and faster cashflow.
-  </p>
 </section>
 
 <script>
@@ -213,47 +222,29 @@
   const MODE_FLAT = "flat";
   const MODE_PER  = "per";
 
-  // Assumption for time saved: 12 minutes per job of admin/chasing
-  const MINUTES_PER_JOB = 12;
-
-  // Value of tradie time: NZ median full-time hourly earnings (Stats NZ, June 2025) used for calc
-  const HOURLY_VALUE_NZD = 36.53;
-
   const models = {
     [MODE_FLAT]: {
-      sliderMeta: "Flat rate + Fair Use. Slider shows how extras adjust.",
-      gold:   { base: 395, included: 20, extraRate: 12 },
-      plat:   { base: 695, included: 35, extraRate: 10 },
-      // Copy
-      goldSub: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.`,
-      platSub: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.`,
-      // Pricing
+      sliderMeta: "Flat rate + fair use. Extras adjust automatically.",
+      gold: { base: 395, included: 20, extraRate: 12, label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
+      plat: { base: 695, included: 35, extraRate: 10, label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
       calc: (jobs, plan) => {
         const extraJobs = Math.max(0, jobs - plan.included);
-        const total = plan.base + extraJobs * plan.extraRate;
-        return { extraJobs, total };
-      },
-      priceSuffix: "/mo"
+        return plan.base + (extraJobs * plan.extraRate);
+      }
     },
 
     [MODE_PER]: {
-      sliderMeta: "Per Job pricing. Slider shows monthly estimate.",
-      gold:   { perJob: 25, minimum: 150 },
-      plat:   { perJob: 35, minimum: 250 },
-      goldSub: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.`,
-      platSub: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.`,
-      calc: (jobs, plan) => {
-        const raw = jobs * plan.perJob;
-        const total = Math.max(plan.minimum, raw);
-        return { extraJobs: jobs, total };
-      },
-      priceSuffix: "/mo est."
+      sliderMeta: "Per job pricing. Slider shows monthly estimate.",
+      gold: { perJob: 25, minimum: 150, label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
+      plat: { perJob: 35, minimum: 250, label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
+      calc: (jobs, plan) => Math.max(plan.minimum, jobs * plan.perJob)
     }
   };
 
   // ===== ELEMENTS =====
   const btnFlat = document.getElementById("btnFlat");
   const btnPer  = document.getElementById("btnPerJob");
+
   const jobsSlider = document.getElementById("jobsSlider");
   const jobsValue  = document.getElementById("jobsValue");
   const sliderMeta = document.getElementById("sliderMeta");
@@ -263,22 +254,9 @@
   const goldSub   = document.getElementById("goldSub");
   const platSub   = document.getElementById("platSub");
 
-  const goldJobs = document.getElementById("goldJobs");
-  const platJobs = document.getElementById("platJobs");
-  const goldIncluded = document.getElementById("goldIncluded");
-  const platIncluded = document.getElementById("platIncluded");
-  const goldExtra = document.getElementById("goldExtra");
-  const platExtra = document.getElementById("platExtra");
-  const goldTotal = document.getElementById("goldTotal");
-  const platTotal = document.getElementById("platTotal");
-
-  const hoursSaved = document.getElementById("hoursSaved");
-  const valueSaved = document.getElementById("valueSaved");
-
   let currentMode = MODE_FLAT;
 
   function money(n){ return Math.round(n).toString(); }
-  function money2(n){ return (Math.round(n)).toString(); }
 
   function setActive(mode){
     currentMode = mode;
@@ -290,13 +268,6 @@
     updateUI();
   }
 
-  function updateSavings(jobs){
-    const hrs = (jobs * MINUTES_PER_JOB) / 60;
-    const val = hrs * HOURLY_VALUE_NZD;
-    hoursSaved.textContent = hrs.toFixed(1);
-    valueSaved.textContent = money2(val);
-  }
-
   function updateUI(){
     const jobs = parseInt(jobsSlider.value, 10);
     jobsValue.textContent = jobs;
@@ -304,48 +275,22 @@
     const m = models[currentMode];
     sliderMeta.textContent = m.sliderMeta;
 
-    // Savings callout
-    updateSavings(jobs);
+    // Gold
+    goldPrice.textContent = money(m.calc(jobs, m.gold));
+    goldSub.innerHTML = m.gold.label(m.gold);
 
-    // GOLD
-    const g = m.gold;
-    const gCalc = m.calc(jobs, g);
-    goldPrice.textContent = money(gCalc.total);
-    goldSub.innerHTML = m.goldSub(g);
-    goldJobs.textContent = jobs;
-
-    // PLATINUM
-    const p = m.plat;
-    const pCalc = m.calc(jobs, p);
-    platPrice.textContent = money(pCalc.total);
-    platSub.innerHTML = m.platSub(p);
-    platJobs.textContent = jobs;
-
-    // Mini calc details
-    if(currentMode === MODE_FLAT){
-      goldIncluded.textContent = g.included;
-      platIncluded.textContent = p.included;
-      goldExtra.textContent = gCalc.extraJobs;
-      platExtra.textContent = pCalc.extraJobs;
-      goldTotal.textContent = money(gCalc.total);
-      platTotal.textContent = money(pCalc.total);
-    } else {
-      goldIncluded.textContent = "-";
-      platIncluded.textContent = "-";
-      goldExtra.textContent = jobs;
-      platExtra.textContent = jobs;
-      goldTotal.textContent = money(gCalc.total);
-      platTotal.textContent = money(pCalc.total);
-    }
+    // Platinum
+    platPrice.textContent = money(m.calc(jobs, m.plat));
+    platSub.innerHTML = m.plat.label(m.plat);
   }
 
   btnFlat.addEventListener("click", () => setActive(MODE_FLAT));
   btnPer.addEventListener("click", () => setActive(MODE_PER));
   jobsSlider.addEventListener("input", updateUI);
 
-  // Init
   updateUI();
 </script>
+
 
 
   <!-- Cards -->
