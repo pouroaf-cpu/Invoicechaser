@@ -781,3 +781,63 @@ footer{
     text-align:left;
   }
 }
+/* ===== PRICING OVERRIDES (force compact + toggle above slider) ===== */
+#pricing.pricing{
+  padding: 14px !important;
+  margin: 16px 0 !important;
+}
+
+#pricing .pricingTopRow{
+  gap: 10px !important;
+  margin-top: 6px !important;
+}
+
+#pricing .pricingControls{
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#pricing .pricingToggle{
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#pricing .toggleBtn{
+  padding: 10px 14px !important;
+  border-radius: 14px !important;
+  min-width: 0 !important;
+}
+
+#pricing .sliderWrap{
+  padding: 10px !important;
+  margin: 0 !important;
+}
+
+#pricing .sliderTop{
+  margin: 0 0 6px !important;
+  gap: 8px !important;
+}
+
+#pricing .slider{
+  margin: 6px 0 6px !important;
+}
+
+#pricing .pricingCardsRow{
+  margin-top: 12px !important;
+  gap: 12px !important;
+}
+
+#pricing .cardsStack{
+  gap: 12px !important;
+}
+
+#pricing .priceCard{
+  padding: 12px !important;
+  min-height: 0 !important;
+}
