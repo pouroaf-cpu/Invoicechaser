@@ -3,308 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Invoice Chaser — Get Paid Faster (Tradie-Friendly)</title>
-  <meta name="description" content="We do the awkward part: polite payment follow-ups and overdue chasing. No Xero? No problem. You do the work you love — we get the invoices paid." />
+  <title>Invoice Chaser — Get Paid Faster</title>
+  <meta name="description" content="We chase unpaid invoices so tradies don’t have to. No Xero? No problem. You do the work you love — we handle payment follow-ups." />
 
-  <style>
-    :root{
-      --bg:#f6f8ff;
-      --card:#ffffff;
-      --ink:#0b1220;
-      --muted:#5b6577;
-      --line:#e7eaf3;
-      --brand:#2563eb;
-      --brand2:#60a5fa;
-      --good:#16a34a;
-      --warn:#f59e0b;
-      --shadow: 0 18px 50px rgba(15, 23, 42, .10);
-      --shadow2: 0 10px 28px rgba(15, 23, 42, .08);
-      --r:18px;
-      --r2:14px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--ink);
-      background:
-        radial-gradient(1100px 700px at 20% 18%, rgba(96,165,250,.35), transparent 55%),
-        radial-gradient(900px 600px at 85% 25%, rgba(37,99,235,.25), transparent 55%),
-        radial-gradient(900px 600px at 60% 80%, rgba(99,102,241,.18), transparent 60%),
-        linear-gradient(180deg, #ffffff 0%, var(--bg) 55%, #ffffff 100%);
-    }
-    a{color:inherit}
-    .wrap{max-width:1120px;margin:0 auto;padding:18px 20px 56px}
-    .nav{
-      position:sticky;top:12px;z-index:30;
-      display:flex;align-items:center;justify-content:space-between;gap:14px;
-      padding:12px 14px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.78);
-      backdrop-filter: blur(10px);
-      border-radius: 999px;
-      box-shadow: var(--shadow2);
-    }
-    .brandRow{display:flex;align-items:center;gap:10px;font-weight:900}
-    .logo{
-      width:34px;height:34px;border-radius:10px;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      box-shadow: 0 12px 26px rgba(37,99,235,.22);
-    }
-    .navlinks{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:flex-end}
-    .navlinks a{
-      text-decoration:none;
-      color:#253047;
-      font-weight:700;
-      font-size:14px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid transparent;
-    }
-    .navlinks a:hover{border-color:var(--line);background:rgba(37,99,235,.06)}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      padding:10px 14px;border-radius:12px;
-      border:1px solid rgba(37,99,235,.30);
-      background: linear-gradient(135deg, rgba(37,99,235,.14), rgba(96,165,250,.10));
-      text-decoration:none;
-      font-weight:900;
-      color:#0b1220;
-      box-shadow: var(--shadow2);
-      white-space:nowrap;
-    }
-    .btn:hover{transform: translateY(-1px); border-color: rgba(37,99,235,.55)}
-    .btn:active{transform: translateY(0)}
-    .btnSolid{
-      border-color: rgba(37,99,235,.18);
-      background: linear-gradient(135deg, rgba(37,99,235,1), rgba(96,165,250,1));
-      color:white;
-    }
-    .btnSolid:hover{filter:brightness(1.02)}
-    .tagline{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:8px 12px;border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.8);
-      box-shadow: var(--shadow2);
-      font-size:13px;font-weight:800;color:#1f2a44;
-    }
-    .tagDot{width:10px;height:10px;border-radius:99px;background:var(--good)}
-    .hero{
-      padding:38px 0 22px;
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    .heroCard{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.82);
-      border-radius: var(--r);
-      box-shadow: var(--shadow);
-      padding:28px;
-    }
-    h1{
-      margin:14px 0 10px;
-      font-size:54px;
-      line-height:1.02;
-      letter-spacing:-1px;
-    }
-    .sub{
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size:16px;
-      max-width:60ch;
-    }
-    .heroPoints{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 18px}
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 10px;border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(37,99,235,.05);
-      color:#24314a;
-      font-weight:800;
-      font-size:13px;
-    }
-    .pill .miniDot{width:8px;height:8px;border-radius:99px;background:var(--brand)}
-    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
-    .fine{margin-top:12px;color:var(--muted);font-size:13px}
-
-    .side{
-      display:flex;flex-direction:column;gap:14px;
-    }
-    .sideCard{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.82);
-      border-radius: var(--r);
-      box-shadow: var(--shadow);
-      padding:18px;
-    }
-    .sideCard h3{margin:0 0 10px;font-size:16px;letter-spacing:-.2px}
-    .mini{
-      border:1px solid var(--line);
-      background: rgba(37,99,235,.04);
-      border-radius: var(--r2);
-      padding:14px;
-    }
-    .mini b{display:block;margin-bottom:6px}
-    .mini p{margin:0;color:var(--muted);font-size:14px}
-
-    section{padding:18px 0}
-    .kicker{
-      margin:0 0 10px;
-      color:#334155;
-      font-weight:900;
-      font-size:12px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-    }
-    .h2{margin:0 0 12px;font-size:28px;letter-spacing:-.4px}
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    .card{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.88);
-      border-radius: var(--r);
-      box-shadow: var(--shadow2);
-      padding:18px;
-    }
-    .icon{
-      width:44px;height:44px;border-radius:14px;
-      display:inline-flex;align-items:center;justify-content:center;
-      background: linear-gradient(135deg, rgba(37,99,235,.14), rgba(96,165,250,.10));
-      border:1px solid rgba(37,99,235,.18);
-      margin-bottom:10px;
-    }
-    .card h3{margin:0 0 8px;font-size:16px}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-
-    .split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-
-    .pricing{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-      align-items:stretch;
-    }
-    .price{
-      position:relative;
-      overflow:hidden;
-    }
-    .badge{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:7px 10px;border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(37,99,235,.05);
-      font-weight:900;
-      font-size:12px;
-      color:#23314c;
-    }
-    .money{
-      margin:10px 0 6px;
-      font-size:34px;
-      font-weight:1000;
-      letter-spacing:-.6px;
-    }
-    .muted{color:var(--muted);font-size:14px;margin:0}
-    .ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
-    .ul li{margin:6px 0}
-    .highlight{
-      border-color: rgba(37,99,235,.30);
-      background: linear-gradient(135deg, rgba(37,99,235,.10), rgba(96,165,250,.08));
-      box-shadow: var(--shadow);
-    }
-    .highlight:before{
-      content:"";
-      position:absolute;inset:-2px;
-      background: radial-gradient(620px 240px at 22% 0%, rgba(37,99,235,.22), transparent 55%);
-      pointer-events:none;
-      opacity:.75;
-    }
-    .highlight > *{position:relative}
-
-    .faq{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-    details{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.88);
-      border-radius: var(--r);
-      box-shadow: var(--shadow2);
-      padding:14px 14px;
-    }
-    summary{
-      cursor:pointer;
-      font-weight:900;
-      list-style:none;
-    }
-    summary::-webkit-details-marker{display:none}
-    details p{margin:10px 0 0;color:var(--muted);font-size:14px}
-
-    .ctaBand{
-      border:1px solid rgba(37,99,235,.22);
-      background: linear-gradient(135deg, rgba(37,99,235,.12), rgba(96,165,250,.10));
-      border-radius: var(--r);
-      box-shadow: var(--shadow);
-      padding:18px;
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
-      flex-wrap:wrap;
-    }
-    .ctaBand b{font-size:16px}
-    .footer{
-      margin-top:18px;
-      padding:18px 0 0;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:13px;
-      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
-    }
-
-    /* Form */
-    label{display:block;font-size:12px;color:#475569;margin:10px 0 6px;font-weight:900}
-    input, textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.95);
-      outline:none;
-      font-size:14px;
-    }
-    input:focus, textarea:focus{border-color: rgba(37,99,235,.45); box-shadow: 0 0 0 4px rgba(37,99,235,.08)}
-    textarea{min-height:110px;resize:vertical}
-
-    @media (max-width: 980px){
-      h1{font-size:42px}
-      .hero{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-      .pricing{grid-template-columns:1fr}
-      .split{grid-template-columns:1fr}
-      .faq{grid-template-columns:1fr}
-      .nav{border-radius:18px}
-    }
-  </style>
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
   <div class="wrap">
+
     <!-- NAV -->
     <header class="nav">
       <div class="brandRow">
-        <div class="logo" aria-hidden="true"></div>
+        <div class="logo"></div>
         <div>Invoice Chaser</div>
       </div>
 
-      <nav class="navlinks" aria-label="Primary navigation">
+      <nav class="navlinks">
         <a href="#features">Features</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
@@ -314,278 +29,134 @@
     </header>
 
     <!-- HERO -->
-    <section class="hero" id="top">
+    <section class="hero">
       <div class="heroCard">
-        <span class="tagline"><span class="tagDot"></span> NO XERO? NO PROBLEM. WE WORK WITH WHAT YOU HAVE.</span>
+        <span class="tagline">NO XERO? NO PROBLEM. HUMAN-RUN SERVICE.</span>
 
-        <h1>We chase the payments.<br/>You do the work you love.</h1>
+        <h1>We chase the payments.<br>You do the work you love.</h1>
+
         <p class="sub">
-          Tradies don’t lose money because the work is bad — they lose money because invoices get missed.
-          We handle the awkward follow-ups (polite, consistent, professional) so cashflow stays healthy.
+          Tradies don’t lose money because the work is bad — they lose money because invoices don’t get followed up.
+          We handle polite calls and reminders so cashflow stays healthy.
         </p>
 
         <div class="heroPoints">
-          <span class="pill"><span class="miniDot"></span> Calls + emails done-for-you</span>
-          <span class="pill"><span class="miniDot"></span> Simple monthly billing</span>
-          <span class="pill"><span class="miniDot"></span> We stop on disputes</span>
+          <span class="pill">Calls & emails done-for-you</span>
+          <span class="pill">Works with any invoicing setup</span>
+          <span class="pill">Stop immediately on disputes</span>
         </div>
 
         <div class="ctaRow">
-          <a class="btn btnSolid" href="#contact">Start Free Setup Call</a>
-          <a class="btn" href="#pricing">See Pricing</a>
-        </div>
-
-        <div class="fine">
-          Positioning line you can repeat: <b>“We do the hard part — chasing payments — so you can keep doing the job.”</b>
+          <a class="btn btnSolid" href="#contact">Free setup call</a>
+          <a class="btn" href="#pricing">See pricing</a>
         </div>
       </div>
 
       <div class="side">
         <div class="sideCard">
-          <h3>What we actually do</h3>
-          <div class="mini">
-            <b>1) Confirm payment details early</b>
-            <p>We make one quick call to confirm who pays, where invoices go, and the best payment method.</p>
-          </div>
-          <div class="mini" style="margin-top:12px">
-            <b>2) Follow up overdue invoices</b>
-            <p>We send reminders and make calls on a clear schedule. No threats, no drama.</p>
-          </div>
+          <h3>What we do</h3>
+          <p>Confirm payment details, follow up overdue invoices, and log everything cleanly.</p>
         </div>
 
         <div class="sideCard">
-          <h3>Works with or without Xero</h3>
-          <div class="mini">
-            <b>Xero</b>
-            <p>We can use overdue reports and log notes against invoices.</p>
-          </div>
-          <div class="mini" style="margin-top:12px">
-            <b>No Xero</b>
-            <p>We run from your invoices list (PDF/Excel) and keep a clean follow-up log.</p>
-          </div>
+          <h3>No software required</h3>
+          <p>Xero, MYOB, PDFs, Excel — we work with what you already use.</p>
         </div>
       </div>
     </section>
 
     <!-- FEATURES -->
     <section id="features">
-      <p class="kicker">Features</p>
-      <h2 class="h2">Simple. Tradie-proof. Built for cashflow.</h2>
+      <h2>Built for tradies, not accountants</h2>
 
       <div class="grid">
         <div class="card">
-          <div class="icon" aria-hidden="true">⚡</div>
-          <h3>Done-for-you follow-ups</h3>
-          <p>We chase unpaid invoices with a calm, professional tone so you don’t have to do the awkward calls.</p>
+          <h3>Done-for-you chasing</h3>
+          <p>We make the awkward calls so you don’t have to.</p>
         </div>
-
         <div class="card">
-          <div class="icon" aria-hidden="true">🧾</div>
-          <h3>Works with any setup</h3>
-          <p>Xero, MYOB, spreadsheets, PDFs — no problem. We build the follow-up list from what you already use.</p>
+          <h3>Any invoicing system</h3>
+          <p>No Xero? No problem. We adapt.</p>
         </div>
-
         <div class="card">
-          <div class="icon" aria-hidden="true">📈</div>
           <h3>Clear tracking</h3>
-          <p>Every action is recorded (who we contacted, when, outcome). Easy proof of work and easy billing.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon" aria-hidden="true">🗓️</div>
-          <h3>Set-and-forget cadence</h3>
-          <p>You choose the rules (e.g., 3 days overdue, 7 days overdue). We run the process consistently.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon" aria-hidden="true">🛡️</div>
-          <h3>Dispute safe</h3>
-          <p>If a customer disputes an invoice, we stop and escalate to you. You stay in control.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon" aria-hidden="true">☎️</div>
-          <h3>Business calling</h3>
-          <p>Calls can come from a dedicated business number so you’re not exposing your personal phone.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SELLING SECTION (matches that “cards” feel) -->
-    <section>
-      <p class="kicker">Why this works</p>
-      <h2 class="h2">You don’t need more admin. You need invoices paid.</h2>
-
-      <div class="split">
-        <div class="card">
-          <h3>What you stop doing</h3>
-          <p class="muted">Chasing payments at 7pm, feeling awkward, putting it off, and losing track.</p>
-          <ul class="ul">
-            <li>No more “I’ll call tomorrow”</li>
-            <li>No more missed invoices</li>
-            <li>No more cashflow gaps</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>What you get back</h3>
-          <p class="muted">Time, headspace, and the ability to focus on the work you actually enjoy.</p>
-          <ul class="ul">
-            <li>More jobs completed</li>
-            <li>Faster payments</li>
-            <li>Less stress</li>
-          </ul>
+          <p>Every follow-up logged and auditable.</p>
         </div>
       </div>
     </section>
 
     <!-- PRICING -->
     <section id="pricing">
-      <p class="kicker">Pricing</p>
-      <h2 class="h2">Per follow-up + a monthly minimum</h2>
+      <h2>Simple pricing</h2>
 
       <div class="pricing">
-        <div class="card price">
-          <span class="badge">Starter</span>
-          <div class="money">$150<span style="font-size:14px;font-weight:900;color:var(--muted)"> / month minimum</span></div>
-          <p class="muted">Low volume. Simple chasing.</p>
-          <ul class="ul">
-            <li>Standard follow-up: <b>$6</b> each</li>
-            <li>Overdue follow-up: <b>$18</b> each</li>
-            <li>Monthly summary</li>
+        <div class="card">
+          <h3>Starter</h3>
+          <p><b>$150/month minimum</b></p>
+          <ul>
+            <li>$6 per follow-up</li>
+            <li>$18 overdue calls</li>
           </ul>
         </div>
 
-        <div class="card price highlight">
-          <span class="badge">Most common</span>
-          <div class="money">$250<span style="font-size:14px;font-weight:900;color:var(--muted)"> / month minimum</span></div>
-          <p class="muted">Busy tradies. Consistent follow-up.</p>
-          <ul class="ul">
-            <li>Standard follow-up: <b>$6</b> each</li>
-            <li>Overdue follow-up: <b>$20</b> each</li>
-            <li>Weekly overdue review</li>
+        <div class="card highlight">
+          <h3>Most common</h3>
+          <p><b>$250/month minimum</b></p>
+          <ul>
+            <li>$6 per follow-up</li>
+            <li>$20 overdue calls</li>
           </ul>
         </div>
 
-        <div class="card price">
-          <span class="badge">High volume</span>
-          <div class="money">$400<span style="font-size:14px;font-weight:900;color:var(--muted)"> / month minimum</span></div>
-          <p class="muted">Small crews. More invoices.</p>
-          <ul class="ul">
-            <li>Standard follow-up: <b>$5</b> each</li>
-            <li>Overdue follow-up: <b>$22</b> each</li>
-            <li>Priority cadence</li>
+        <div class="card">
+          <h3>High volume</h3>
+          <p><b>$400/month minimum</b></p>
+          <ul>
+            <li>$5 per follow-up</li>
+            <li>$22 overdue calls</li>
           </ul>
         </div>
-      </div>
-
-      <div class="fine">
-        Tip: keep pricing visible and simple. Tradies buy clarity.
       </div>
     </section>
 
     <!-- FAQ -->
     <section id="faq">
-      <p class="kicker">FAQ</p>
-      <h2 class="h2">Common questions</h2>
+      <h2>FAQ</h2>
 
-      <div class="faq">
-        <details>
-          <summary>Do I need Xero?</summary>
-          <p><b>No Xero? No problem.</b> If you have invoices in PDF/Excel, we can work from that. If you use Xero, we can use overdue reports and add notes against invoices.</p>
-        </details>
+      <details>
+        <summary>Do I need Xero?</summary>
+        <p>No. We work with whatever invoice format you already use.</p>
+      </details>
 
-        <details>
-          <summary>Will customers get annoyed?</summary>
-          <p>Not if it’s done properly. We use a polite, professional tone and a consistent schedule. Most late payments happen because people forgot — reminders fix that.</p>
-        </details>
+      <details>
+        <summary>Will customers get annoyed?</summary>
+        <p>No — polite, professional reminders get invoices paid faster.</p>
+      </details>
 
-        <details>
-          <summary>What if an invoice is disputed?</summary>
-          <p>We stop immediately and escalate to you. You decide the next step. We do not handle disputes or debt collection.</p>
-        </details>
-
-        <details>
-          <summary>How do you bill me?</summary>
-          <p>Monthly invoice from our system. You get a simple breakdown: standard follow-ups, overdue follow-ups, and how the minimum was applied (if relevant).</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- CTA BAND -->
-    <section>
-      <div class="ctaBand">
-        <div>
-          <b>Want to stop chasing payments this week?</b>
-          <div class="muted">Free setup call. We’ll confirm your rules and start from your current invoices list.</div>
-        </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn btnSolid" href="#contact">GET STARTED</a>
-          <a class="btn" href="#top">Back to top</a>
-        </div>
-      </div>
+      <details>
+        <summary>Is this debt collection?</summary>
+        <p>No. We stop immediately if an invoice is disputed.</p>
+      </details>
     </section>
 
     <!-- CONTACT -->
     <section id="contact">
-      <p class="kicker">Contact</p>
-      <h2 class="h2">Get started</h2>
+      <h2>Get started</h2>
 
-      <div class="split">
-        <div class="card">
-          <h3 style="margin:0 0 8px">Send a message</h3>
-          <p class="muted" style="margin:0 0 8px">Tell us your trade, invoice volume, and when you want follow-ups to start (e.g., 3 days overdue / 7 days overdue).</p>
+      <form action="mailto:hello@invoicechaser.kiwi" method="post" enctype="text/plain">
+        <input name="Name" placeholder="Name" required />
+        <input name="Business" placeholder="Business name" required />
+        <input name="Email" type="email" placeholder="Email" required />
+        <textarea name="Message" placeholder="Invoice volume + when to start chasing"></textarea>
 
-          <!-- No-backend mailto form -->
-          <form action="mailto:hello@invoicechaser.kiwi" method="post" enctype="text/plain">
-            <label for="name">Name</label>
-            <input id="name" name="Name" placeholder="Your name" required />
-
-            <label for="biz">Business</label>
-            <input id="biz" name="Business" placeholder="e.g., Smith Electrical" required />
-
-            <label for="email">Email</label>
-            <input id="email" name="Email" type="email" placeholder="you@business.co.nz" required />
-
-            <label for="msg">Message</label>
-            <textarea id="msg" name="Message" placeholder="Trade + invoice volume + follow-up timing"></textarea>
-
-            <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-              <button class="btn btnSolid" type="submit">Send</button>
-              <a class="btn" href="tel:+64000000000">Call (set your number)</a>
-            </div>
-
-            <div class="fine">
-              Replace <b>hello@invoicechaser.kiwi</b> and the phone number with your real details.
-            </div>
-          </form>
-        </div>
-
-        <div class="card">
-          <h3 style="margin:0 0 8px">What we need</h3>
-          <ul class="ul" style="margin-top:10px">
-            <li>Your invoice list (Xero/MYOB/export/PDF/Excel)</li>
-            <li>Your follow-up rules (when to start chasing)</li>
-            <li>Your preferred tone (friendly vs firm)</li>
-            <li>Escalation contact (for disputes)</li>
-          </ul>
-
-          <div class="mini" style="margin-top:14px">
-            <b>Sales line (use this)</b>
-            <p>“We do the hard part — chasing payments — so you can do what you love doing.”</p>
-          </div>
-        </div>
-      </div>
+        <button class="btn btnSolid" type="submit">Send</button>
+      </form>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
-      <div>© <span id="y"></span> Invoice Chaser</div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="#features" style="text-decoration:none">Features</a>
-        <a href="#pricing" style="text-decoration:none">Pricing</a>
-        <a href="#faq" style="text-decoration:none">FAQ</a>
-      </div>
+      © <span id="y"></span> Invoice Chaser
     </footer>
+
   </div>
 
   <script>
