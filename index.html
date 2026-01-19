@@ -140,23 +140,23 @@
         <!-- GOLD -->
         <article class="planCard highlight">
           <h3 class="planTitle">Gold</h3>
-          <div class="wasRow">Usually $<span id="goldWas">495</span></div>
+          <div class="wasRow">Usually $<span id="goldWas">299</span></div>
 
           <div class="nowLabel">Now</div>
           <div class="nowRow">
             <span class="currency">$</span>
-            <span class="nowPrice" id="goldPrice">395</span>
+            <span class="nowPrice" id="goldPrice">149</span>
           </div>
 
           <div class="perLine">NZD per month</div>
 
-          <!-- UPDATED: Time-value savings -->
+          <!-- Time-value savings -->
           <div class="savePill">
             <strong>Potential time value saved</strong>
             <span>~$<span id="goldTimeSave">570</span> over 3 months*</span>
           </div>
 
-          <p class="planDesc" id="goldSub">Includes 20 jobs. Extra jobs $12 each.</p>
+          <p class="planDesc" id="goldSub">Includes 20 jobs. Extra jobs $10 each.</p>
 
           <a class="learnMore" href="#faq">Learn more</a>
           <a class="ctaBtn" href="#contact">Get one month free</a>
@@ -165,23 +165,23 @@
         <!-- PLATINUM -->
         <article class="planCard">
           <h3 class="planTitle">Platinum</h3>
-          <div class="wasRow">Usually $<span id="platWas">895</span></div>
+          <div class="wasRow">Usually $<span id="platWas">499</span></div>
 
           <div class="nowLabel">Now</div>
           <div class="nowRow">
             <span class="currency">$</span>
-            <span class="nowPrice" id="platPrice">695</span>
+            <span class="nowPrice" id="platPrice">249</span>
           </div>
 
           <div class="perLine">NZD per month</div>
 
-          <!-- UPDATED: Time-value savings -->
+          <!-- Time-value savings -->
           <div class="savePill">
             <strong>Potential time value saved</strong>
             <span>~$<span id="platTimeSave">998</span> over 3 months*</span>
           </div>
 
-          <p class="planDesc" id="platSub">Includes 35 jobs. Extra jobs $10 each.</p>
+          <p class="planDesc" id="platSub">Includes 35 jobs. Extra jobs $8 each.</p>
 
           <a class="learnMore" href="#faq">Learn more</a>
           <a class="ctaBtn" href="#contact">Get one month free</a>
@@ -198,9 +198,9 @@
         const MODE_FLAT = "flat";
         const MODE_PER  = "per";
 
-        // Value-of-time settings (edit if you want)
-        const OWNER_RATE = 95;         // $/hour
-        const MINS_PER_JOB = 6;        // minutes saved per job/invoice follow-up (conservative)
+        // Time-value settings
+        const OWNER_RATE = 95;   // $/hour (used only for "potential time value saved")
+        const MINS_PER_JOB = 6;  // minutes saved per job/invoice follow-up
 
         function money(n){ return Math.round(n).toString(); }
 
@@ -213,8 +213,8 @@
         const models = {
           [MODE_FLAT]: {
             sliderMeta: "Flat rate + fair use. Extras adjust automatically.",
-            gold: { base: 395, included: 20, extraRate: 12, usually: 495, label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
-            plat: { base: 695, included: 35, extraRate: 10, usually: 895, label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
+            gold: { base: 149, included: 20, extraRate: 10, usually: 299, label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
+            plat: { base: 249, included: 35, extraRate: 8,  usually: 499, label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
             calc: (jobs, plan) => {
               const extraJobs = Math.max(0, jobs - plan.included);
               return plan.base + (extraJobs * plan.extraRate);
@@ -222,8 +222,8 @@
           },
           [MODE_PER]: {
             sliderMeta: "Per job pricing. Slider shows monthly estimate.",
-            gold: { perJob: 25, minimum: 150, usuallyPerJob: 35, label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
-            plat: { perJob: 35, minimum: 250, usuallyPerJob: 50, label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
+            gold: { perJob: 15, minimum: 99,  usuallyPerJob: 22, label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
+            plat: { perJob: 22, minimum: 149, usuallyPerJob: 30, label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
             calc: (jobs, plan) => Math.max(plan.minimum, jobs * plan.perJob)
           }
         };
@@ -244,7 +244,7 @@
         const goldWas  = document.getElementById("goldWas");
         const platWas  = document.getElementById("platWas");
 
-        // NEW: time value savings elements
+        // Time-value save fields
         const goldTimeSave = document.getElementById("goldTimeSave");
         const platTimeSave = document.getElementById("platTimeSave");
 
