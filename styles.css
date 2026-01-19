@@ -444,3 +444,119 @@ footer{
 @media(max-width:900px){
   .priceBig{font-size:32px}
 }
+/* PRICING (Toggle + Slider + 2 Plans) */
+.pricingSection{padding:40px 0}
+.pricingIntro{color:var(--muted);margin:6px 0 18px}
+.pricingFooter{color:var(--muted);margin-top:16px}
+
+/* Toggle */
+.pricingToggle{
+  display:inline-flex;
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+.toggleBtn{
+  border:0;
+  background:transparent;
+  padding:10px 14px;
+  font-weight:900;
+  cursor:pointer;
+  color:var(--ink);
+}
+.toggleBtn.isActive{
+  background:rgba(37,99,235,.10);
+  color:var(--brand);
+}
+
+/* Slider */
+.sliderWrap{
+  margin-top:16px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  box-shadow:var(--shadow);
+  padding:16px;
+}
+.sliderTop{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:10px;
+}
+.sliderLabel{font-size:12px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.sliderValue{font-size:18px;font-weight:900}
+.sliderMeta{color:var(--muted);font-size:13px}
+.slider{width:100%;accent-color:var(--brand)}
+.sliderTicks{
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+  font-size:12px;
+  margin-top:6px;
+}
+
+/* Savings box */
+.savingsBox{
+  margin-top:12px;
+  border-top:1px solid var(--line);
+  padding-top:12px;
+}
+.savingsTitle{font-weight:900;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.savingsText{margin-top:6px;font-size:14px}
+.savingsTiny{margin-top:6px;color:var(--muted);font-size:12px}
+
+/* Plans */
+.plansGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:16px;
+}
+.planCard{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  box-shadow:var(--shadow);
+  padding:20px;
+}
+.planCard.highlight{border-color:var(--brand)}
+.planTop{margin-bottom:12px}
+.planTop h3{margin:0 0 6px}
+.planPrice{font-size:36px;font-weight:1000;margin:6px 0 2px}
+.planPrice .per{font-size:13px;font-weight:900;color:var(--muted);margin-left:6px}
+.planSub{color:var(--muted);font-size:13px}
+
+.planList{margin:12px 0 0;padding-left:18px;color:var(--muted)}
+.planList li{margin:8px 0}
+
+/* Mini calc */
+.miniCalc{
+  margin:14px 0;
+  border-top:1px solid var(--line);
+  padding-top:12px;
+}
+.calcRow{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:6px 0;
+  color:var(--muted);
+  font-size:13px;
+}
+.calcRow b{color:var(--ink)}
+.calcRow.total{
+  border-top:1px solid var(--line);
+  margin-top:6px;
+  padding-top:10px;
+  font-size:14px;
+}
+
+@media(max-width:900px){
+  .plansGrid{grid-template-columns:1fr}
+  .planPrice{font-size:32px}
+}
