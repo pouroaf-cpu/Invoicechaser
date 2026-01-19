@@ -397,3 +397,41 @@ footer{
   #pricing .sliderMeta{text-align:left;max-width:none}
   #pricing .cardsStack{grid-template-columns:1fr;max-width:none}
 }
+/* ===== PRICING WIDTH CONTROL ===== */
+
+/* Container */
+#pricing .pricingControls{
+  align-items:flex-start; /* stop stretching children */
+}
+
+/* TOGGLE: compact */
+#pricing .pricingToggle{
+  width: fit-content !important;
+  max-width: none !important;
+}
+
+#pricing .toggleBtn{
+  flex: 0 0 auto !important;
+  padding: 8px 14px !important;
+  font-size: 13px;
+}
+
+/* SLIDER: ~50% screen width */
+#pricing .sliderWrap{
+  width: min(50vw, 520px) !important; /* cap for large screens */
+}
+
+/* Keep cards aligned with slider width */
+#pricing .cardsStack{
+  max-width: 520px;
+}
+
+/* Mobile: full width */
+@media (max-width: 900px){
+  #pricing .sliderWrap{
+    width: 100% !important;
+  }
+  #pricing .pricingToggle{
+    width: 100% !important;
+  }
+}
