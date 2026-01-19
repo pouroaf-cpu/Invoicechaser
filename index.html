@@ -101,105 +101,92 @@
       </div>
     </section>
 
-    <!-- PRICING -->
-    <section id="pricing" class="pricing">
-      <div class="pricingHead">
+    <!-- PRICING (REBUILT CLEAN) -->
+    <section id="pricing" class="pricingBlock">
+      <header class="pricingHeader">
         <h2>Pricing</h2>
         <p>Pick a model, set job volume, and we’ll show the total.</p>
+      </header>
+
+      <!-- TOGGLE (TOP) -->
+      <div class="pricingToggleRow" role="tablist" aria-label="Pricing model toggle">
+        <button type="button" class="toggleBtn isActive" id="btnFlat" role="tab" aria-selected="true">
+          Flat rate + Fair Use
+        </button>
+        <button type="button" class="toggleBtn" id="btnPerJob" role="tab" aria-selected="false">
+          Per Job
+        </button>
       </div>
 
-      <!-- TOGGLE ABOVE PRICING DISPLAY -->
-      <div class="pricingToggleWrap" role="tablist" aria-label="Pricing model toggle">
-        <div class="pricingToggle">
-          <button type="button" class="toggleBtn isActive" id="btnFlat" role="tab" aria-selected="true">
-            Flat rate + Fair Use
-          </button>
-          <button type="button" class="toggleBtn" id="btnPerJob" role="tab" aria-selected="false">
-            Per Job
-          </button>
-        </div>
-      </div>
-
-      <!-- SLIDER BESIDE CARDS -->
-      <div class="pricingMain">
-
-        <!-- SLIDER (LEFT) -->
-        <div class="pricingSlider">
-          <div class="sliderWrap">
-            <div class="sliderTop">
-              <div>
-                <div class="sliderLabel">Jobs per month</div>
-                <div class="sliderValue"><span id="jobsValue">20</span> jobs</div>
-              </div>
-              <div class="sliderMeta" id="sliderMeta">Flat rate + fair use. Extras adjust automatically.</div>
-            </div>
-
-            <input id="jobsSlider" class="slider" type="range" min="0" max="120" step="1" value="20" />
-
-            <div class="sliderTicks" aria-hidden="true">
-              <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span><span>120</span>
-            </div>
+      <!-- SLIDER (UNDER TOGGLE) -->
+      <div class="sliderWrap">
+        <div class="sliderTop">
+          <div>
+            <div class="sliderLabel">Jobs per month</div>
+            <div class="sliderValue"><span id="jobsValue">20</span> jobs</div>
           </div>
+          <div class="sliderMeta" id="sliderMeta">Flat rate + fair use. Extras adjust automatically.</div>
         </div>
 
-        <!-- CARDS (RIGHT) -->
-        <div class="pricingCards">
-          <div class="cardsStack">
+        <input id="jobsSlider" class="slider" type="range" min="0" max="120" step="1" value="20" />
 
-            <!-- GOLD -->
-            <article class="priceCard highlight">
-              <h3 class="planTitle">Gold</h3>
-              <div class="wasRow">Usually $<span id="goldWas">495</span></div>
-
-              <div class="nowLabel">Now</div>
-              <div class="nowRow">
-                <span class="currency">$</span>
-                <span class="nowPrice" id="goldPrice">395</span>
-              </div>
-
-              <div class="perLine">NZD per month</div>
-
-              <div class="savePill">
-                <strong>Save $<span id="goldSave">300</span></strong>
-                <span>over 3 months</span>
-              </div>
-
-              <p class="planDesc" id="goldSub">Includes 20 jobs. Extra jobs $12 each.</p>
-
-              <a class="learnMore" href="#faq">Learn more</a>
-              <a class="ctaBtn" href="#contact">Get one month free</a>
-            </article>
-
-            <!-- PLATINUM -->
-            <article class="priceCard">
-              <h3 class="planTitle">Platinum</h3>
-              <div class="wasRow">Usually $<span id="platWas">895</span></div>
-
-              <div class="nowLabel">Now</div>
-              <div class="nowRow">
-                <span class="currency">$</span>
-                <span class="nowPrice" id="platPrice">695</span>
-              </div>
-
-              <div class="perLine">NZD per month</div>
-
-              <div class="savePill">
-                <strong>Save $<span id="platSave">600</span></strong>
-                <span>over 3 months</span>
-              </div>
-
-              <p class="planDesc" id="platSub">Includes 35 jobs. Extra jobs $10 each.</p>
-
-              <a class="learnMore" href="#faq">Learn more</a>
-              <a class="ctaBtn" href="#contact">Get one month free</a>
-            </article>
-
-          </div>
+        <div class="sliderTicks" aria-hidden="true">
+          <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span><span>120</span>
         </div>
-
       </div>
 
-      <!-- PRICING SCRIPT -->
+      <!-- 2 PLANS -->
+      <div class="plansRow">
+        <!-- GOLD -->
+        <article class="planCard highlight">
+          <h3 class="planTitle">Gold</h3>
+          <div class="wasRow">Usually $<span id="goldWas">495</span></div>
+
+          <div class="nowLabel">Now</div>
+          <div class="nowRow">
+            <span class="currency">$</span>
+            <span class="nowPrice" id="goldPrice">395</span>
+          </div>
+
+          <div class="perLine">NZD per month</div>
+
+          <div class="savePill">
+            <strong>Save $<span id="goldSave">300</span></strong>
+            <span>over 3 months</span>
+          </div>
+
+          <p class="planDesc" id="goldSub">Includes 20 jobs. Extra jobs $12 each.</p>
+
+          <a class="learnMore" href="#faq">Learn more</a>
+          <a class="ctaBtn" href="#contact">Get one month free</a>
+        </article>
+
+        <!-- PLATINUM -->
+        <article class="planCard">
+          <h3 class="planTitle">Platinum</h3>
+          <div class="wasRow">Usually $<span id="platWas">895</span></div>
+
+          <div class="nowLabel">Now</div>
+          <div class="nowRow">
+            <span class="currency">$</span>
+            <span class="nowPrice" id="platPrice">695</span>
+          </div>
+
+          <div class="perLine">NZD per month</div>
+
+          <div class="savePill">
+            <strong>Save $<span id="platSave">600</span></strong>
+            <span>over 3 months</span>
+          </div>
+
+          <p class="planDesc" id="platSub">Includes 35 jobs. Extra jobs $10 each.</p>
+
+          <a class="learnMore" href="#faq">Learn more</a>
+          <a class="ctaBtn" href="#contact">Get one month free</a>
+        </article>
+      </div>
+
+      <!-- PRICING JS -->
       <script>
         const MODE_FLAT = "flat";
         const MODE_PER  = "per";
@@ -322,7 +309,6 @@
         <input name="Business" placeholder="Business name" required />
         <input name="Email" type="email" placeholder="Email" required />
         <textarea name="Message" placeholder="Job volume + when to start chasing"></textarea>
-
         <button class="btn btnSolid" type="submit">Send</button>
       </form>
     </section>
@@ -330,7 +316,6 @@
     <footer class="footer">
       © <span id="y"></span> Invoice Chaser
     </footer>
-
   </div>
 
   <script>
