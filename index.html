@@ -41,8 +41,7 @@
         <h1>We chase the payments.<br />You do the work you love.</h1>
 
         <p class="sub">
-          Late invoices hurt cashflow. We handle polite follow-ups by phone and email, keep records tidy,
-          and stop immediately if a job is disputed.
+          Late invoices hurt cashflow. We handle polite follow-ups by phone and email, keep records tidy, and stop immediately if a job is disputed.
         </p>
 
         <div class="heroPoints">
@@ -97,19 +96,19 @@
 
         <div class="card">
           <h3>Step 3 — You get paid</h3>
-          <p>You stay on the tools. We keep it polite and consistent until it’s resolved or disputed.</p>
+          <p>You stay on the tools. We keep the pressure polite and consistent until it’s resolved or disputed.</p>
         </div>
       </div>
     </section>
 
-    <!-- PRICING (CLEAN REBUILD) -->
+    <!-- PRICING -->
     <section id="pricing" class="pricingBlock">
       <header class="pricingHeader">
         <h2>Pricing</h2>
         <p>Pick a model, set job volume, and we’ll show the total.</p>
       </header>
 
-      <!-- TOGGLE (TOP, CENTERED) -->
+      <!-- TOGGLE (TOP) -->
       <div class="pricingToggleRow" role="tablist" aria-label="Pricing model toggle">
         <button type="button" class="toggleBtn isActive" id="btnFlat" role="tab" aria-selected="true">
           Flat rate + Fair Use
@@ -119,7 +118,7 @@
         </button>
       </div>
 
-      <!-- SLIDER (UNDER TOGGLE, CENTERED) -->
+      <!-- SLIDER (UNDER TOGGLE) -->
       <div class="sliderWrap">
         <div class="sliderTop">
           <div>
@@ -136,7 +135,7 @@
         </div>
       </div>
 
-      <!-- 2 PLANS (CENTERED, EVEN WIDTH) -->
+      <!-- 2 PLANS -->
       <div class="plansRow">
         <!-- GOLD -->
         <article class="planCard highlight">
@@ -151,9 +150,10 @@
 
           <div class="perLine">NZD per month</div>
 
+          <!-- UPDATED: Time-value savings -->
           <div class="savePill">
-            <strong>Save $<span id="goldSave">300</span></strong>
-            <span>over 3 months</span>
+            <strong>Potential time value saved</strong>
+            <span>~$<span id="goldTimeSave">570</span> over 3 months*</span>
           </div>
 
           <p class="planDesc" id="goldSub">Includes 20 jobs. Extra jobs $12 each.</p>
@@ -175,9 +175,10 @@
 
           <div class="perLine">NZD per month</div>
 
+          <!-- UPDATED: Time-value savings -->
           <div class="savePill">
-            <strong>Save $<span id="platSave">600</span></strong>
-            <span>over 3 months</span>
+            <strong>Potential time value saved</strong>
+            <span>~$<span id="platTimeSave">998</span> over 3 months*</span>
           </div>
 
           <p class="planDesc" id="platSub">Includes 35 jobs. Extra jobs $10 each.</p>
@@ -187,10 +188,27 @@
         </article>
       </div>
 
+      <p class="pricingFootnote">
+        *Estimate based on owner time valued at $95/hr and average follow-up time per invoice.
+      </p>
+
       <!-- PRICING JS -->
       <script>
+        // ===== CONFIG =====
         const MODE_FLAT = "flat";
         const MODE_PER  = "per";
+
+        // Value-of-time settings (edit if you want)
+        const OWNER_RATE = 95;         // $/hour
+        const MINS_PER_JOB = 6;        // minutes saved per job/invoice follow-up (conservative)
+
+        function money(n){ return Math.round(n).toString(); }
+
+        function timeValueOver3Months(jobs){
+          const hoursPerMonth = (jobs * MINS_PER_JOB) / 60;
+          const valuePerMonth = hoursPerMonth * OWNER_RATE;
+          return valuePerMonth * 3;
+        }
 
         const models = {
           [MODE_FLAT]: {
@@ -210,6 +228,7 @@
           }
         };
 
+        // ===== ELEMENTS =====
         const btnFlat = document.getElementById("btnFlat");
         const btnPer  = document.getElementById("btnPerJob");
 
@@ -224,12 +243,12 @@
 
         const goldWas  = document.getElementById("goldWas");
         const platWas  = document.getElementById("platWas");
-        const goldSave = document.getElementById("goldSave");
-        const platSave = document.getElementById("platSave");
+
+        // NEW: time value savings elements
+        const goldTimeSave = document.getElementById("goldTimeSave");
+        const platTimeSave = document.getElementById("platTimeSave");
 
         let currentMode = MODE_FLAT;
-
-        function money(n){ return Math.round(n).toString(); }
 
         function setActive(mode){
           currentMode = mode;
@@ -269,8 +288,10 @@
           goldWas.textContent = money(gWas);
           platWas.textContent = money(pWas);
 
-          goldSave.textContent = money(Math.max(0, (gWas - gNow) * 3));
-          platSave.textContent = money(Math.max(0, (pWas - pNow) * 3));
+          // Potential time value saved (over 3 months)
+          const t3 = timeValueOver3Months(jobs);
+          goldTimeSave.textContent = money(t3);
+          platTimeSave.textContent = money(t3);
         }
 
         btnFlat.addEventListener("click", () => setActive(MODE_FLAT));
@@ -317,7 +338,6 @@
     <footer class="footer">
       © <span id="y"></span> Invoice Chaser
     </footer>
-
   </div>
 
   <script>
