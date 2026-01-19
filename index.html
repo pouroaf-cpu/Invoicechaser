@@ -3,10 +3,184 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Invoice Chaser — Tradie Payment Follow-Up Service</title>
-  <meta name="description" content="We personally chase unpaid invoices so tradies get paid faster. No accounting software? No problem. You do the work you love — we handle payment follow-ups by phone and email." />
+  <meta name="description" content="We personally chase unpaid invoices so tradies get paid faster. No accounting software? No problem. You do the work — we handle payment follow-ups by phone and email." />
 
   <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    /* ===== Pricing (screenshot look) ===== */
+    .pricing{
+      background:#bff3ff;
+      border-radius:18px;
+      padding:28px;
+      margin:28px 0;
+    }
+    .pricingHead{ text-align:center; margin-bottom:16px; }
+    .pricingHead h2{ margin:0 0 6px; }
+    .pricingHead p{ margin:0; opacity:.85; }
+
+    .pricingToggle{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      margin:14px auto 18px;
+      flex-wrap:wrap;
+    }
+    .toggleBtn{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,.15);
+      background:#fff;
+      font-weight:800;
+      cursor:pointer;
+    }
+    .toggleBtn.isActive{
+      background:#162a3a;
+      color:#fff;
+      border-color:#162a3a;
+    }
+
+    .sliderWrap{
+      background:rgba(255,255,255,.55);
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:14px;
+      padding:14px 14px 10px;
+      max-width:980px;
+      margin:0 auto 18px;
+    }
+    .sliderTop{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-end;
+    }
+    .sliderLabel{ font-weight:800; opacity:.9; }
+    .sliderValue{ font-weight:900; font-size:22px; }
+    .sliderMeta{ opacity:.8; text-align:right; max-width:50ch; }
+    .slider{ width:100%; margin:12px 0 8px; }
+    .sliderTicks{
+      display:flex;
+      justify-content:space-between;
+      font-weight:800;
+      opacity:.7;
+      font-size:12px;
+    }
+
+    .pricingGrid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:18px;
+      margin-top:18px;
+    }
+    .priceCard{
+      background:#fff;
+      border-radius:14px;
+      padding:22px 18px 18px;
+      text-align:center;
+      border:1px solid rgba(0,0,0,.08);
+    }
+    .planTitle{
+      margin:2px 0 10px;
+      font-size:30px;
+      letter-spacing:.2px;
+    }
+    .wasRow{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      align-items:baseline;
+      opacity:.8;
+      margin-bottom:10px;
+    }
+    .wasLabel{ font-size:18px; }
+    .wasPrice{ font-size:18px; }
+
+    .nowLabel{
+      margin-top:4px;
+      font-weight:800;
+      opacity:.9;
+    }
+    .nowRow{
+      display:flex;
+      justify-content:center;
+      align-items:flex-end;
+      gap:6px;
+      margin-top:4px;
+    }
+    .currency{
+      font-weight:900;
+      font-size:26px;
+      line-height:1;
+      padding-bottom:10px;
+      opacity:.95;
+    }
+    .nowPrice{
+      font-weight:900;
+      font-size:82px;
+      line-height:.95;
+      letter-spacing:-1px;
+      color:#162a3a;
+    }
+    .perLine{
+      margin-top:6px;
+      font-size:18px;
+      opacity:.85;
+    }
+    .savePill{
+      display:inline-flex;
+      flex-direction:column;
+      gap:4px;
+      margin:16px auto 10px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#d5f6ff;
+      color:#153244;
+    }
+    .saveText{
+      font-weight:900;
+      font-size:18px;
+      line-height:1.1;
+    }
+    .saveSub{
+      font-weight:900;
+      font-size:18px;
+      line-height:1.1;
+    }
+    .planDesc{
+      margin:14px auto 14px;
+      max-width:32ch;
+      font-size:22px;
+      line-height:1.25;
+      color:#203243;
+    }
+    .learnMore{
+      display:inline-block;
+      margin-bottom:14px;
+      font-weight:900;
+      text-decoration:underline;
+      color:#142c3f;
+    }
+    .ctaBtn{
+      display:block;
+      width:100%;
+      border-radius:8px;
+      padding:14px 14px;
+      font-weight:900;
+      text-decoration:none;
+      background:#3fe0a0;
+      color:#0a2a22;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .pricingGrid{ grid-template-columns:1fr; }
+      .nowPrice{ font-size:72px; }
+      .sliderTop{ flex-direction:column; align-items:flex-start; }
+      .sliderMeta{ text-align:left; max-width:none; }
+    }
+  </style>
 </head>
 
 <body>
@@ -96,19 +270,17 @@
       </div>
     </section>
 
-    <!-- PRICING (Toggle + Job Slider + Gold vs Platinum comparison) -->
-    <section id="pricing" class="pricingSection">
-      <h2>Pricing</h2>
-      <p class="pricingIntro">Pick a payment model, set your monthly job volume, and we’ll show the total.</p>
+    <!-- PRICING -->
+    <section id="pricing" class="pricing">
+      <div class="pricingHead">
+        <h2>Pricing</h2>
+        <p>Pick a model, set job volume, and we’ll show the total.</p>
+      </div>
 
       <!-- Toggle -->
       <div class="pricingToggle" role="tablist" aria-label="Pricing model toggle">
-        <button type="button" class="toggleBtn isActive" id="btnFlat" role="tab" aria-selected="true">
-          Flat rate + Fair Use
-        </button>
-        <button type="button" class="toggleBtn" id="btnPerJob" role="tab" aria-selected="false">
-          Per Job
-        </button>
+        <button type="button" class="toggleBtn isActive" id="btnFlat" role="tab" aria-selected="true">Flat rate + Fair Use</button>
+        <button type="button" class="toggleBtn" id="btnPerJob" role="tab" aria-selected="false">Per Job</button>
       </div>
 
       <!-- Slider -->
@@ -128,23 +300,67 @@
         </div>
       </div>
 
-      <!-- Totals -->
-      <div class="planTotals">
-        <div class="totalCard highlight">
-          <div class="totalTitle">Gold</div>
-          <div class="totalPrice">$<span id="goldPrice">395</span><span class="per">/mo</span></div>
-          <div class="totalSub" id="goldSub">Includes 20 jobs. Extra jobs $12 each.</div>
-        </div>
+      <!-- Cards -->
+      <div class="pricingGrid">
+        <!-- Gold -->
+        <article class="priceCard">
+          <h3 class="planTitle">Gold</h3>
 
-        <div class="totalCard">
-          <div class="totalTitle">Platinum</div>
-          <div class="totalPrice">$<span id="platPrice">695</span><span class="per">/mo</span></div>
-          <div class="totalSub" id="platSub">Includes 35 jobs. Extra jobs $10 each.</div>
-        </div>
+          <div class="wasRow">
+            <span class="wasLabel">Usually</span>
+            <span class="wasPrice">$<span id="goldWas">495</span></span>
+          </div>
+
+          <div class="nowLabel">Now</div>
+          <div class="nowRow">
+            <span class="currency">$</span>
+            <span class="nowPrice" id="goldPrice">395</span>
+          </div>
+
+          <div class="perLine">NZD per month</div>
+
+          <div class="savePill">
+            <span class="saveText">Save $<span id="goldSave">300</span></span>
+            <span class="saveSub">over 3 months</span>
+          </div>
+
+          <p class="planDesc" id="goldSub">Includes 20 jobs. Extra jobs $12 each.</p>
+
+          <a class="learnMore" href="#faq">Learn more</a>
+          <a class="ctaBtn" href="#contact">Get one month free</a>
+        </article>
+
+        <!-- Platinum -->
+        <article class="priceCard">
+          <h3 class="planTitle">Platinum</h3>
+
+          <div class="wasRow">
+            <span class="wasLabel">Usually</span>
+            <span class="wasPrice">$<span id="platWas">895</span></span>
+          </div>
+
+          <div class="nowLabel">Now</div>
+          <div class="nowRow">
+            <span class="currency">$</span>
+            <span class="nowPrice" id="platPrice">695</span>
+          </div>
+
+          <div class="perLine">NZD per month</div>
+
+          <div class="savePill">
+            <span class="saveText">Save $<span id="platSave">600</span></span>
+            <span class="saveSub">over 3 months</span>
+          </div>
+
+          <p class="planDesc" id="platSub">Includes 35 jobs. Extra jobs $10 each.</p>
+
+          <a class="learnMore" href="#faq">Learn more</a>
+          <a class="ctaBtn" href="#contact">Get one month free</a>
+        </article>
       </div>
 
-      <!-- Comparison -->
-      <div class="compareWrap">
+      <!-- Comparison (keep yours, trimmed) -->
+      <div class="compareWrap" style="margin-top:18px;">
         <div class="compareHeader">
           <div class="compareCol featureCol">What’s included</div>
           <div class="compareCol planCol">Gold</div>
@@ -182,26 +398,12 @@
         </div>
 
         <div class="compareRow">
-          <div class="compareCol featureCol">Final reminder calls/emails</div>
-          <div class="compareCol planCol"><span class="mark no">✕</span></div>
-          <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-        </div>
-
-        <div class="compareRow">
-          <div class="compareCol featureCol">Pre-handover pack (if external collections needed)</div>
-          <div class="compareCol planCol"><span class="mark no">✕</span></div>
-          <div class="compareCol planCol"><span class="mark yes">✓</span></div>
-        </div>
-
-        <div class="compareRow">
           <div class="compareCol featureCol">Priority handling</div>
           <div class="compareCol planCol"><span class="mark no">✕</span></div>
           <div class="compareCol planCol"><span class="mark yes">✓</span></div>
         </div>
 
-        <div class="compareNote">
-          We stop immediately if a job is disputed. No threats. No drama.
-        </div>
+        <div class="compareNote">We stop immediately if a job is disputed. No threats. No drama.</div>
 
         <div class="compareCTA">
           <a class="btn btnSolid" href="#contact">Get started</a>
@@ -214,11 +416,20 @@
         const MODE_FLAT = "flat";
         const MODE_PER  = "per";
 
+        // NOTE: "Usually" is a marketing anchor (editable). "Save" is auto-calculated over 3 months.
         const models = {
           [MODE_FLAT]: {
             sliderMeta: "Flat rate + fair use. Extras adjust automatically.",
-            gold: { base: 395, included: 20, extraRate: 12, label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
-            plat: { base: 695, included: 35, extraRate: 10, label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
+            gold: {
+              base: 395, included: 20, extraRate: 12,
+              usually: 495,
+              label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.`
+            },
+            plat: {
+              base: 695, included: 35, extraRate: 10,
+              usually: 895,
+              label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.`
+            },
             calc: (jobs, plan) => {
               const extraJobs = Math.max(0, jobs - plan.included);
               return plan.base + (extraJobs * plan.extraRate);
@@ -227,8 +438,16 @@
 
           [MODE_PER]: {
             sliderMeta: "Per job pricing. Slider shows monthly estimate.",
-            gold: { perJob: 25, minimum: 150, label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
-            plat: { perJob: 35, minimum: 250, label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
+            gold: {
+              perJob: 25, minimum: 150,
+              usually: 35, // optional: “usually per job” anchor, used for badge calc below
+              label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.`
+            },
+            plat: {
+              perJob: 35, minimum: 250,
+              usually: 50,
+              label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.`
+            },
             calc: (jobs, plan) => Math.max(plan.minimum, jobs * plan.perJob)
           }
         };
@@ -246,6 +465,11 @@
         const goldSub   = document.getElementById("goldSub");
         const platSub   = document.getElementById("platSub");
 
+        const goldWas  = document.getElementById("goldWas");
+        const platWas  = document.getElementById("platWas");
+        const goldSave = document.getElementById("goldSave");
+        const platSave = document.getElementById("platSave");
+
         let currentMode = MODE_FLAT;
 
         function money(n){ return Math.round(n).toString(); }
@@ -260,6 +484,28 @@
           updateUI();
         }
 
+        function updateSavings(nowGold, nowPlat, m){
+          // For flat: use “usually” monthly anchors.
+          // For per: show a “usually” estimate based on per-job anchor * jobs, but still displayed as a single number for the card.
+          const jobs = parseInt(jobsSlider.value, 10);
+
+          let gUsually, pUsually;
+
+          if(currentMode === MODE_FLAT){
+            gUsually = m.gold.usually;
+            pUsually = m.plat.usually;
+          } else {
+            gUsually = Math.max(m.gold.minimum, jobs * (m.gold.usually || m.gold.perJob));
+            pUsually = Math.max(m.plat.minimum, jobs * (m.plat.usually || m.plat.perJob));
+          }
+
+          goldWas.textContent = money(gUsually);
+          platWas.textContent = money(pUsually);
+
+          goldSave.textContent = money(Math.max(0, (gUsually - nowGold) * 3));
+          platSave.textContent = money(Math.max(0, (pUsually - nowPlat) * 3));
+        }
+
         function updateUI(){
           const jobs = parseInt(jobsSlider.value, 10);
           jobsValue.textContent = jobs;
@@ -268,12 +514,16 @@
           sliderMeta.textContent = m.sliderMeta;
 
           // Gold
-          goldPrice.textContent = money(m.calc(jobs, m.gold));
+          const gNow = m.calc(jobs, m.gold);
+          goldPrice.textContent = money(gNow);
           goldSub.textContent = m.gold.label(m.gold);
 
           // Platinum
-          platPrice.textContent = money(m.calc(jobs, m.plat));
+          const pNow = m.calc(jobs, m.plat);
+          platPrice.textContent = money(pNow);
           platSub.textContent = m.plat.label(m.plat);
+
+          updateSavings(gNow, pNow, m);
         }
 
         btnFlat.addEventListener("click", () => setActive(MODE_FLAT));
@@ -295,12 +545,12 @@
 
       <details>
         <summary>Is this automated software?</summary>
-        <p>No. This is a human-run follow-up service combining phone &amp; email outreach.</p>
+        <p>No. This is a human-run follow-up service combining phone and email outreach.</p>
       </details>
 
       <details>
         <summary>What if a customer disputes?</summary>
-        <p>We stop immediately and escalate to you to handle next steps. We don’t handle legal disputes or debt collection.</p>
+        <p>We stop immediately and escalate to you. We don’t handle legal disputes or debt collection.</p>
       </details>
     </section>
 
@@ -312,7 +562,7 @@
         <input name="Name" placeholder="Name" required />
         <input name="Business" placeholder="Business name" required />
         <input name="Email" type="email" placeholder="Email" required />
-        <textarea name="Message" placeholder="Invoice volume + when to start chasing"></textarea>
+        <textarea name="Message" placeholder="Job volume + when to start chasing"></textarea>
 
         <button class="btn btnSolid" type="submit">Send</button>
       </form>
