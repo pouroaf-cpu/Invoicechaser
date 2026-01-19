@@ -6,8 +6,9 @@
   --line:#e7eaf3;
   --brand:#2563eb;
   --brand2:#60a5fa;
-  --shadow:0 18px 50px rgba(15,23,42,.10);
-  --r:18px;
+  --shadow:0 14px 34px rgba(15,23,42,.10);
+  --r:10px;   /* less round */
+  --r2:8px;   /* even less round */
 }
 
 *{box-sizing:border-box}
@@ -21,23 +22,26 @@ body{
 
 .wrap{max-width:1120px;margin:0 auto;padding:20px}
 
+/* NAV */
 .nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:12px;
   padding:12px 16px;
   border:1px solid var(--line);
-  border-radius:999px;
+  border-radius:12px; /* was pill */
   background:#fff;
   box-shadow:var(--shadow);
   position:sticky;
   top:12px;
+  z-index:10;
 }
 
 .brandRow{display:flex;align-items:center;gap:10px;font-weight:900}
 
 .logo{
-  width:34px;height:34px;border-radius:10px;
+  width:34px;height:34px;border-radius:8px; /* less round */
   background:linear-gradient(135deg,var(--brand),var(--brand2));
 }
 
@@ -45,28 +49,45 @@ body{
   margin-left:12px;
   text-decoration:none;
   font-weight:700;
+  color:var(--ink);
+  padding:8px 10px;
+  border-radius:8px;
 }
 
+.navlinks a:hover{
+  background:rgba(37,99,235,.06);
+  border:1px solid var(--line);
+}
+
+/* BUTTONS */
 .btn{
   padding:10px 14px;
-  border-radius:12px;
+  border-radius:8px; /* less round */
   border:1px solid var(--line);
   background:#fff;
   font-weight:800;
   cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
 }
 
+.btn:hover{filter:brightness(.99)}
+
 .btnSolid{
+  border-radius:8px; /* less round */
   background:linear-gradient(135deg,var(--brand),var(--brand2));
   color:#fff;
   border:none;
 }
 
+/* HERO */
 .hero{
   display:grid;
   grid-template-columns:1.2fr .8fr;
   gap:18px;
-  padding:40px 0;
+  padding:36px 0;
 }
 
 .heroCard,.sideCard,.card{
@@ -81,32 +102,36 @@ body{
   font-size:12px;
   font-weight:900;
   color:var(--brand);
+  letter-spacing:.08em;
+  text-transform:uppercase;
 }
 
-h1{font-size:48px;line-height:1.05}
+h1{font-size:46px;line-height:1.08;margin:10px 0 10px}
 
-.sub{color:var(--muted)}
+.sub{color:var(--muted);margin:0 0 12px}
 
-.heroPoints{display:flex;gap:10px;flex-wrap:wrap}
+/* Pills (less SaaS-y) */
+.heroPoints{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 0}
 
 .pill{
   padding:6px 10px;
-  border-radius:999px;
+  border-radius:6px; /* was 999px */
   background:#eef2ff;
+  border:1px solid var(--line);
   font-weight:700;
   font-size:13px;
 }
 
+/* Grids */
 .grid,.pricing{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:14px;
 }
 
-.highlight{
-  border-color:var(--brand);
-}
+.highlight{border-color:var(--brand)}
 
+/* Footer */
 footer{
   margin-top:40px;
   padding-top:20px;
@@ -114,8 +139,9 @@ footer{
   color:var(--muted);
 }
 
+/* Responsive */
 @media(max-width:900px){
   .hero{grid-template-columns:1fr}
   .grid,.pricing{grid-template-columns:1fr}
-  h1{font-size:36px}
+  h1{font-size:34px}
 }
