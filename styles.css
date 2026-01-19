@@ -435,3 +435,8 @@ footer{
     width: 100% !important;
   }
 }
+.logo{
+  height:34px;
+  width:auto;
+  display:block;
+}
