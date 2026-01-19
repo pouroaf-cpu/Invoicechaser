@@ -244,3 +244,82 @@ footer{
   .hero{grid-template-columns:1fr}
   .hero h1{font-size:34px}
 }
+/* PRICING */
+.pricingSection{
+  padding:40px 0;
+}
+
+.pricingSection h2{
+  font-size:32px;
+  margin-bottom:6px;
+}
+
+.pricingIntro{
+  color:var(--muted);
+  margin-bottom:24px;
+}
+
+.pricingGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.priceCard{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  box-shadow:var(--shadow);
+  padding:22px;
+}
+
+.priceCard.highlight{
+  border-color:var(--brand);
+}
+
+.priceCard h3{
+  margin:0 0 6px;
+  font-size:18px;
+}
+
+.price{
+  font-size:32px;
+  font-weight:900;
+  margin:6px 0 0;
+}
+
+.priceSub{
+  color:var(--muted);
+  margin:0 0 14px;
+  font-size:14px;
+}
+
+.priceList{
+  margin:0;
+  padding-left:18px;
+  color:var(--muted);
+}
+
+.priceList li{
+  margin:8px 0;
+}
+
+.priceNote{
+  margin-top:14px;
+  font-size:13px;
+  color:var(--muted);
+  border-top:1px solid var(--line);
+  padding-top:10px;
+}
+
+.pricingFooter{
+  margin-top:18px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+@media(max-width:900px){
+  .pricingGrid{
+    grid-template-columns:1fr;
+  }
+}
