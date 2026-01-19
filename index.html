@@ -108,17 +108,13 @@
         <p>Pick a model, set job volume, and we’ll show the total.</p>
       </header>
 
-      <!-- TOGGLE (TOP) -->
-      <div class="pricingToggleRow" role="tablist" aria-label="Pricing model toggle">
-        <button type="button" class="toggleBtn isActive" id="btnFlat" role="tab" aria-selected="true">
-          Flat rate + Fair Use
-        </button>
-        <button type="button" class="toggleBtn" id="btnPerJob" role="tab" aria-selected="false">
-          Per Job
-        </button>
+      <!-- TOGGLE -->
+      <div class="pricingToggleRow" role="tablist">
+        <button type="button" class="toggleBtn isActive" id="btnFlat">Flat rate + Fair Use</button>
+        <button type="button" class="toggleBtn" id="btnPerJob">Per Job</button>
       </div>
 
-      <!-- SLIDER (UNDER TOGGLE) -->
+      <!-- SLIDER -->
       <div class="sliderWrap">
         <div class="sliderTop">
           <div>
@@ -130,17 +126,18 @@
 
         <input id="jobsSlider" class="slider" type="range" min="0" max="120" step="1" value="20" />
 
-        <div class="sliderTicks" aria-hidden="true">
+        <div class="sliderTicks">
           <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span><span>120</span>
         </div>
       </div>
 
-      <!-- 2 PLANS -->
+      <!-- PLANS -->
       <div class="plansRow">
+
         <!-- GOLD -->
         <article class="planCard highlight">
           <h3 class="planTitle">Gold</h3>
-          <div class="wasRow">Usually $<span id="goldWas">299</span></div>
+          <div class="wasRow">Usually $299</div>
 
           <div class="nowLabel">Now</div>
           <div class="nowRow">
@@ -150,10 +147,9 @@
 
           <div class="perLine">NZD per month</div>
 
-          <!-- Time-value savings -->
           <div class="savePill">
             <strong>Potential time value saved</strong>
-            <span>~$<span id="goldTimeSave">570</span> over 3 months*</span>
+            <span>~$<span id="goldTimeSave">660</span> over 3 months*</span>
           </div>
 
           <p class="planDesc" id="goldSub">Includes 20 jobs. Extra jobs $10 each.</p>
@@ -165,7 +161,7 @@
         <!-- PLATINUM -->
         <article class="planCard">
           <h3 class="planTitle">Platinum</h3>
-          <div class="wasRow">Usually $<span id="platWas">499</span></div>
+          <div class="wasRow">Usually $499</div>
 
           <div class="nowLabel">Now</div>
           <div class="nowRow">
@@ -175,10 +171,9 @@
 
           <div class="perLine">NZD per month</div>
 
-          <!-- Time-value savings -->
           <div class="savePill">
             <strong>Potential time value saved</strong>
-            <span>~$<span id="platTimeSave">998</span> over 3 months*</span>
+            <span>~$<span id="platTimeSave">1,155</span> over 3 months*</span>
           </div>
 
           <p class="planDesc" id="platSub">Includes 35 jobs. Extra jobs $8 each.</p>
@@ -186,153 +181,85 @@
           <a class="learnMore" href="#faq">Learn more</a>
           <a class="ctaBtn" href="#contact">Get one month free</a>
         </article>
+
       </div>
 
       <p class="pricingFootnote">
-        *Estimate based on owner time valued at $95/hr and average follow-up time per invoice.
+        *Estimate based on owner time valued at $110/hr and average follow-up time per invoice.
       </p>
 
       <!-- PRICING JS -->
       <script>
-        // ===== CONFIG =====
         const MODE_FLAT = "flat";
         const MODE_PER  = "per";
 
-        // Time-value settings
-        const OWNER_RATE = 95;   // $/hour (used only for "potential time value saved")
-        const MINS_PER_JOB = 6;  // minutes saved per job/invoice follow-up
+        /* UPDATED OWNER TIME */
+        const OWNER_RATE = 110;   // $/hour
+        const MINS_PER_JOB = 6;   // minutes saved per invoice
 
         function money(n){ return Math.round(n).toString(); }
 
         function timeValueOver3Months(jobs){
-          const hoursPerMonth = (jobs * MINS_PER_JOB) / 60;
-          const valuePerMonth = hoursPerMonth * OWNER_RATE;
-          return valuePerMonth * 3;
+          return ((jobs * MINS_PER_JOB) / 60) * OWNER_RATE * 3;
         }
 
         const models = {
-          [MODE_FLAT]: {
+          flat: {
             sliderMeta: "Flat rate + fair use. Extras adjust automatically.",
-            gold: { base: 149, included: 20, extraRate: 10, usually: 299, label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
-            plat: { base: 249, included: 35, extraRate: 8,  usually: 499, label: (p) => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
-            calc: (jobs, plan) => {
-              const extraJobs = Math.max(0, jobs - plan.included);
-              return plan.base + (extraJobs * plan.extraRate);
-            }
+            gold: { base: 149, included: 20, extraRate: 10, label: p => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
+            plat: { base: 249, included: 35, extraRate: 8,  label: p => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
+            calc: (j,p)=> p.base + Math.max(0, j - p.included) * p.extraRate
           },
-          [MODE_PER]: {
+          per: {
             sliderMeta: "Per job pricing. Slider shows monthly estimate.",
-            gold: { perJob: 15, minimum: 99,  usuallyPerJob: 22, label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
-            plat: { perJob: 22, minimum: 149, usuallyPerJob: 30, label: (p) => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
-            calc: (jobs, plan) => Math.max(plan.minimum, jobs * plan.perJob)
+            gold: { perJob: 15, minimum: 99,  label: p => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
+            plat: { perJob: 22, minimum: 149, label: p => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
+            calc: (j,p)=> Math.max(p.minimum, j * p.perJob)
           }
         };
 
-        // ===== ELEMENTS =====
-        const btnFlat = document.getElementById("btnFlat");
-        const btnPer  = document.getElementById("btnPerJob");
+        let mode = MODE_FLAT;
 
-        const jobsSlider = document.getElementById("jobsSlider");
-        const jobsValue  = document.getElementById("jobsValue");
-        const sliderMeta = document.getElementById("sliderMeta");
+        const els = {
+          jobs: jobsSlider,
+          jobsVal: jobsValue,
+          meta: sliderMeta,
+          goldPrice, platPrice,
+          goldSub, platSub,
+          goldTimeSave, platTimeSave
+        };
 
-        const goldPrice = document.getElementById("goldPrice");
-        const platPrice = document.getElementById("platPrice");
-        const goldSub   = document.getElementById("goldSub");
-        const platSub   = document.getElementById("platSub");
-
-        const goldWas  = document.getElementById("goldWas");
-        const platWas  = document.getElementById("platWas");
-
-        // Time-value save fields
-        const goldTimeSave = document.getElementById("goldTimeSave");
-        const platTimeSave = document.getElementById("platTimeSave");
-
-        let currentMode = MODE_FLAT;
-
-        function setActive(mode){
-          currentMode = mode;
-          const isFlat = mode === MODE_FLAT;
-          btnFlat.classList.toggle("isActive", isFlat);
-          btnPer.classList.toggle("isActive", !isFlat);
-          btnFlat.setAttribute("aria-selected", isFlat ? "true" : "false");
-          btnPer.setAttribute("aria-selected", !isFlat ? "true" : "false");
-          updateUI();
+        function setMode(m){
+          mode = m;
+          btnFlat.classList.toggle("isActive", m === MODE_FLAT);
+          btnPerJob.classList.toggle("isActive", m === MODE_PER);
+          update();
         }
 
-        function getUsually(jobs, m, key){
-          if(currentMode === MODE_FLAT) return m[key].usually;
-          const anchor = m[key].usuallyPerJob || m[key].perJob;
-          return Math.max(m[key].minimum, jobs * anchor);
+        function update(){
+          const j = +els.jobs.value;
+          els.jobsVal.textContent = j;
+
+          const m = models[mode];
+          els.meta.textContent = m.sliderMeta;
+
+          els.goldPrice.textContent = money(m.calc(j, m.gold));
+          els.platPrice.textContent = money(m.calc(j, m.plat));
+
+          els.goldSub.textContent = m.gold.label(m.gold);
+          els.platSub.textContent = m.plat.label(m.plat);
+
+          const t = timeValueOver3Months(j);
+          els.goldTimeSave.textContent = money(t);
+          els.platTimeSave.textContent = money(t);
         }
 
-        function updateUI(){
-          const jobs = parseInt(jobsSlider.value, 10);
-          jobsValue.textContent = jobs;
+        btnFlat.onclick = ()=>setMode(MODE_FLAT);
+        btnPerJob.onclick = ()=>setMode(MODE_PER);
+        jobsSlider.oninput = update;
 
-          const m = models[currentMode];
-          sliderMeta.textContent = m.sliderMeta;
-
-          const gNow = m.calc(jobs, m.gold);
-          const pNow = m.calc(jobs, m.plat);
-
-          goldPrice.textContent = money(gNow);
-          platPrice.textContent = money(pNow);
-
-          goldSub.textContent = m.gold.label(m.gold);
-          platSub.textContent = m.plat.label(m.plat);
-
-          const gWas = getUsually(jobs, m, "gold");
-          const pWas = getUsually(jobs, m, "plat");
-
-          goldWas.textContent = money(gWas);
-          platWas.textContent = money(pWas);
-
-          // Potential time value saved (over 3 months)
-          const t3 = timeValueOver3Months(jobs);
-          goldTimeSave.textContent = money(t3);
-          platTimeSave.textContent = money(t3);
-        }
-
-        btnFlat.addEventListener("click", () => setActive(MODE_FLAT));
-        btnPer.addEventListener("click", () => setActive(MODE_PER));
-        jobsSlider.addEventListener("input", updateUI);
-
-        updateUI();
+        update();
       </script>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq">
-      <h2>FAQ</h2>
-
-      <details>
-        <summary>Do I need Xero?</summary>
-        <p>No. We can work from exports, MYOB, Excel or PDFs — whatever you’re using.</p>
-      </details>
-
-      <details>
-        <summary>Is this automated software?</summary>
-        <p>No. This is a human-run follow-up service combining phone and email outreach.</p>
-      </details>
-
-      <details>
-        <summary>What if a customer disputes?</summary>
-        <p>We stop immediately and escalate to you. We don’t handle legal disputes or debt collection.</p>
-      </details>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Get Started</h2>
-
-      <form action="mailto:hello@invoicechaser.kiwi" method="post" enctype="text/plain">
-        <input name="Name" placeholder="Name" required />
-        <input name="Business" placeholder="Business name" required />
-        <input name="Email" type="email" placeholder="Email" required />
-        <textarea name="Message" placeholder="Job volume + when to start chasing"></textarea>
-        <button class="btn btnSolid" type="submit">Send</button>
-      </form>
     </section>
 
     <footer class="footer">
