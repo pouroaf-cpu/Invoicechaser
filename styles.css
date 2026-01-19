@@ -706,3 +706,78 @@ footer{
   }
   .totalPrice{font-size:30px}
 }
+/* ===== COMPACT PRICING CONTROLS ===== */
+
+.pricingControls{
+  display:flex;
+  flex-direction:column;
+  gap:10px;            /* key: tight vertical spacing */
+  margin-bottom:12px;
+}
+
+/* Toggle */
+.pricingToggle.compact{
+  display:flex;
+  gap:8px;
+}
+
+.toggleBtn{
+  padding:10px 14px;   /* reduced from earlier */
+  border-radius:14px;
+  font-weight:900;
+}
+
+/* Slider container */
+.sliderWrap.compact{
+  padding:12px;        /* reduced */
+  border-radius:14px;
+}
+
+.sliderTop{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+  margin-bottom:6px;
+}
+
+.sliderLabel{
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:900;
+}
+
+.sliderValue{
+  font-size:20px;
+  font-weight:900;
+}
+
+.sliderMeta{
+  font-size:12px;
+  opacity:.75;
+  max-width:42ch;
+  text-align:right;
+}
+
+/* Slider */
+.slider{
+  margin:6px 0 6px;   /* much tighter */
+}
+
+.sliderTicks{
+  font-size:11px;
+  opacity:.6;
+  font-weight:900;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .sliderTop{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .sliderMeta{
+    text-align:left;
+  }
+}
