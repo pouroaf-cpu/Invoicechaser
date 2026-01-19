@@ -481,3 +481,65 @@ footer{
     max-width:100%;
   }
 }
+/* ===== PRICING LAYOUT FIX ===== */
+
+#pricing{
+  max-width:1200px;
+  margin:0 auto;
+}
+
+/* toggle row */
+.pricingToggleWrap{
+  display:flex;
+  justify-content:center;
+  margin:12px 0 18px;
+}
+
+/* main row: slider + cards */
+.pricingMain{
+  display:grid;
+  grid-template-columns: 420px 1fr; /* slider | cards */
+  gap:32px;
+  align-items:start;
+}
+
+/* slider column */
+.pricingSlider{
+  display:flex;
+  justify-content:flex-end;
+}
+
+/* constrain slider width */
+.pricingSlider .sliderWrap{
+  width:100%;
+  max-width:420px;
+}
+
+/* cards column */
+.pricingCards{
+  display:flex;
+  justify-content:flex-start;
+}
+
+.cardsStack{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:16px;
+  max-width:760px;
+}
+
+/* mobile */
+@media(max-width:900px){
+  .pricingMain{
+    grid-template-columns:1fr;
+  }
+
+  .pricingSlider{
+    justify-content:center;
+  }
+
+  .cardsStack{
+    grid-template-columns:1fr;
+    max-width:100%;
+  }
+}
