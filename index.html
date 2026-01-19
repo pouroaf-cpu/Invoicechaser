@@ -97,62 +97,239 @@
       </div>
     </section>
 
- <!-- PRICING -->
+<!-- PRICING (Toggle + Slider) -->
 <section id="pricing" class="pricingSection">
-  <h2>Simple, done-for-you pricing</h2>
-  <p class="pricingIntro">
-    You don’t pay for software. You pay for invoices being followed up properly.
-  </p>
+  <h2>Pricing</h2>
+  <p class="pricingIntro">Choose how you want to pay, then set your monthly invoice volume.</p>
 
+  <!-- Toggle -->
+  <div class="pricingToggle" role="tablist" aria-label="Pricing model toggle">
+    <button type="button" class="toggleBtn isActive" id="btnFlat" role="tab" aria-selected="true">
+      Flat rate + Fair use
+    </button>
+    <button type="button" class="toggleBtn" id="btnPerInvoice" role="tab" aria-selected="false">
+      Per invoice
+    </button>
+  </div>
+
+  <!-- Slider -->
+  <div class="sliderWrap">
+    <div class="sliderTop">
+      <div>
+        <div class="sliderLabel">Invoices / jobs per month</div>
+        <div class="sliderValue"><span id="jobsValue">20</span> jobs</div>
+      </div>
+      <div class="sliderMeta" id="sliderMeta">Includes 20 jobs. Extras billed per job.</div>
+    </div>
+
+    <input
+      id="jobsSlider"
+      class="slider"
+      type="range"
+      min="0"
+      max="120"
+      step="1"
+      value="20"
+      aria-label="Invoices per month"
+    />
+
+    <div class="sliderTicks">
+      <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span><span>120</span>
+    </div>
+  </div>
+
+  <!-- Cards -->
   <div class="pricingGrid">
-
-    <!-- GOLD -->
     <div class="priceCard highlight">
-      <h3>Gold — Payment Follow-Up</h3>
-      <p class="price">$395 / month</p>
-      <p class="priceSub">Best for most tradies</p>
+      <div class="cardHeader">
+        <h3 id="planName">Gold — Done-for-you follow-up</h3>
+        <div class="priceBig">$<span id="priceTotal">395</span><span class="per">/mo</span></div>
+        <div class="priceSmall" id="priceSub">Includes <b>20</b> jobs. Extra jobs: <b>$<span id="extraRate">12</span></b> each.</div>
+      </div>
 
-      <ul class="priceList">
-        <li>Invoice review for potential payment issues</li>
-        <li>Reminder call/email before due date (if needed)</li>
+      <ul class="priceList" id="featureList">
+        <li>We call + email for you (human-run)</li>
+        <li>Reminder before due date (if needed)</li>
         <li>Follow-up at 3 days overdue</li>
         <li>Follow-up at 7 days overdue</li>
-        <li>Phone + email (real people)</li>
         <li>Notes logged + monthly summary</li>
         <li>Stop immediately if disputed</li>
       </ul>
 
-      <p class="priceNote">
-        Includes up to <b>20 follow-up calls</b> per month.
-      </p>
+      <div class="calcBox" id="calcBox">
+        <div class="calcRow">
+          <span>Base</span><b>$<span id="basePrice">395</span></b>
+        </div>
+        <div class="calcRow">
+          <span>Included jobs</span><b><span id="includedJobs">20</span></b>
+        </div>
+        <div class="calcRow">
+          <span>Extra jobs</span><b><span id="extraJobs">0</span></b>
+        </div>
+        <div class="calcRow">
+          <span>Extras cost</span><b>$<span id="extrasCost">0</span></b>
+        </div>
+        <div class="calcRow total">
+          <span>Total</span><b>$<span id="totalPrice">395</span></b>
+        </div>
+      </div>
+
+      <a class="btn btnSolid" href="#contact">Get started</a>
+      <div class="tinyNote">No lock-in. Month to month.</div>
     </div>
-
-    <!-- PLATINUM -->
-    <div class="priceCard">
-      <h3>Platinum — Cashflow Protection</h3>
-      <p class="price">$695 / month</p>
-      <p class="priceSub">For chronic late payments</p>
-
-      <ul class="priceList">
-        <li>Everything in Gold</li>
-        <li>Additional follow-ups beyond 7 days</li>
-        <li>Stronger escalation tone (still professional)</li>
-        <li>Final reminder calls & emails</li>
-        <li>Pre-collection handover support</li>
-        <li>Priority handling</li>
-      </ul>
-
-      <p class="priceNote">
-        Includes up to <b>35 follow-up calls</b> per month.
-      </p>
-    </div>
-
   </div>
-
-  <p class="pricingFooter">
-    No lock-in. Month to month. If one invoice gets paid faster, this pays for itself.
-  </p>
 </section>
+
+<script>
+  // ====== CONFIG ======
+  const MODE_FLAT = "flat";
+  const MODE_PER = "per";
+
+  // Flat-rate config (Gold example)
+  const flatConfig = {
+    mode: MODE_FLAT,
+    planName: "Gold — Done-for-you follow-up",
+    basePrice: 395,
+    includedJobs: 20,
+    extraRate: 12, // $ per job above included
+    sliderDefault: 20,
+    sliderMeta: "Includes 20 jobs. Extras billed per job.",
+    priceSubTemplate: (included, rate) => `Includes <b>${included}</b> jobs. Extra jobs: <b>$${rate}</b> each.`,
+    features: [
+      "We call + email for you (human-run)",
+      "Reminder before due date (if needed)",
+      "Follow-up at 3 days overdue",
+      "Follow-up at 7 days overdue",
+      "Notes logged + monthly summary",
+      "Stop immediately if disputed"
+    ]
+  };
+
+  // Per-invoice config
+  const perConfig = {
+    mode: MODE_PER,
+    planName: "Per invoice — Pay as you go",
+    basePrice: 0,           // no base by default
+    includedJobs: 0,
+    extraRate: 25,          // $ per invoice
+    sliderDefault: 10,
+    sliderMeta: "You pay per invoice. No base fee shown here (add a minimum if you want).",
+    priceSubTemplate: (included, rate) => `Price: <b>$${rate}</b> per invoice.`,
+    features: [
+      "We call + email for you (human-run)",
+      "3-day overdue follow-up included",
+      "7-day overdue follow-up included",
+      "Clear action log + monthly summary",
+      "Stop immediately if disputed"
+    ]
+  };
+
+  // Optional: minimum monthly spend (set to 0 if you don't want it)
+  const MIN_MONTHLY = 150;
+
+  // ====== ELEMENTS ======
+  const btnFlat = document.getElementById("btnFlat");
+  const btnPer = document.getElementById("btnPerInvoice");
+  const jobsSlider = document.getElementById("jobsSlider");
+  const jobsValue = document.getElementById("jobsValue");
+  const sliderMeta = document.getElementById("sliderMeta");
+
+  const planName = document.getElementById("planName");
+  const priceTotal = document.getElementById("priceTotal");
+  const priceSub = document.getElementById("priceSub");
+  const extraRateEl = document.getElementById("extraRate");
+  const basePriceEl = document.getElementById("basePrice");
+  const includedJobsEl = document.getElementById("includedJobs");
+  const extraJobsEl = document.getElementById("extraJobs");
+  const extrasCostEl = document.getElementById("extrasCost");
+  const totalPriceEl = document.getElementById("totalPrice");
+  const featureList = document.getElementById("featureList");
+
+  let current = flatConfig;
+
+  // ====== HELPERS ======
+  function money(n){ return Math.round(n).toString(); }
+
+  function setActive(mode){
+    const isFlat = mode === MODE_FLAT;
+    btnFlat.classList.toggle("isActive", isFlat);
+    btnPer.classList.toggle("isActive", !isFlat);
+    btnFlat.setAttribute("aria-selected", isFlat ? "true" : "false");
+    btnPer.setAttribute("aria-selected", !isFlat ? "true" : "false");
+  }
+
+  function renderFeatures(items){
+    featureList.innerHTML = items.map(x => `<li>${x}</li>`).join("");
+  }
+
+  function calculateTotal(jobs){
+    if(current.mode === MODE_FLAT){
+      const extraJobs = Math.max(0, jobs - current.includedJobs);
+      const extrasCost = extraJobs * current.extraRate;
+      const total = current.basePrice + extrasCost;
+      return { extraJobs, extrasCost, total, base: current.basePrice, included: current.includedJobs };
+    }
+
+    // Per-invoice
+    const extrasCost = jobs * current.extraRate;
+    const total = Math.max(MIN_MONTHLY, extrasCost); // remove MIN_MONTHLY if you don't want it
+    const extraJobs = jobs; // all jobs are billable in this model
+    return { extraJobs, extrasCost, total, base: current.basePrice, included: current.includedJobs };
+  }
+
+  function updateUI(){
+    const jobs = parseInt(jobsSlider.value, 10);
+    jobsValue.textContent = jobs;
+
+    planName.textContent = current.planName;
+    sliderMeta.textContent = current.sliderMeta;
+
+    // Pricing copy
+    extraRateEl.textContent = money(current.extraRate);
+    priceSub.innerHTML = current.priceSubTemplate(current.includedJobs, current.extraRate);
+
+    // Card calc
+    const calc = calculateTotal(jobs);
+
+    basePriceEl.textContent = money(calc.base);
+    includedJobsEl.textContent = calc.included;
+    extraJobsEl.textContent = calc.extraJobs;
+    extrasCostEl.textContent = money(calc.extrasCost);
+    totalPriceEl.textContent = money(calc.total);
+
+    // Big price display
+    priceTotal.textContent = money(calc.total);
+
+    // Features
+    renderFeatures(current.features);
+
+    // Per-invoice: adjust labels a bit
+    if(current.mode === MODE_PER){
+      document.getElementById("calcBox").classList.add("isPerInvoice");
+      document.querySelector(".per").textContent = "/mo";
+    } else {
+      document.getElementById("calcBox").classList.remove("isPerInvoice");
+      document.querySelector(".per").textContent = "/mo";
+    }
+  }
+
+  function switchMode(next){
+    current = next;
+
+    // Match slider defaults per model
+    jobsSlider.value = next.sliderDefault;
+    setActive(next.mode);
+    updateUI();
+  }
+
+  // ====== EVENTS ======
+  btnFlat.addEventListener("click", () => switchMode(flatConfig));
+  btnPer.addEventListener("click", () => switchMode(perConfig));
+  jobsSlider.addEventListener("input", updateUI);
+
+  // Init
+  switchMode(flatConfig);
+</script>
 
 
     <!-- FAQ -->
