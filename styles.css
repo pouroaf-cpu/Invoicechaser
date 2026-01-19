@@ -290,3 +290,278 @@ footer{
 .planTitle{ margin:2px 0 6px; font-size:16px; font-weight:900; }
 .wasRow{ opacity:.75; font-weight:800; margin-bottom:6px; font-size:13px; }
 .nowLabel{ font
+/* =========================================
+   PRICING (XERO-STYLE CARDS)
+   - Toggle on top
+   - Slider under
+   - Two plan cards in the “Xero” look
+   Paste this at the BOTTOM of styles.css
+   ========================================= */
+
+.pricingBlock{
+  background:#bff3ff;
+  border-radius:18px;
+  padding:26px;
+  margin:22px 0;
+}
+
+.pricingHeader h2{
+  margin:0 0 6px;
+  font-size:40px;
+  font-weight:1000;
+  letter-spacing:-.02em;
+}
+
+.pricingHeader p{
+  margin:0 0 18px;
+  color:var(--muted);
+  font-size:18px;
+}
+
+/* Toggle (compact, centered) */
+.pricingToggleRow{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:0 auto 14px;
+  width:fit-content;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:8px;
+  box-shadow:var(--shadow);
+}
+
+.pricingToggleRow .toggleBtn{
+  border:0;
+  background:transparent;
+  padding:12px 18px;
+  border-radius:999px;
+  font-weight:950;
+  cursor:pointer;
+  color:var(--ink);
+  white-space:nowrap;
+}
+
+.pricingToggleRow .toggleBtn.isActive{
+  background:#162a3a;
+  color:#fff;
+}
+
+/* Slider (centered “panel”) */
+.pricingBlock .sliderWrap{
+  width:min(980px, 100%);
+  margin:0 auto 22px;
+  background:rgba(255,255,255,.75);
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:16px 18px;
+}
+
+.pricingBlock .sliderTop{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:16px;
+  margin-bottom:10px;
+}
+
+.pricingBlock .sliderLabel{
+  font-weight:950;
+  font-size:12px;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.pricingBlock .sliderValue{
+  font-weight:1000;
+  font-size:26px;
+  margin-top:4px;
+  letter-spacing:-.01em;
+}
+
+.pricingBlock .sliderMeta{
+  font-size:14px;
+  color:var(--muted);
+  max-width:48ch;
+  text-align:right;
+}
+
+.pricingBlock .slider{
+  width:100%;
+  margin:10px 0 8px;
+  accent-color:var(--brand);
+}
+
+.pricingBlock .sliderTicks{
+  display:flex;
+  justify-content:space-between;
+  font-weight:900;
+  opacity:.65;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* ===== XERO-STYLE PLAN CARDS ===== */
+.plansRow{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:18px;
+  width:min(1040px, 100%);
+  margin:0 auto;
+  align-items:stretch;
+}
+
+.planCard{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:22px 18px 18px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  min-height:640px;
+}
+
+.planTitle{
+  margin:0;
+  font-size:28px;
+  font-weight:1000;
+  letter-spacing:-.01em;
+}
+
+.wasRow{
+  margin:14px 0 0;
+  font-size:18px;
+  font-weight:900;
+  color:var(--muted);
+}
+
+.nowLabel{
+  margin:16px 0 0;
+  font-weight:950;
+  font-size:18px;
+  color:var(--ink);
+}
+
+.nowRow{
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  gap:10px;
+  margin-top:10px;
+}
+
+/* small $ like the reference */
+.currency{
+  font-weight:1000;
+  font-size:28px;
+  line-height:1;
+  padding-bottom:18px;
+  color:#162a3a;
+}
+
+.nowPrice{
+  font-weight:1100;
+  font-size:96px;
+  line-height:.9;
+  letter-spacing:-2px;
+  color:#162a3a;
+}
+
+.perLine{
+  margin-top:10px;
+  font-size:18px;
+  color:#3b475a;
+}
+
+/* “Save … over 3 months” highlight strip */
+.savePill{
+  display:inline-flex;
+  flex-direction:column;
+  gap:2px;
+  margin:18px auto 16px;
+  padding:10px 16px;
+  border-radius:8px;
+  background:#cfefff;
+  color:#153244;
+  font-weight:1000;
+  font-size:18px;
+  line-height:1.05;
+}
+
+.savePill strong{
+  font-size:20px;
+  letter-spacing:-.01em;
+}
+
+/* plan copy */
+.planDesc{
+  margin:18px auto 18px;
+  max-width:34ch;
+  font-size:18px;
+  line-height:1.45;
+  color:#243245;
+  font-weight:800;
+}
+
+/* links and CTA like the reference */
+.learnMore{
+  display:inline-block;
+  margin:8px 0 18px;
+  font-weight:1000;
+  text-decoration:underline;
+  color:#142c3f;
+  font-size:18px;
+}
+
+.ctaBtn{
+  margin-top:auto;
+  display:block;
+  width:100%;
+  border-radius:8px;
+  padding:16px 14px;
+  font-weight:1100;
+  text-decoration:none;
+  background:#3fe0a0;
+  color:#0a2a22;
+  font-size:18px;
+}
+
+/* highlight plan just a subtle border (no cheesy badge) */
+.planCard.highlight{
+  border-color:rgba(37,99,235,.35);
+  box-shadow:0 18px 44px rgba(15,23,42,.12);
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .pricingToggleRow{
+    width:100%;
+    justify-content:space-between;
+  }
+  .pricingToggleRow .toggleBtn{
+    width:100%;
+    text-align:center;
+  }
+  .pricingBlock .sliderTop{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .pricingBlock .sliderMeta{
+    text-align:left;
+    max-width:none;
+  }
+  .plansRow{
+    grid-template-columns:1fr;
+  }
+  .planCard{
+    min-height:0;
+  }
+  .nowPrice{
+    font-size:78px;
+  }
+}
