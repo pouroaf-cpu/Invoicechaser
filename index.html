@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InvoiceChaser — Payment Follow-Ups for Tradies</title>
+  <meta name="description" content="InvoiceChaser helps tradies get paid faster. We handle polite payment follow-ups and overdue reminders so you don’t have to." />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1b33;
+      --ink:#e8eefc;
+      --muted:#b7c3de;
+      --line:rgba(255,255,255,.12);
+      --accent:#22d3ee;  /* teal/cyan */
+      --accent2:#60a5fa; /* blue */
+      --good:#34d399;
+      --warn:#fbbf24;
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(34,211,238,.18), transparent 60%),
+        radial-gradient(900px 600px at 85% 20%, rgba(96,165,250,.18), transparent 55%),
+        linear-gradient(180deg, #070b14 0%, var(--bg) 45%, #070b14 100%);
+      line-height:1.45;
+    }
+
+    a{color:inherit}
+    .wrap{max-width:1080px;margin:0 auto;padding:24px}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:16px;padding:14px 16px;border:1px solid var(--line);
+      background: rgba(15,27,51,.55);
+      backdrop-filter: blur(10px);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      position:sticky;top:14px;z-index:20;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .logo{
+      width:34px;height:34px;border-radius:10px;
+      background: linear-gradient(135deg, rgba(34,211,238,1), rgba(96,165,250,1));
+      box-shadow: 0 10px 24px rgba(34,211,238,.22);
+    }
+    .navlinks{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+    .navlinks a{
+      text-decoration:none;
+      color:var(--muted);
+      padding:8px 10px;border-radius:999px;
+      border:1px solid transparent;
+    }
+    .navlinks a:hover{color:var(--ink);border-color:var(--line);background:rgba(255,255,255,.05)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 14px;border-radius:12px;
+      border:1px solid rgba(34,211,238,.35);
+      background: linear-gradient(135deg, rgba(34,211,238,.18), rgba(96,165,250,.12));
+      box-shadow: 0 12px 28px rgba(0,0,0,.35);
+      text-decoration:none;font-weight:700;
+      white-space:nowrap;
+    }
+    .btn:hover{border-color: rgba(34,211,238,.65); transform: translateY(-1px)}
+    .btn:active{transform: translateY(0px)}
+    .btn.small{padding:9px 12px;border-radius:10px;font-weight:700}
+
+    .hero{
+      padding:52px 0 28px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .heroCard{
+      border:1px solid var(--line);
+      background: rgba(15,27,51,.6);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:26px;
+    }
+    h1{margin:0 0 10px;font-size:44px;line-height:1.05;letter-spacing:-.6px}
+    .sub{margin:0 0 18px;color:var(--muted);font-size:16px;max-width:54ch}
+    .pillRow{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 18px}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-weight:600;font-size:13px;
+    }
+    .dot{width:8px;height:8px;border-radius:99px;background:var(--good)}
+    .dot.warn{background:var(--warn)}
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .ctaNote{margin-top:10px;color:var(--muted);font-size:13px}
+
+    .sideCard{
+      display:flex;flex-direction:column;gap:14px;
+      border:1px solid var(--line);
+      background: rgba(15,27,51,.55);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:22px;
+    }
+    .sideTitle{font-weight:800;margin:0;font-size:16px}
+    .mini{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      border-radius:14px;
+      padding:14px;
+    }
+    .mini b{display:block;margin-bottom:6px}
+    .mini p{margin:0;color:var(--muted);font-size:14px}
+
+    section{padding:18px 0}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      border:1px solid var(--line);
+      background: rgba(15,27,51,.55);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    .card h3{margin:0 0 8px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .kicker{color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:12px;margin:0 0 10px}
+    .h2{margin:0 0 12px;font-size:26px;letter-spacing:-.3px}
+
+    .pricing{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      align-items:stretch;
+    }
+    .price{
+      position:relative;
+      overflow:hidden;
+    }
+    .price .tag{
+      display:inline-flex;align-items:center;
+      padding:6px 10px;border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-weight:700;font-size:12px;
+      background:rgba(255,255,255,.04);
+    }
+    .price .money{
+      font-size:30px;font-weight:900;margin:10px 0 6px;
+      letter-spacing:-.5px;
+    }
+    .price ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
+    .price li{margin:6px 0}
+    .highlight{
+      border-color: rgba(34,211,238,.45);
+      background: linear-gradient(135deg, rgba(34,211,238,.14), rgba(96,165,250,.10));
+    }
+    .highlight:before{
+      content:"";
+      position:absolute;inset:-2px;
+      background: radial-gradient(600px 220px at 20% 0%, rgba(34,211,238,.35), transparent 55%);
+      pointer-events:none;
+      opacity:.55;
+    }
+    .highlight > *{position:relative}
+
+    .process{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:14px;
+    }
+    .stepNum{
+      width:34px;height:34px;border-radius:12px;
+      display:inline-flex;align-items:center;justify-content:center;
+      font-weight:900;
+      border:1px solid rgba(34,211,238,.35);
+      background:rgba(34,211,238,.10);
+      margin-bottom:10px;
+    }
+
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    label{display:block;font-size:12px;color:var(--muted);margin:10px 0 6px}
+    input, textarea{
+      width:100%;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      color:var(--ink);
+      border-radius:14px;
+      padding:12px 12px;
+      outline:none;
+      font-size:14px;
+    }
+    textarea{min-height:110px;resize:vertical}
+    input:focus, textarea:focus{border-color: rgba(34,211,238,.55)}
+    .fine{color:var(--muted);font-size:12px;margin-top:10px}
+    .footer{
+      margin-top:18px;
+      padding:18px 0 36px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr; padding-top:28px}
+      .grid{grid-template-columns:1fr}
+      .pricing{grid-template-columns:1fr}
+      .process{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      h1{font-size:36px}
+      .nav{border-radius:18px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>InvoiceChaser</div>
+      </div>
+
+      <nav class="navlinks" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+        <a class="btn small" href="#contact">Get started</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="heroCard">
+          <p class="kicker">Payment follow-ups for tradies</p>
+          <h1>Get paid faster — without chasing customers yourself.</h1>
+          <p class="sub">
+            We handle polite payment reminders, overdue calls, and follow-up logging. You stay focused on the work. We keep invoices moving.
+          </p>
+
+          <div class="pillRow">
+            <span class="pill"><span class="dot"></span> Friendly, professional tone</span>
+            <span class="pill"><span class="dot"></span> Xero-based workflow</span>
+            <span class="pill"><span class="dot warn"></span> Stop on disputes</span>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn" href="#contact">Request a free setup call</a>
+            <a class="btn" style="border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.06)" href="#pricing">See pricing</a>
+          </div>
+          <div class="ctaNote">Designed for one-person tradies and small crews. School-hours support available.</div>
+        </div>
+
+        <aside class="sideCard" aria-label="Quick facts">
+          <p class="sideTitle">What you get</p>
+
+          <div class="mini">
+            <b>Cleaner cashflow</b>
+            <p>Overdue invoices get followed up consistently, so you don’t forget or avoid the awkward calls.</p>
+          </div>
+
+          <div class="mini">
+            <b>Clear audit trail</b>
+            <p>We log follow-up notes against invoices (e.g., “called / emailed / payment date given”).</p>
+          </div>
+
+          <div class="mini">
+            <b>Simple billing</b>
+            <p>Per follow-up with a minimum monthly spend, plus a separate overdue rate.</p>
+          </div>
+        </aside>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services">
+        <p class="kicker">Services</p>
+        <h2 class="h2">Simple, repeatable payment follow-ups</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Payment details confirmation</h3>
+            <p>Short call after booking/quote approval to confirm invoice email, preferred payment method, and who approves payment.</p>
+          </div>
+
+          <div class="card">
+            <h3>Standard reminders</h3>
+            <p>Email or call reminders around due date to ensure invoices don’t get missed. One action = one follow-up.</p>
+          </div>
+
+          <div class="card">
+            <h3>Overdue escalation</h3>
+            <p>7+ days overdue: firmer, still professional follow-ups. We stop immediately if an invoice is disputed.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section id="pricing">
+        <p class="kicker">Pricing</p>
+        <h2 class="h2">Per follow-up with a monthly minimum</h2>
+
+        <div class="pricing">
+          <div class="card price">
+            <span class="tag">Starter</span>
+            <div class="money">$150<span style="font-size:14px;font-weight:700;color:var(--muted)"> / month minimum</span></div>
+            <p style="margin:0;color:var(--muted);font-size:14px">Best for low volume.</p>
+            <ul>
+              <li>Standard follow-up: <b>$6</b> each</li>
+              <li>Overdue follow-up: <b>$18</b> each</li>
+              <li>Basic monthly summary</li>
+            </ul>
+          </div>
+
+          <div class="card price highlight">
+            <span class="tag">Most common</span>
+            <div class="money">$250<span style="font-size:14px;font-weight:700;color:var(--muted)"> / month minimum</span></div>
+            <p style="margin:0;color:var(--muted);font-size:14px">Best for busy tradies.</p>
+            <ul>
+              <li>Standard follow-up: <b>$6</b> each</li>
+              <li>Overdue follow-up: <b>$20</b> each</li>
+              <li>Weekly overdue list review</li>
+            </ul>
+          </div>
+
+          <div class="card price">
+            <span class="tag">High volume</span>
+            <div class="money">$400<span style="font-size:14px;font-weight:700;color:var(--muted)"> / month minimum</span></div>
+            <p style="margin:0;color:var(--muted);font-size:14px">Best for small crews.</p>
+            <ul>
+              <li>Standard follow-up: <b>$5</b> each</li>
+              <li>Overdue follow-up: <b>$22</b> each</li>
+              <li>Priority response + tighter cadence</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="fine">
+          Notes: Pricing shown is a starting point — keep the structure, adjust the numbers to match your market. You invoice the tradie monthly from your own Xero.
+        </p>
+      </section>
+
+      <!-- PROCESS -->
+      <section id="process">
+        <p class="kicker">Process</p>
+        <h2 class="h2">How it works</h2>
+
+        <div class="process">
+          <div class="card">
+            <div class="stepNum">1</div>
+            <h3>Access + rules</h3>
+            <p>Client invites you to their Xero org (invoice view + notes). You agree the follow-up cadence and tone.</p>
+          </div>
+          <div class="card">
+            <div class="stepNum">2</div>
+            <h3>Overdue list</h3>
+            <p>We pull overdue invoices via Xero (Aged Receivables / Awaiting Payment) and build the action list.</p>
+          </div>
+          <div class="card">
+            <div class="stepNum">3</div>
+            <h3>Follow-ups</h3>
+            <p>We call/email. Every action is logged in Xero “History & Notes” against the invoice.</p>
+          </div>
+          <div class="card">
+            <div class="stepNum">4</div>
+            <h3>Monthly invoice</h3>
+            <p>You receive one monthly invoice from us (per follow-up + minimum). Disputes get escalated back to you.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <p class="kicker">Contact</p>
+        <h2 class="h2">Request a free setup call</h2>
+
+        <div class="contact">
+          <div class="card">
+            <h3 style="margin:0 0 8px">Tell us about your business</h3>
+            <p style="margin:0;color:var(--muted);font-size:14px">
+              Keep it simple: trade, number of invoices per week, and how overdue you want us to start chasing (e.g., 3 days, 7 days).
+            </p>
+
+            <!-- Mailto form (no backend needed) -->
+            <form action="mailto:hello@invoicechaser.kiwi" method="post" enctype="text/plain">
+              <label for="name">Name</label>
+              <input id="name" name="Name" placeholder="Your name" required />
+
+              <label for="biz">Business name</label>
+              <input id="biz" name="Business" placeholder="e.g., Smith Electrical" required />
+
+              <label for="email">Email</label>
+              <input id="email" name="Email" type="email" placeholder="you@business.co.nz" required />
+
+              <label for="msg">Message</label>
+              <textarea id="msg" name="Message" placeholder="Trade + invoice volume + your preferred follow-up timing"></textarea>
+
+              <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+                <button class="btn" type="submit">Send</button>
+                <a class="btn" style="border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.06)" href="tel:+64000000000">Or call (set your number)</a>
+              </div>
+
+              <p class="fine">
+                Replace hello@invoicechaser.kiwi with your real email, and update the phone number link.
+              </p>
+            </form>
+          </div>
+
+          <div class="card">
+            <h3 style="margin:0 0 8px">What we need from you</h3>
+            <div class="twoCol">
+              <div class="mini">
+                <b>Xero access</b>
+                <p>Invoice view + ability to add notes (no bank permissions required).</p>
+              </div>
+              <div class="mini">
+                <b>Follow-up rules</b>
+                <p>When to start chasing, and when to stop (e.g., disputed invoices).</p>
+              </div>
+              <div class="mini">
+                <b>Your brand voice</b>
+                <p>Friendly, firm, or strict. We match your tone.</p>
+              </div>
+              <div class="mini">
+                <b>Escalation contact</b>
+                <p>Who we notify if an invoice becomes a dispute.</p>
+              </div>
+            </div>
+
+            <div class="mini" style="margin-top:14px">
+              <b>Positioning line (use this)</b>
+              <p>“We handle your payment follow-ups so you don’t have to chase customers.”</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div>© <span id="y"></span> InvoiceChaser. All rights reserved.</div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#top" style="text-decoration:none">Back to top</a>
+          <span aria-hidden="true">•</span>
+          <a href="mailto:hello@invoicechaser.kiwi" style="text-decoration:none">hello@invoicechaser.kiwi</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
