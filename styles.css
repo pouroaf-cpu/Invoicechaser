@@ -440,3 +440,39 @@ footer{
   width:auto;
   display:block;
 }
+/* ===== CENTER PRICING BLOCK ===== */
+#pricing{
+  display:flex;
+  justify-content:center;
+}
+
+#pricing > *{
+  width:100%;
+}
+
+/* constrain the pricing content */
+#pricing .pricingTopRow,
+#pricing .pricingControls,
+#pricing .pricingCardsRow{
+  max-width:900px;   /* controls how centered/tight it feels */
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* center toggle */
+#pricing .pricingToggle{
+  justify-content:center;
+}
+
+/* center slider and limit width */
+#pricing .sliderWrap{
+  max-width:50%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* cards already good, just center */
+#pricing .cardsStack{
+  margin-left:auto;
+  margin-right:auto;
+}
