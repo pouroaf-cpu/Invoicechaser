@@ -54,7 +54,7 @@
   <!-- PRICING -->
   <section id="pricing" class="pricingBlock">
 
-    <header class="pricingHeader">
+    <header class="pricingHeader pricingHeaderCentered">
       <h2>Pricing</h2>
       <p>Set your invoice volume. Platinum is recommended.</p>
     </header>
@@ -142,57 +142,177 @@
       Platinum calls are recorded for quality and record-keeping.
     </p>
 
-    <!-- CLEAN PRICING STYLES (NO GAPS) -->
+    <!-- CLOSE THE DEAL (BEST CTA) -->
+    <div class="pricingCta">
+      <div class="pricingCtaCard">
+        <h3>Book a 10-minute setup call</h3>
+        <p>We’ll confirm invoice volume, agree the workflow, and you can start within 48 hours.</p>
+
+        <!-- If you add Calendly/Cal.com later, swap this href -->
+        <div class="pricingCtaBtns">
+          <a class="btn btnSolid" href="#contact">Book the call</a>
+          <a class="btn" href="#callback">Request a callback</a>
+        </div>
+
+        <form id="callback" class="miniForm" action="mailto:hello@invoicechaser.kiwi" method="post">
+          <div class="miniGrid">
+            <input name="Name" placeholder="Name" required />
+            <input name="Phone" placeholder="Phone" required />
+          </div>
+
+          <div class="miniGrid">
+            <input name="Business" placeholder="Business name" required />
+            <input name="Invoices" placeholder="Invoices/month (approx)" />
+          </div>
+
+          <textarea name="Message" placeholder="Anything we should know (largest customers, typical terms, problem payers, etc.)"></textarea>
+
+          <button class="btn btnSolid" type="submit">Request a callback</button>
+          <p class="miniFine">Fast response. Priority handling for all clients.</p>
+        </form>
+      </div>
+    </div>
+
+    <!-- XERO-STYLE TABLE + CENTER HEADER + CTA STYLES -->
     <style>
+      /* Center the Pricing header */
+      .pricingHeaderCentered{
+        text-align:center;
+      }
+      .pricingHeaderCentered p{
+        margin:0 auto 18px;
+        max-width:60ch;
+      }
+
+      /* Xero-style pricing table */
       .pricingTable{
         width:100%;
         border-collapse:collapse;
         background:#fff;
+        font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
+        font-size:15px;
       }
 
       .pricingTable th,
       .pricingTable td{
-        padding:14px;
-        border:1px solid #ddd;
+        padding:14px 16px;
+        border:1px solid #e6e9f2;
         vertical-align:middle;
+        font-weight:400;
+        color:#111827;
+      }
+
+      .pricingTable thead th{
+        background:#fff;
+        font-weight:600;
+        color:#0b1220;
       }
 
       .sectionRow td{
-        background:#f5f5f5;
-        font-weight:700;
+        background:#f7f8fb;
+        font-weight:600;
+        color:#1f2937;
       }
 
       .planHead{display:grid;gap:6px}
-      .planName{font-weight:800}
-      .planPrice{font-size:1.35rem;font-weight:900}
-      .planMini{font-size:.9rem;color:#666}
-      .per{font-size:.9rem;color:#666}
+      .planName{font-weight:600;font-size:16px}
+      .planPrice{font-size:22px;font-weight:600;letter-spacing:-.01em}
+      .per{font-size:14px;font-weight:400;color:#6b7280}
+      .planMini{font-size:13px;color:#6b7280;font-weight:400}
 
       .planBadge{
         display:inline-block;
-        font-size:.75rem;
-        font-weight:800;
+        font-size:11px;
+        font-weight:600;
         letter-spacing:.08em;
         text-transform:uppercase;
         padding:4px 10px;
-        border:1px solid #999;
+        border:1px solid #cfd5e3;
         border-radius:999px;
+        background:#fff;
+        color:#374151;
         width:fit-content;
       }
 
-      /* ===== Continuous Platinum box: 3rd column only ===== */
+      /* Continuous Platinum box (no gaps) */
       .platinumBoxed th:nth-child(3),
       .platinumBoxed td:nth-child(3){
-        border-left:2px solid #999;
-        border-right:2px solid #999;
+        border-left:2px solid #9aa3b2;
+        border-right:2px solid #9aa3b2;
       }
-
       .platinumBoxed thead th:nth-child(3){
-        border-top:2px solid #999;
+        border-top:2px solid #9aa3b2;
+      }
+      .platinumBoxed tbody tr:last-child td:nth-child(3){
+        border-bottom:2px solid #9aa3b2;
       }
 
-      .platinumBoxed tbody tr:last-child td:nth-child(3){
-        border-bottom:2px solid #999;
+      /* Deal-close block */
+      .pricingCta{
+        margin-top:18px;
+        display:flex;
+        justify-content:center;
+      }
+      .pricingCtaCard{
+        width:min(980px,100%);
+        background:#fff;
+        border:1px solid #e7eaf3;
+        border-radius:14px;
+        box-shadow:0 14px 34px rgba(15,23,42,.10);
+        padding:18px;
+      }
+      .pricingCtaCard h3{
+        margin:0 0 6px;
+        font-size:20px;
+        font-weight:900;
+        text-align:center;
+      }
+      .pricingCtaCard p{
+        margin:0 0 12px;
+        color:#5b6577;
+        text-align:center;
+      }
+      .pricingCtaBtns{
+        display:flex;
+        gap:10px;
+        justify-content:center;
+        flex-wrap:wrap;
+        margin:10px 0 12px;
+      }
+
+      .miniForm input,
+      .miniForm textarea{
+        width:100%;
+        border:1px solid #e7eaf3;
+        border-radius:10px;
+        padding:12px 12px;
+        font-size:15px;
+        outline:none;
+      }
+      .miniForm textarea{
+        min-height:90px;
+        resize:vertical;
+        margin-top:12px;
+      }
+      .miniGrid{
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+        margin-top:10px;
+      }
+      .miniForm button{
+        width:100%;
+        margin-top:12px;
+      }
+      .miniFine{
+        margin:10px 0 0;
+        text-align:center;
+        color:#5b6577;
+        font-size:13px;
+      }
+
+      @media(max-width:900px){
+        .miniGrid{ grid-template-columns:1fr; }
       }
     </style>
 
