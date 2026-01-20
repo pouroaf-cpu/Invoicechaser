@@ -7,8 +7,8 @@
   <title>Invoice Chaser — Tradie Payment Follow-Up Service</title>
   <meta name="description" content="We personally follow up unpaid invoices so tradies get paid faster. You stay on the tools — we handle professional phone follow-ups and stop immediately if a job is disputed." />
 
-  <link rel="icon" href="/favicon.JPG" type="image/jpeg" />
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="favicon.JPG" type="image/jpeg" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
@@ -17,7 +17,7 @@
   <!-- NAV -->
   <header class="nav">
     <div class="brandRow">
-      <img src="/logo.jpg" alt="Invoice Chaser logo" class="logo" />
+      <img src="logo.JPG" alt="Invoice Chaser logo" class="logo" />
       <div class="brandName">Invoice Chaser</div>
     </div>
 
@@ -29,57 +29,61 @@
     </nav>
   </header>
 
-<!-- HERO -->
-<section class="hero">
+  <!-- HERO -->
+  <section class="hero" id="top">
 
-  <!-- LEFT: COPY -->
-  <div class="heroCard">
-    <div class="tagline">HUMAN-RUN • NOT SOFTWARE</div>
+    <!-- LEFT: COPY -->
+    <div class="heroCard">
+      <div class="tagline">HUMAN-RUN • NOT SOFTWARE</div>
 
-    <h1>We chase the payments.<br>You stay on the tools.</h1>
+      <h1>We chase the payments.<br>You stay on the tools.</h1>
 
-    <p class="sub">
-      Late invoices kill cashflow. We handle professional phone follow-ups and stop immediately if a job is disputed.
-    </p>
+      <p class="sub">
+        Late invoices kill cashflow. We handle professional phone follow-ups and stop immediately if a job is disputed.
+      </p>
 
-    <div class="heroPoints">
-      <span class="pill">Pre-due + overdue calls</span>
-      <span class="pill">Works with what you already use</span>
-      <span class="pill">No disputes handled</span>
+      <div class="heroPoints">
+        <span class="pill">Pre-due + overdue calls</span>
+        <span class="pill">Works with what you already use</span>
+        <span class="pill">No disputes handled</span>
+      </div>
+
+      <div class="ctaRow">
+        <a class="btn btnSolid" href="#contact">Request a callback</a>
+        <a class="btn" href="#pricing">See pricing</a>
+      </div>
+
+      <p class="fine">
+        Simple promise: <strong>you stop chasing invoices</strong>.
+      </p>
     </div>
 
-    <div class="ctaRow">
-      <a class="btn btnSolid" href="#contact">Request a callback</a>
-      <a class="btn" href="#pricing">See pricing</a>
-    </div>
+    <!-- RIGHT: IMAGE -->
+    <aside class="heroImage" aria-label="Stressed tradie image">
+      <img
+        src="/tradie.png"
+        alt="Stressed tradie dealing with unpaid invoices"
+        loading="eager"
+      />
+    </aside>
 
-    <p class="fine">
-      Simple promise: <strong>you stop chasing invoices</strong>.
-    </p>
-  </div>
-
-  <!-- RIGHT: IMAGE -->
-  <aside class="heroImage">
-<img src="/tradie.png" alt="Stressed tradie dealing with unpaid invoices" loading="eager" />
-
-
-  </aside>
-
-</section>
-
+  </section>
 
   <!-- HOW IT WORKS -->
   <section id="how-it-works">
     <h2>How it works</h2>
+
     <div class="grid">
       <div class="card">
         <h3>1. Share your invoice list</h3>
         <p>Export a list or share access. No new software required.</p>
       </div>
+
       <div class="card">
         <h3>2. We follow up by phone</h3>
-        <p>Pre-due call, then overdue calls at 3, 7, and 14 days.</p>
+        <p>Every invoice gets a pre-due call, then follow-ups at 3, 7, and 14 days overdue.</p>
       </div>
+
       <div class="card">
         <h3>3. You get paid</h3>
         <p>Cashflow improves without you losing time chasing debtors.</p>
@@ -123,7 +127,7 @@
               <div class="planHead">
                 <div class="planName">Gold</div>
                 <div class="planPrice">$<span id="goldMonthly">395</span> <span class="per">/ month</span></div>
-                <div class="planMini">+ $150 one-time setup fee</div>
+                <div class="planMini">+ $150 one-time setup fee (new clients)</div>
               </div>
             </th>
 
@@ -154,10 +158,10 @@
           </tr>
 
           <tr class="sectionRow"><td colspan="3">Follow-up process</td></tr>
-          <tr><td>Pre-due phone call</td><td>✔️</td><td>✔️</td></tr>
+          <tr><td>Pre-due phone call (payment timing check)</td><td>✔️</td><td>✔️</td></tr>
           <tr><td>3-day overdue calls</td><td>✔️ (business hours)</td><td>✔️ (business + after hours)</td></tr>
           <tr><td>7-day overdue calls</td><td>✔️ (business hours)</td><td>✔️ (business + after hours)</td></tr>
-          <tr><td>14-day overdue chasing</td><td>—</td><td>✔️</td></tr>
+          <tr><td>14-day overdue chasing</td><td>—</td><td>✔️ (inc. alternative contacts)</td></tr>
           <tr><td>Alternative contacts</td><td>—</td><td>✔️</td></tr>
           <tr><td>Escalation / work calls</td><td>—</td><td>✔️</td></tr>
           <tr><td>Collections referral (client discretion)</td><td>—</td><td>✔️</td></tr>
@@ -188,23 +192,38 @@
 
       <div class="pricingCloseCard">
         <h3>Request a callback</h3>
-        <p>We’ll call you back, confirm volume, and start quickly.</p>
+        <p class="formSub">We’ll confirm volume and get you live quickly.</p>
 
         <form class="callbackForm" action="mailto:hello@invoicechaser.kiwi" method="post">
-          <div class="callbackGrid">
-            <input name="Name" placeholder="Name" required />
-            <input name="Phone" placeholder="Phone" required />
+          <div class="formGrid">
+            <div class="field">
+              <label>Name</label>
+              <input type="text" name="Name" placeholder="John Smith" required />
+            </div>
+            <div class="field">
+              <label>Phone</label>
+              <input type="tel" name="Phone" placeholder="027 123 4567" required />
+            </div>
           </div>
 
-          <div class="callbackGrid">
-            <input name="Business" placeholder="Business name" required />
-            <input name="Invoices" placeholder="Invoices/month (approx)" />
+          <div class="formGrid">
+            <div class="field">
+              <label>Business name</label>
+              <input type="text" name="Business" placeholder="Smith Electrical Ltd" required />
+            </div>
+            <div class="field">
+              <label>Invoices per month</label>
+              <input type="number" name="Invoices" placeholder="e.g. 20" />
+            </div>
           </div>
 
-          <textarea name="Message" placeholder="Anything we should know? (largest customers, typical terms, problem payers, etc.)"></textarea>
+          <div class="field">
+            <label>Anything we should know?</label>
+            <textarea name="Message" placeholder="Large customers, payment terms, repeat late payers, etc."></textarea>
+          </div>
 
-          <button class="btn btnSolid" type="submit">Request callback</button>
-          <p class="callbackFine">Fast response. Priority handling for all clients.</p>
+          <button class="btn btnSolid formBtn" type="submit">Request callback</button>
+          <p class="formFine">Fast response. Priority handling for all clients.</p>
         </form>
       </div>
 
@@ -237,7 +256,7 @@
         platMonthly.textContent = p;
       }
 
-      slider.oninput = update;
+      slider.addEventListener("input", update);
       update();
     </script>
 
@@ -253,6 +272,10 @@
     <details>
       <summary>Do I need special software?</summary>
       <p>No. We work from what you already use.</p>
+    </details>
+    <details>
+      <summary>What happens if an invoice is disputed?</summary>
+      <p>We stop immediately and notify you. Disputes are not chased.</p>
     </details>
   </section>
 
