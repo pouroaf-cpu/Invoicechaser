@@ -616,3 +616,11 @@ footer{
   .planCard{ min-height:0; }
   .nowPrice{ font-size:78px; }
 }
+.pricingHeader{
+  text-align:center;
+}
+
+.pricingHeader p{
+  margin:0 auto 18px;
+  max-width:60ch;
+}
