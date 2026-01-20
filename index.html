@@ -92,12 +92,12 @@
     </div>
   </section>
 
-<!-- PRICING -->
+<!-- PRICING (drop-in replacement for your current #pricing section) -->
 <section id="pricing" class="pricingBlock">
 
   <header class="pricingHeader">
     <h2>Pricing</h2>
-    <p>Set your invoice volume. Prices adjust automatically.</p>
+    <p>Set your invoice volume. Platinum will always stay above Gold.</p>
   </header>
 
   <!-- SLIDER -->
@@ -108,7 +108,7 @@
         <div class="sliderValue"><span id="jobsValue">20</span> invoices</div>
       </div>
       <div class="sliderMeta" id="sliderMeta">
-        Monthly price updates based on included invoices + extras.
+        Prices update based on included invoices + extras.
       </div>
     </div>
 
@@ -124,6 +124,8 @@
       <thead>
         <tr>
           <th></th>
+
+          <!-- GOLD -->
           <th>
             <div class="planHead">
               <div class="planName">Gold</div>
@@ -134,8 +136,11 @@
               <div class="planMini">+ $150 one-time setup fee (new clients only)</div>
             </div>
           </th>
-          <th>
+
+          <!-- PLATINUM (the "Platinum effect") -->
+          <th class="platCol">
             <div class="planHead">
+              <div class="planTopPill">Best for cashflow discipline</div>
               <div class="planName">Platinum</div>
               <div class="planPrice">
                 <span class="currency">$</span><span id="platMonthly">695</span>
@@ -144,6 +149,7 @@
               <div class="planMini">No setup fee</div>
             </div>
           </th>
+
         </tr>
       </thead>
 
@@ -154,12 +160,12 @@
         <tr>
           <td>Included invoices</td>
           <td><strong>20</strong> / month</td>
-          <td><strong>40</strong> / month</td>
+          <td class="platCol"><strong>40</strong> / month</td>
         </tr>
         <tr>
           <td>Extra invoices</td>
           <td><strong>$12</strong> each</td>
-          <td><strong>$10</strong> each</td>
+          <td class="platCol"><strong>$10</strong> each</td>
         </tr>
 
         <tr class="sectionRow">
@@ -168,37 +174,37 @@
         <tr>
           <td>Pre-due phone call</td>
           <td class="tick">✔️</td>
-          <td class="tick">✔️</td>
+          <td class="tick platCol">✔️</td>
         </tr>
         <tr>
           <td>3-day overdue calls</td>
           <td>✔️ <span class="mutedText">(business hours)</span></td>
-          <td>✔️ <span class="mutedText">(business + after hours)</span></td>
+          <td class="platCol">✔️ <span class="mutedText">(business + after hours)</span></td>
         </tr>
         <tr>
           <td>7-day overdue calls</td>
           <td>✔️ <span class="mutedText">(business hours)</span></td>
-          <td>✔️ <span class="mutedText">(business + after hours)</span></td>
+          <td class="platCol">✔️ <span class="mutedText">(business + after hours)</span></td>
         </tr>
         <tr>
           <td>14-day overdue chasing</td>
           <td class="cross">—</td>
-          <td class="tick">✔️</td>
+          <td class="tick platCol">✔️</td>
         </tr>
         <tr>
           <td>Alternative contacts</td>
           <td class="cross">—</td>
-          <td class="tick">✔️</td>
+          <td class="tick platCol">✔️</td>
         </tr>
         <tr>
           <td>Escalation / work calls</td>
           <td class="cross">—</td>
-          <td class="tick">✔️</td>
+          <td class="tick platCol">✔️</td>
         </tr>
         <tr>
           <td>Collections referral <span class="mutedText">(client discretion)</span></td>
           <td class="cross">—</td>
-          <td class="tick">✔️</td>
+          <td class="tick platCol">✔️</td>
         </tr>
 
         <tr class="sectionRow">
@@ -207,22 +213,22 @@
         <tr>
           <td>Priority handling</td>
           <td class="tick">✔️</td>
-          <td class="tick">✔️</td>
+          <td class="tick platCol">✔️</td>
         </tr>
         <tr>
           <td>Notes logged</td>
           <td class="tick">✔️</td>
-          <td class="tick">✔️</td>
+          <td class="tick platCol">✔️</td>
         </tr>
         <tr>
           <td>Monthly recovery summary</td>
           <td class="tick">✔️</td>
-          <td class="tick">✔️</td>
+          <td class="tick platCol">✔️</td>
         </tr>
         <tr>
           <td>Stops immediately if disputed</td>
           <td class="tick">✔️</td>
-          <td class="tick">✔️</td>
+          <td class="tick platCol">✔️</td>
         </tr>
       </tbody>
     </table>
@@ -239,50 +245,89 @@
   </p>
 
   <style>
-    /* Pricing table styles (fits your existing page styling) */
+    /* ===== Pricing table styles ===== */
     .pricingTableWrap { margin-top: 18px; }
-    .pricingTable {
+    .pricingTable{
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
       border: 1px solid rgba(255,255,255,.12);
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
       background: rgba(255,255,255,.03);
     }
-    .pricingTable th, .pricingTable td {
+    .pricingTable th, .pricingTable td{
       padding: 14px;
       border-bottom: 1px solid rgba(255,255,255,.10);
       border-right: 1px solid rgba(255,255,255,.10);
       text-align: left;
       vertical-align: middle;
     }
-    .pricingTable th:last-child, .pricingTable td:last-child { border-right: 0; }
-    .pricingTable tr:last-child td { border-bottom: 0; }
-    .pricingTable thead th { background: rgba(255,255,255,.06); }
-    .planHead { display: grid; gap: 6px; }
-    .planName { font-weight: 800; font-size: 1.05rem; }
-    .planPrice { font-weight: 900; font-size: 1.35rem; letter-spacing: .2px; }
-    .planPrice .currency { opacity: .9; margin-right: 2px; }
-    .planPrice .per { font-weight: 600; font-size: .95rem; opacity: .8; margin-left: 6px; }
-    .planMini { font-size: .95rem; opacity: .75; line-height: 1.35; }
-    .sectionRow td {
+    .pricingTable th:last-child, .pricingTable td:last-child{ border-right: 0; }
+    .pricingTable tr:last-child td{ border-bottom: 0; }
+    .pricingTable thead th{ background: rgba(255,255,255,.06); }
+
+    .planHead{ display: grid; gap: 6px; }
+    .planName{ font-weight: 900; font-size: 1.08rem; letter-spacing: .2px; }
+    .planPrice{ font-weight: 950; font-size: 1.4rem; letter-spacing: .2px; }
+    .planPrice .currency{ opacity: .9; margin-right: 2px; }
+    .planPrice .per{ font-weight: 600; font-size: .95rem; opacity: .8; margin-left: 6px; }
+    .planMini{ font-size: .95rem; opacity: .75; line-height: 1.35; }
+    .mutedText{ opacity: .75; font-size: .95rem; }
+
+    .sectionRow td{
       background: rgba(255,255,255,.04);
-      font-weight: 800;
+      font-weight: 900;
       border-right: 0 !important;
     }
-    .tick { font-weight: 900; }
-    .cross { opacity: .6; }
-    .pricingNote { margin: 12px 2px 0; opacity: .9; }
+    .tick{ font-weight: 900; }
+    .cross{ opacity: .6; }
+
+    /* ===== The "Platinum effect" =====
+       1) Column glow
+       2) Slight raise
+       3) Top pill
+       4) Bolder borders
+    */
+    .platCol{
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
+      position: relative;
+    }
+    .pricingTable thead .platCol{
+      background: linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.06));
+    }
+    .pricingTable thead th.platCol{
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.18);
+    }
+
+    .planTopPill{
+      display: inline-flex;
+      width: fit-content;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.16);
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .2px;
+      opacity: .95;
+    }
+
+    /* Make Platinum read "bigger" without changing layout */
+    .pricingTable thead th.platCol .planPrice{
+      font-size: 1.5rem;
+    }
+
+    /* Mobile tweak */
     @media (max-width: 760px){
-      .pricingTable th:first-child { width: 38%; }
-      .planPrice { font-size: 1.2rem; }
+      .planPrice{ font-size: 1.2rem; }
+      .pricingTable thead th.platCol .planPrice{ font-size: 1.25rem; }
     }
   </style>
 
   <!-- PRICING LOGIC -->
   <script>
-    // Slider-driven monthly estimates for Gold/Platinum (subscription + extras)
+    // Ensures Platinum is ALWAYS > Gold by applying an enforced gap.
     const slider = document.getElementById("jobsSlider");
     const jobsValue = document.getElementById("jobsValue");
     const jobsValue2 = document.getElementById("jobsValue2");
@@ -301,6 +346,9 @@
     const PLAT_INCLUDED = 40;
     const PLAT_EXTRA = 10;
 
+    // "Platinum effect" rule: Platinum must always be at least this much higher than Gold.
+    const PLAT_MIN_GAP = 150; // adjust (e.g., 200) if you want a stronger gap
+
     function calcPlan(base, included, extra, jobs){
       return base + Math.max(0, jobs - included) * extra;
     }
@@ -310,10 +358,15 @@
       jobsValue.textContent = jobs;
       jobsValue2.textContent = jobs;
 
-      sliderMeta.textContent = "Monthly price updates based on included invoices + extras.";
+      sliderMeta.textContent = "Prices update based on included invoices + extras.";
 
       const g = calcPlan(GOLD_BASE, GOLD_INCLUDED, GOLD_EXTRA, jobs);
-      const p = calcPlan(PLAT_BASE, PLAT_INCLUDED, PLAT_EXTRA, jobs);
+      let p = calcPlan(PLAT_BASE, PLAT_INCLUDED, PLAT_EXTRA, jobs);
+
+      // Enforce Platinum always higher than Gold by a minimum gap.
+      if(p <= g + PLAT_MIN_GAP){
+        p = g + PLAT_MIN_GAP;
+      }
 
       goldMonthly.textContent = g;
       platMonthly.textContent = p;
@@ -326,6 +379,7 @@
   </script>
 
 </section>
+
 
 
   <!-- FAQ -->
