@@ -427,3 +427,41 @@ footer{
   .planCard{ min-height:0; }
   .nowPrice{ font-size:78px; }
 }
+/* ===== Platinum emphasis ===== */
+.platHighlight{
+  position: relative;
+  border: 2px solid rgba(255,255,255,.35);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.18),
+    0 12px 30px rgba(0,0,0,.25);
+}
+
+.planBadge{
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: .8rem;
+  font-weight: 900;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.25),
+    rgba(255,255,255,.10)
+  );
+  border: 1px solid rgba(255,255,255,.35);
+}
+
+/* Make Platinum feel physically higher */
+.pricingTable thead th.platHighlight{
+  transform: translateY(-4px);
+}
+
+/* Mobile safety */
+@media (max-width: 760px){
+  .pricingTable thead th.platHighlight{
+    transform: none;
+  }
+}
