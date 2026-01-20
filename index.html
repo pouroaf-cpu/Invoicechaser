@@ -7,8 +7,8 @@
   <title>Invoice Chaser — Tradie Payment Follow-Up Service</title>
   <meta name="description" content="We personally follow up unpaid invoices so tradies get paid faster. You stay on the tools — we handle professional phone follow-ups and stop immediately if a job is disputed." />
 
-  <link rel="icon" href="favicon.JPG" type="image/jpeg" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.JPG" type="image/jpeg" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
@@ -17,7 +17,7 @@
   <!-- NAV -->
   <header class="nav">
     <div class="brandRow">
-      <img src="logo.JPG" alt="Invoice Chaser logo" class="logo" />
+      <img src="/logo.jpg" alt="Invoice Chaser logo" class="logo" />
       <div class="brandName">Invoice Chaser</div>
     </div>
 
@@ -26,16 +26,12 @@
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Get started</a>
-
-      <!-- CTA -->
-      <a href="tel:+64272214375" class="btn btnSolid navCta" aria-label="Call now">
-        Call now
-      </a>
+      <a class="navCta" href="tel:+64272214375">Call now</a>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section class="hero" id="top">
+  <section class="hero">
 
     <!-- LEFT: COPY -->
     <div class="heroCard">
@@ -64,7 +60,7 @@
     </div>
 
     <!-- RIGHT: IMAGE -->
-    <aside class="heroImage" aria-label="Stressed tradie image">
+    <aside class="heroImage">
       <img
         src="/tradie.png"
         alt="Stressed tradie dealing with unpaid invoices"
@@ -77,18 +73,15 @@
   <!-- HOW IT WORKS -->
   <section id="how-it-works">
     <h2>How it works</h2>
-
     <div class="grid">
       <div class="card">
         <h3>1. Share your invoice list</h3>
         <p>Export a list or share access. No new software required.</p>
       </div>
-
       <div class="card">
         <h3>2. We follow up by phone</h3>
-        <p>Every invoice gets a pre-due call, then follow-ups at 3, 7, and 14 days overdue.</p>
+        <p>Pre-due call, then overdue calls at 3, 7, and 14 days.</p>
       </div>
-
       <div class="card">
         <h3>3. You get paid</h3>
         <p>Cashflow improves without you losing time chasing debtors.</p>
@@ -111,75 +104,142 @@
           <div class="sliderLabel">Invoices per month</div>
           <div class="sliderValue"><span id="jobsValue">20</span> invoices</div>
         </div>
-        <div class="sliderMeta" id="sliderMeta">
-          Prices update automatically.
-        </div>
+        <div class="sliderMeta" id="sliderMeta">Prices update automatically.</div>
       </div>
-
       <input id="jobsSlider" class="slider" type="range" min="0" max="200" value="20" />
     </div>
 
-    <!-- PRICING TABLE -->
-    <div class="pricingTableWrap">
-      <table class="pricingTable platinumBoxed">
+    <!-- MODERN COMPARISON (NO TABLE) -->
+    <div class="pricingCompare">
 
-        <thead>
-          <tr>
-            <th></th>
+      <!-- Plan cards -->
+      <div class="planGrid">
+        <div class="planSpacer" aria-hidden="true"></div>
 
-            <!-- GOLD -->
-            <th>
-              <div class="planHead">
-                <div class="planName">Gold</div>
-                <div class="planPrice">$<span id="goldMonthly">395</span> <span class="per">/ month</span></div>
-                <div class="planMini">+ $150 one-time setup fee (new clients)</div>
-              </div>
-            </th>
+        <div class="planCardLite">
+          <div class="planTop">
+            <div class="planTitleLite">Gold</div>
+            <div class="planPriceLite">
+              <span class="currency">$</span><span id="goldMonthly">395</span>
+              <span class="per">/ month</span>
+            </div>
+            <div class="planSubLite">+ $150 one-time setup fee (new clients)</div>
+          </div>
+        </div>
 
-            <!-- PLATINUM -->
-            <th>
-              <div class="planHead">
-                <div class="planBadge">Recommended</div>
-                <div class="planName">Platinum</div>
-                <div class="planPrice">$<span id="platMonthly">695</span> <span class="per">/ month</span></div>
-                <div class="planMini">No setup fee • Calls recorded</div>
-              </div>
-            </th>
-          </tr>
-        </thead>
+        <div class="planCardLite isPlatinum">
+          <div class="planTop">
+            <div class="planBadgeLite">Recommended</div>
+            <div class="planTitleLite">Platinum</div>
+            <div class="planPriceLite">
+              <span class="currency">$</span><span id="platMonthly">695</span>
+              <span class="per">/ month</span>
+            </div>
+            <div class="planSubLite">No setup fee • Calls recorded</div>
+          </div>
+        </div>
+      </div>
 
-        <tbody>
+      <!-- Features -->
+      <div class="compareBody">
 
-          <tr class="sectionRow"><td colspan="3">Volume</td></tr>
-          <tr>
-            <td>Included invoices</td>
-            <td>20 / month</td>
-            <td>40 / month</td>
-          </tr>
-          <tr>
-            <td>Extra invoices</td>
-            <td>$12 each</td>
-            <td>$10 each</td>
-          </tr>
+        <div class="compareGroup">
+          <div class="groupTitle">Volume</div>
 
-          <tr class="sectionRow"><td colspan="3">Follow-up process</td></tr>
-          <tr><td>Pre-due phone call (payment timing check)</td><td>✔️</td><td>✔️</td></tr>
-          <tr><td>3-day overdue calls</td><td>✔️ (business hours)</td><td>✔️ (business + after hours)</td></tr>
-          <tr><td>7-day overdue calls</td><td>✔️ (business hours)</td><td>✔️ (business + after hours)</td></tr>
-          <tr><td>14-day overdue chasing</td><td>—</td><td>✔️ (inc. alternative contacts)</td></tr>
-          <tr><td>Alternative contacts</td><td>—</td><td>✔️</td></tr>
-          <tr><td>Escalation / work calls</td><td>—</td><td>✔️</td></tr>
-          <tr><td>Collections referral (client discretion)</td><td>—</td><td>✔️</td></tr>
+          <div class="compareRow">
+            <div class="featureLabel">Included invoices</div>
+            <div class="featureVal">20 / month</div>
+            <div class="featureVal platCol">40 / month</div>
+          </div>
 
-          <tr class="sectionRow"><td colspan="3">Service</td></tr>
-          <tr><td>Priority handling</td><td>✔️</td><td>✔️</td></tr>
-          <tr><td>Call recordings provided</td><td>—</td><td>✔️</td></tr>
-          <tr><td>Notes logged</td><td>✔️</td><td>✔️</td></tr>
-          <tr><td>Monthly recovery summary</td><td>✔️</td><td>✔️</td></tr>
-          <tr><td>Stops immediately if disputed</td><td>✔️</td><td>✔️</td></tr>
+          <div class="compareRow">
+            <div class="featureLabel">Extra invoices</div>
+            <div class="featureVal">$12 each</div>
+            <div class="featureVal platCol">$10 each</div>
+          </div>
+        </div>
 
-        </tbody>
-      </table>
+        <div class="compareGroup">
+          <div class="groupTitle">Follow-up process</div>
+
+          <div class="compareRow">
+            <div class="featureLabel">Pre-due phone call (payment timing check)</div>
+            <div class="featureVal"><span class="tick">✓</span></div>
+            <div class="featureVal platCol"><span class="tick">✓</span></div>
+          </div>
+
+          <div class="compareRow">
+            <div class="featureLabel">3-day overdue calls</div>
+            <div class="featureVal"><span class="tick">✓</span> <span class="note">(business hours)</span></div>
+            <div class="featureVal platCol"><span class="tick">✓</span> <span class="note">(business + after hours)</span></div>
+          </div>
+
+          <div class="compareRow">
+            <div class="featureLabel">7-day overdue calls</div>
+            <div class="featureVal"><span class="tick">✓</span> <span class="note">(business hours)</span></div>
+            <div class="featureVal platCol"><span class="tick">✓</span> <span class="note">(business + after hours)</span></div>
+          </div>
+
+          <div class="compareRow">
+            <div class="featureLabel">14-day overdue chasing</div>
+            <div class="featureVal"><span class="dash">—</span></div>
+            <div class="featureVal platCol"><span class="tick">✓</span> <span class="note">(inc. alternative contacts)</span></div>
+          </div>
+
+          <div class="compareRow">
+            <div class="featureLabel">Alternative contacts</div>
+            <div class="featureVal"><span class="dash">—</span></div>
+            <div class="featureVal platCol"><span class="tick">✓</span></div>
+          </div>
+
+          <div class="compareRow">
+            <div class="featureLabel">Escalation / work calls</div>
+            <div class="featureVal"><span class="dash">—</span></div>
+            <div class="featureVal platCol"><span class="tick">✓</span></div>
+          </div>
+
+          <div class="compareRow">
+            <div class="featureLabel">Collections referral (client discretion)</div>
+            <div class="featureVal"><span class="dash">—</span></div>
+            <div class="featureVal platCol"><span class="tick">✓</span></div>
+          </div>
+        </div>
+
+        <div class="compareGroup">
+          <div class="groupTitle">Service</div>
+
+          <div class="compareRow">
+            <div class="featureLabel">Priority handling</div>
+            <div class="featureVal"><span class="tick">✓</span></div>
+            <div class="featureVal platCol"><span class="tick">✓</span></div>
+          </div>
+
+          <div class="compareRow">
+            <div class="featureLabel">Call recordings provided</div>
+            <div class="featureVal"><span class="dash">—</span></div>
+            <div class="featureVal platCol"><span class="tick">✓</span></div>
+          </div>
+
+          <div class="compareRow">
+            <div class="featureLabel">Notes logged</div>
+            <div class="featureVal"><span class="tick">✓</span></div>
+            <div class="featureVal platCol"><span class="tick">✓</span></div>
+          </div>
+
+          <div class="compareRow">
+            <div class="featureLabel">Monthly recovery summary</div>
+            <div class="featureVal"><span class="tick">✓</span></div>
+            <div class="featureVal platCol"><span class="tick">✓</span></div>
+          </div>
+
+          <div class="compareRow">
+            <div class="featureLabel">Stops immediately if disputed</div>
+            <div class="featureVal"><span class="tick">✓</span></div>
+            <div class="featureVal platCol"><span class="tick">✓</span></div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <p class="pricingFootnote">
@@ -188,52 +248,48 @@
     </p>
 
     <!-- CLOSE THE DEAL -->
-    <div class="pricingClose" id="contact">
-
-      <div class="pricingCloseCard">
-        <h3>Request a callback</h3>
-        <p class="formSub">We’ll confirm volume and get you live quickly.</p>
-
-        <div class="callNowRow">
-          <a class="btn btnSolid callNowBtn" href="tel:+64272214375" aria-label="Call now 027 221 4375">
-            Call now: 027 221 4375
-          </a>
+    <div class="pricingCta" id="contact">
+      <div class="pricingCtaCard">
+        <div class="ctaTopRow">
+          <a class="btn btnSolid callNowBtn" href="tel:+64272214375">Call now: 027 221 4375</a>
           <div class="callNowNote">Speak with our Director of Sales.</div>
         </div>
 
-        <form class="callbackForm" action="mailto:hello@invoicechaser.kiwi" method="post">
-          <div class="formGrid">
-            <div class="field">
-              <label>Name</label>
-              <input type="text" name="Name" placeholder="John Smith" required />
-            </div>
-            <div class="field">
-              <label>Phone</label>
-              <input type="tel" name="Phone" placeholder="027 123 4567" required />
-            </div>
+        <h3>Request a callback</h3>
+        <p>We’ll call you back, confirm volume, and start quickly.</p>
+
+        <form class="miniForm" action="mailto:hello@invoicechaser.kiwi" method="post">
+          <div class="miniGrid">
+            <label class="field">
+              <span class="fieldLabel">Name</span>
+              <input name="Name" placeholder="Your name" required />
+            </label>
+            <label class="field">
+              <span class="fieldLabel">Phone</span>
+              <input name="Phone" placeholder="027 xxx xxxx" required />
+            </label>
           </div>
 
-          <div class="formGrid">
-            <div class="field">
-              <label>Business name</label>
-              <input type="text" name="Business" placeholder="Smith Electrical Ltd" required />
-            </div>
-            <div class="field">
-              <label>Invoices per month</label>
-              <input type="number" name="Invoices" placeholder="e.g. 20" />
-            </div>
+          <div class="miniGrid">
+            <label class="field">
+              <span class="fieldLabel">Business</span>
+              <input name="Business" placeholder="Business name" required />
+            </label>
+            <label class="field">
+              <span class="fieldLabel">Invoices / month</span>
+              <input name="Invoices" placeholder="Approx volume" />
+            </label>
           </div>
 
-          <div class="field">
-            <label>Anything we should know?</label>
-            <textarea name="Message" placeholder="Large customers, payment terms, repeat late payers, etc."></textarea>
-          </div>
+          <label class="field">
+            <span class="fieldLabel">Notes</span>
+            <textarea name="Message" placeholder="Biggest customers, typical terms, problem payers, anything important."></textarea>
+          </label>
 
-          <button class="btn btnSolid formBtn" type="submit">Request callback</button>
-          <p class="formFine">Fast response. Priority handling for all clients.</p>
+          <button class="btn btnSolid" type="submit">Request callback</button>
+          <p class="miniFine">Fast response. Priority handling for all clients.</p>
         </form>
       </div>
-
     </div>
 
     <!-- PRICING LOGIC -->
@@ -263,7 +319,7 @@
         platMonthly.textContent = p;
       }
 
-      slider.addEventListener("input", update);
+      slider.oninput = update;
       update();
     </script>
 
@@ -279,10 +335,6 @@
     <details>
       <summary>Do I need special software?</summary>
       <p>No. We work from what you already use.</p>
-    </details>
-    <details>
-      <summary>What happens if an invoice is disputed?</summary>
-      <p>We stop immediately and notify you. Disputes are not chased.</p>
     </details>
   </section>
 
