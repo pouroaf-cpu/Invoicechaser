@@ -5,270 +5,287 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Invoice Chaser — Tradie Payment Follow-Up Service</title>
-  <meta name="description" content="We personally chase unpaid invoices so tradies get paid faster. No accounting software? No problem. You do the work — we handle payment follow-ups by phone and email." />
+  <meta name="description" content="We personally chase unpaid invoices so tradies get paid faster. You stay on the tools — we handle follow-ups by phone and email." />
 
-  <!-- FAVICON -->
   <link rel="icon" href="/favicon.jpg" type="image/jpeg" />
-  <link rel="shortcut icon" href="/favicon.jpg" />
-
   <link rel="stylesheet" href="/styles.css" />
 </head>
 
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <!-- NAV -->
-    <header class="nav">
-      <div class="brandRow">
-        <img src="/logo.jpg" alt="Invoice Chaser logo" class="logo" />
-        <div class="brandName">Invoice Chaser</div>
-      </div>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="brandRow">
+      <img src="/logo.jpg" alt="Invoice Chaser logo" class="logo" />
+      <div class="brandName">Invoice Chaser</div>
+    </div>
 
-      <nav class="navlinks" aria-label="Primary">
-        <a href="#how-it-works">How it Works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-        <a class="btn btnSolid" href="#contact">Get Started</a>
-      </nav>
-    </header>
+    <nav class="navlinks">
+      <a href="#how-it-works">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Get started</a>
+    </nav>
+  </header>
 
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div class="heroCard">
-        <div class="tagline">HUMAN-RUN SERVICE • NOT SOFTWARE</div>
-
-        <h1>We chase the payments.<br />You do the work you love.</h1>
-
-        <p class="sub">
-          Late invoices hurt cashflow. We handle polite follow-ups by phone and email, keep records tidy, and stop immediately if a job is disputed.
-        </p>
-
-        <div class="heroPoints">
-          <span class="pill">We call and email for you</span>
-          <span class="pill">Works with or without Xero</span>
-          <span class="pill">Stop on disputes</span>
-        </div>
-
-        <div class="ctaRow">
-          <a class="btn btnSolid" href="#contact">Free setup call</a>
-          <a class="btn" href="#pricing">See pricing</a>
-        </div>
-
-        <p class="fine">
-          Simple promise: <b>you stop chasing invoices</b> and cashflow becomes predictable.
-        </p>
-      </div>
-
-      <aside class="side" aria-label="Highlights">
-        <div class="sideCard">
-          <h3>What we do</h3>
-          <ul class="list">
-            <li>Confirm payment details early (when needed)</li>
-            <li>Follow up due + overdue invoices on a clear schedule</li>
-            <li>Log outcomes so nothing slips</li>
-          </ul>
-        </div>
-
-        <div class="sideCard">
-          <h3>No accounting software? No problem.</h3>
-          <p class="mutedText">
-            We can run from exports, PDFs, Excel, or a simple invoice list. You don’t need new software.
-          </p>
-        </div>
-      </aside>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section id="how-it-works">
-      <h2>How It Works</h2>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Step 1 — Send your invoice list</h3>
-          <p>We work with exports, spreadsheets, PDFs — whatever you use.</p>
-        </div>
-
-        <div class="card">
-          <h3>Step 2 — We follow up</h3>
-          <p>We call and email on your behalf and log every outcome so nothing gets missed.</p>
-        </div>
-
-        <div class="card">
-          <h3>Step 3 — You get paid</h3>
-          <p>You stay on the tools. We keep the pressure polite and consistent until it’s resolved or disputed.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing" class="pricingBlock">
-      <header class="pricingHeader">
-        <h2>Pricing</h2>
-        <p>Pick a model, set job volume, and we’ll show the total.</p>
-      </header>
-
-      <!-- TOGGLE -->
-      <div class="pricingToggleRow" role="tablist">
-        <button type="button" class="toggleBtn isActive" id="btnFlat">Flat rate + Fair Use</button>
-        <button type="button" class="toggleBtn" id="btnPerJob">Per Job</button>
-      </div>
-
-      <!-- SLIDER -->
-      <div class="sliderWrap">
-        <div class="sliderTop">
-          <div>
-            <div class="sliderLabel">Jobs per month</div>
-            <div class="sliderValue"><span id="jobsValue">20</span> jobs</div>
-          </div>
-          <div class="sliderMeta" id="sliderMeta">Flat rate + fair use. Extras adjust automatically.</div>
-        </div>
-
-        <input id="jobsSlider" class="slider" type="range" min="0" max="120" step="1" value="20" />
-
-        <div class="sliderTicks">
-          <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span><span>120</span>
-        </div>
-      </div>
-
-      <!-- PLANS -->
-      <div class="plansRow">
-
-        <!-- GOLD -->
-        <article class="planCard highlight">
-          <h3 class="planTitle">Gold</h3>
-          <div class="wasRow">Usually $299</div>
-
-          <div class="nowLabel">Now</div>
-          <div class="nowRow">
-            <span class="currency">$</span>
-            <span class="nowPrice" id="goldPrice">149</span>
-          </div>
-
-          <div class="perLine">NZD per month</div>
-
-          <div class="savePill">
-            <strong>Potential time value saved</strong>
-            <span>~$<span id="goldTimeSave">660</span> over 3 months*</span>
-          </div>
-
-          <p class="planDesc" id="goldSub">Includes 20 jobs. Extra jobs $10 each.</p>
-
-          <a class="learnMore" href="#faq">Learn more</a>
-          <a class="ctaBtn" href="#contact">Get one month free</a>
-        </article>
-
-        <!-- PLATINUM -->
-        <article class="planCard">
-          <h3 class="planTitle">Platinum</h3>
-          <div class="wasRow">Usually $499</div>
-
-          <div class="nowLabel">Now</div>
-          <div class="nowRow">
-            <span class="currency">$</span>
-            <span class="nowPrice" id="platPrice">249</span>
-          </div>
-
-          <div class="perLine">NZD per month</div>
-
-          <div class="savePill">
-            <strong>Potential time value saved</strong>
-            <span>~$<span id="platTimeSave">1,155</span> over 3 months*</span>
-          </div>
-
-          <p class="planDesc" id="platSub">Includes 35 jobs. Extra jobs $8 each.</p>
-
-          <a class="learnMore" href="#faq">Learn more</a>
-          <a class="ctaBtn" href="#contact">Get one month free</a>
-        </article>
-
-      </div>
-
-      <p class="pricingFootnote">
-        *Estimate based on owner time valued at $110/hr and average follow-up time per invoice.
+  <!-- HERO -->
+  <section class="hero">
+    <div class="heroCard">
+      <div class="tagline">HUMAN-RUN • NOT SOFTWARE</div>
+      <h1>We chase the payments.<br>You stay on the tools.</h1>
+      <p class="sub">
+        Late invoices kill cashflow. We handle polite, professional follow-ups by phone and email and stop immediately if a job is disputed.
       </p>
 
-      <!-- PRICING JS -->
-      <script>
-        const MODE_FLAT = "flat";
-        const MODE_PER  = "per";
+      <div class="heroPoints">
+        <span class="pill">Phone + email follow-ups</span>
+        <span class="pill">Works with or without Xero</span>
+        <span class="pill">No disputes handled</span>
+      </div>
 
-        /* UPDATED OWNER TIME */
-        const OWNER_RATE = 110;   // $/hour
-        const MINS_PER_JOB = 6;   // minutes saved per invoice
+      <div class="ctaRow">
+        <a class="btn btnSolid" href="#contact">Free setup call</a>
+        <a class="btn" href="#pricing">See pricing</a>
+      </div>
 
-        function money(n){ return Math.round(n).toString(); }
+      <p class="fine">
+        Simple promise: <strong>you stop chasing invoices</strong>.
+      </p>
+    </div>
 
-        function timeValueOver3Months(jobs){
-          return ((jobs * MINS_PER_JOB) / 60) * OWNER_RATE * 3;
+    <aside class="side">
+      <div class="sideCard">
+        <h3>What we do</h3>
+        <ul class="list">
+          <li>Confirm payment timing</li>
+          <li>Follow up due + overdue invoices</li>
+          <li>Log outcomes so nothing slips</li>
+        </ul>
+      </div>
+
+      <div class="sideCard">
+        <h3>No software changes</h3>
+        <p class="mutedText">
+          Xero, MYOB, Excel, PDFs — we work from whatever you already use.
+        </p>
+      </div>
+    </aside>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works">
+    <h2>How it works</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>1. Send invoices</h3>
+        <p>Export a list or share access. No setup headache.</p>
+      </div>
+      <div class="card">
+        <h3>2. We follow up</h3>
+        <p>Human calls and emails, logged properly.</p>
+      </div>
+      <div class="card">
+        <h3>3. You get paid</h3>
+        <p>Cashflow improves without you chasing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="pricingBlock">
+
+    <header class="pricingHeader">
+      <h2>Pricing</h2>
+      <p>Set your invoice volume. We’ll show the total.</p>
+    </header>
+
+    <!-- TOGGLE -->
+    <div class="pricingToggleRow">
+      <button class="toggleBtn isActive" id="btnFlat">Flat rate</button>
+      <button class="toggleBtn" id="btnPer">Per job</button>
+    </div>
+
+    <!-- SLIDER -->
+    <div class="sliderWrap">
+      <div class="sliderTop">
+        <div>
+          <div class="sliderLabel">Invoices per month</div>
+          <div class="sliderValue"><span id="jobsValue">20</span> invoices</div>
+        </div>
+        <div class="sliderMeta" id="sliderMeta">
+          Flat rate with fair use. Extras adjust automatically.
+        </div>
+      </div>
+
+      <input id="jobsSlider" class="slider" type="range" min="0" max="120" value="20" />
+      <div class="sliderTicks">
+        <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span><span>120</span>
+      </div>
+    </div>
+
+    <!-- PLANS -->
+    <div class="plansRow">
+
+      <!-- GOLD -->
+      <article class="planCard highlight">
+        <h3 class="planTitle">Gold</h3>
+        <div class="wasRow">Usually $299</div>
+
+        <div class="nowLabel">Now</div>
+        <div class="nowRow">
+          <span class="currency">$</span>
+          <span class="nowPrice" id="goldPrice">199</span>
+        </div>
+
+        <div class="perLine">NZD / month</div>
+
+        <div class="savePill">
+          <strong>Potential time value saved</strong>
+          <span>~$<span id="goldTime">660</span> over 3 months*</span>
+        </div>
+
+        <p class="planDesc" id="goldSub">
+          Includes 20 invoices. Extra invoices $12 each.
+        </p>
+
+        <a class="learnMore" href="#faq">Learn more</a>
+        <a class="ctaBtn" href="#contact">Get started</a>
+      </article>
+
+      <!-- PLATINUM -->
+      <article class="planCard">
+        <h3 class="planTitle">Platinum</h3>
+        <div class="wasRow">Usually $499</div>
+
+        <div class="nowLabel">Now</div>
+        <div class="nowRow">
+          <span class="currency">$</span>
+          <span class="nowPrice" id="platPrice">349</span>
+        </div>
+
+        <div class="perLine">NZD / month</div>
+
+        <div class="savePill">
+          <strong>Potential time value saved</strong>
+          <span>~$<span id="platTime">1155</span> over 3 months*</span>
+        </div>
+
+        <p class="planDesc" id="platSub">
+          Includes 35 invoices. Extra invoices $10 each.
+        </p>
+
+        <a class="learnMore" href="#faq">Learn more</a>
+        <a class="ctaBtn" href="#contact">Get started</a>
+      </article>
+
+    </div>
+
+    <p class="pricingFootnote">
+      *Estimate based on owner time valued at $110/hr and ~6 minutes per invoice follow-up.
+    </p>
+
+    <!-- PRICING LOGIC -->
+    <script>
+      const OWNER_RATE = 110;
+      const MINS_PER_JOB = 6;
+
+      const slider = document.getElementById("jobsSlider");
+      const jobsValue = document.getElementById("jobsValue");
+      const sliderMeta = document.getElementById("sliderMeta");
+
+      const goldPrice = document.getElementById("goldPrice");
+      const platPrice = document.getElementById("platPrice");
+      const goldSub = document.getElementById("goldSub");
+      const platSub = document.getElementById("platSub");
+      const goldTime = document.getElementById("goldTime");
+      const platTime = document.getElementById("platTime");
+
+      const btnFlat = document.getElementById("btnFlat");
+      const btnPer = document.getElementById("btnPer");
+
+      let mode = "flat";
+
+      function timeValue(jobs){
+        return Math.round(((jobs * MINS_PER_JOB) / 60) * OWNER_RATE * 3);
+      }
+
+      function update(){
+        const jobs = Number(slider.value);
+        jobsValue.textContent = jobs;
+
+        goldTime.textContent = timeValue(jobs);
+        platTime.textContent = timeValue(jobs);
+
+        if(mode === "flat"){
+          sliderMeta.textContent = "Flat rate with fair use. Extras adjust automatically.";
+          goldPrice.textContent = 199 + Math.max(0, jobs - 20) * 12;
+          platPrice.textContent = 349 + Math.max(0, jobs - 35) * 10;
+          goldSub.textContent = "Includes 20 invoices. Extra invoices $12 each.";
+          platSub.textContent = "Includes 35 invoices. Extra invoices $10 each.";
+        } else {
+          sliderMeta.textContent = "Per-invoice pricing. Slider shows monthly estimate.";
+          goldPrice.textContent = Math.max(99, jobs * 15);
+          platPrice.textContent = Math.max(149, jobs * 22);
+          goldSub.textContent = "Per invoice $15. Minimum $99/month.";
+          platSub.textContent = "Per invoice $22. Minimum $149/month.";
         }
+      }
 
-        const models = {
-          flat: {
-            sliderMeta: "Flat rate + fair use. Extras adjust automatically.",
-            gold: { base: 149, included: 20, extraRate: 10, label: p => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
-            plat: { base: 249, included: 35, extraRate: 8,  label: p => `Includes ${p.included} jobs. Extra jobs $${p.extraRate} each.` },
-            calc: (j,p)=> p.base + Math.max(0, j - p.included) * p.extraRate
-          },
-          per: {
-            sliderMeta: "Per job pricing. Slider shows monthly estimate.",
-            gold: { perJob: 15, minimum: 99,  label: p => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
-            plat: { perJob: 22, minimum: 149, label: p => `Per job $${p.perJob}. Minimum $${p.minimum}/mo.` },
-            calc: (j,p)=> Math.max(p.minimum, j * p.perJob)
-          }
-        };
-
-        let mode = MODE_FLAT;
-
-        const els = {
-          jobs: jobsSlider,
-          jobsVal: jobsValue,
-          meta: sliderMeta,
-          goldPrice, platPrice,
-          goldSub, platSub,
-          goldTimeSave, platTimeSave
-        };
-
-        function setMode(m){
-          mode = m;
-          btnFlat.classList.toggle("isActive", m === MODE_FLAT);
-          btnPerJob.classList.toggle("isActive", m === MODE_PER);
-          update();
-        }
-
-        function update(){
-          const j = +els.jobs.value;
-          els.jobsVal.textContent = j;
-
-          const m = models[mode];
-          els.meta.textContent = m.sliderMeta;
-
-          els.goldPrice.textContent = money(m.calc(j, m.gold));
-          els.platPrice.textContent = money(m.calc(j, m.plat));
-
-          els.goldSub.textContent = m.gold.label(m.gold);
-          els.platSub.textContent = m.plat.label(m.plat);
-
-          const t = timeValueOver3Months(j);
-          els.goldTimeSave.textContent = money(t);
-          els.platTimeSave.textContent = money(t);
-        }
-
-        btnFlat.onclick = ()=>setMode(MODE_FLAT);
-        btnPerJob.onclick = ()=>setMode(MODE_PER);
-        jobsSlider.oninput = update;
-
+      btnFlat.onclick = () => {
+        mode = "flat";
+        btnFlat.classList.add("isActive");
+        btnPer.classList.remove("isActive");
         update();
-      </script>
-    </section>
+      };
 
-    <footer class="footer">
-      © <span id="y"></span> Invoice Chaser
-    </footer>
-  </div>
+      btnPer.onclick = () => {
+        mode = "per";
+        btnPer.classList.add("isActive");
+        btnFlat.classList.remove("isActive");
+        update();
+      };
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+      slider.oninput = update;
+      update();
+    </script>
+
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>FAQ</h2>
+    <details>
+      <summary>Is this debt collection?</summary>
+      <p>No. We follow up politely and stop immediately if a job is disputed.</p>
+    </details>
+    <details>
+      <summary>Do I need Xero?</summary>
+      <p>No. We work from whatever you already use.</p>
+    </details>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Get started</h2>
+    <form action="mailto:hello@invoicechaser.kiwi" method="post">
+      <input name="Name" placeholder="Name" required />
+      <input name="Business" placeholder="Business name" required />
+      <input name="Email" type="email" placeholder="Email" required />
+      <textarea name="Message" placeholder="Invoice volume + when to start"></textarea>
+      <button class="btn btnSolid">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    © <span id="y"></span> Invoice Chaser
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
