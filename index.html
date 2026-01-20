@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Invoice Chaser — Tradie Payment Follow-Up Service</title>
-  <meta name="description" content="We personally chase unpaid invoices so tradies get paid faster. You stay on the tools — we handle follow-ups by phone and email." />
+  <meta name="description" content="We personally follow up unpaid invoices so tradies get paid faster. You stay on the tools — we handle polite, professional phone follow-ups and stop immediately if a job is disputed." />
 
   <link rel="icon" href="/favicon.jpg" type="image/jpeg" />
   <link rel="stylesheet" href="/styles.css" />
@@ -35,12 +35,12 @@
       <div class="tagline">HUMAN-RUN • NOT SOFTWARE</div>
       <h1>We chase the payments.<br>You stay on the tools.</h1>
       <p class="sub">
-        Late invoices kill cashflow. We handle polite, professional follow-ups by phone and email and stop immediately if a job is disputed.
+        Late invoices kill cashflow. We run polite, professional phone follow-ups and stop immediately if a job is disputed.
       </p>
 
       <div class="heroPoints">
-        <span class="pill">Phone + email follow-ups</span>
-        <span class="pill">Works with or without Xero</span>
+        <span class="pill">Pre-due call + overdue calls</span>
+        <span class="pill">Works with whatever you use</span>
         <span class="pill">No disputes handled</span>
       </div>
 
@@ -65,7 +65,7 @@
       </div>
 
       <div class="sideCard">
-        <h3>No software changes</h3>
+        <h3>No software change required</h3>
         <p class="mutedText">
           Xero, MYOB, Excel, PDFs — we work from whatever you already use.
         </p>
@@ -79,11 +79,11 @@
     <div class="grid">
       <div class="card">
         <h3>1. Send invoices</h3>
-        <p>Export a list or share access. No setup headache.</p>
+        <p>Export a list or share access. We align the workflow once.</p>
       </div>
       <div class="card">
         <h3>2. We follow up</h3>
-        <p>Human calls and emails, logged properly.</p>
+        <p>Human calls, logged properly, with stop rules for disputes.</p>
       </div>
       <div class="card">
         <h3>3. You get paid</h3>
@@ -92,312 +92,317 @@
     </div>
   </section>
 
-<!-- PRICING (drop-in replacement for your current #pricing section) -->
-<section id="pricing" class="pricingBlock">
+  <!-- PRICING -->
+  <section id="pricing" class="pricingBlock">
 
-  <header class="pricingHeader">
-    <h2>Pricing</h2>
-    <p>Set your invoice volume. Platinum will always stay above Gold.</p>
-  </header>
+    <header class="pricingHeader">
+      <h2>Pricing</h2>
+      <p>Set your invoice volume. Platinum is always priced above Gold.</p>
+    </header>
 
-  <!-- SLIDER -->
-  <div class="sliderWrap">
-    <div class="sliderTop">
-      <div>
-        <div class="sliderLabel">Invoices per month</div>
-        <div class="sliderValue"><span id="jobsValue">20</span> invoices</div>
+    <!-- SLIDER -->
+    <div class="sliderWrap">
+      <div class="sliderTop">
+        <div>
+          <div class="sliderLabel">Invoices per month</div>
+          <div class="sliderValue"><span id="jobsValue">20</span> invoices</div>
+        </div>
+        <div class="sliderMeta" id="sliderMeta">
+          Prices update based on included invoices + extras.
+        </div>
       </div>
-      <div class="sliderMeta" id="sliderMeta">
-        Prices update based on included invoices + extras.
+
+      <input id="jobsSlider" class="slider" type="range" min="0" max="200" value="20" />
+      <div class="sliderTicks">
+        <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span><span>150</span><span>200</span>
       </div>
     </div>
 
-    <input id="jobsSlider" class="slider" type="range" min="0" max="200" value="20" />
-    <div class="sliderTicks">
-      <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span><span>150</span><span>200</span>
+    <!-- PRICING TABLE -->
+    <div class="pricingTableWrap">
+      <table class="pricingTable" aria-label="Invoice Chaser pricing table">
+        <thead>
+          <tr>
+            <th></th>
+
+            <!-- GOLD -->
+            <th>
+              <div class="planHead">
+                <div class="planName">Gold</div>
+                <div class="planPrice">
+                  <span class="currency">$</span><span id="goldMonthly">395</span>
+                  <span class="per">/ month</span>
+                </div>
+                <div class="planMini">+ $150 one-time setup fee (new clients only)</div>
+              </div>
+            </th>
+
+            <!-- PLATINUM -->
+            <th class="platCol platHighlight">
+              <div class="planHead">
+                <div class="planBadge">Recommended</div>
+                <div class="planName">Platinum</div>
+                <div class="planPrice">
+                  <span class="currency">$</span><span id="platMonthly">695</span>
+                  <span class="per">/ month</span>
+                </div>
+                <div class="planMini">No setup fee • Calls recorded</div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="sectionRow">
+            <td colspan="3">Volume</td>
+          </tr>
+          <tr>
+            <td>Included invoices</td>
+            <td><strong>20</strong> / month</td>
+            <td class="platCol"><strong>40</strong> / month</td>
+          </tr>
+          <tr>
+            <td>Extra invoices</td>
+            <td><strong>$12</strong> each</td>
+            <td class="platCol"><strong>$10</strong> each</td>
+          </tr>
+
+          <tr class="sectionRow">
+            <td colspan="3">Follow-up process</td>
+          </tr>
+          <tr>
+            <td>Pre-due phone call</td>
+            <td class="tick">✔️</td>
+            <td class="tick platCol">✔️</td>
+          </tr>
+          <tr>
+            <td>3-day overdue calls</td>
+            <td>✔️ <span class="mutedText">(business hours)</span></td>
+            <td class="platCol">✔️ <span class="mutedText">(business + after hours)</span></td>
+          </tr>
+          <tr>
+            <td>7-day overdue calls</td>
+            <td>✔️ <span class="mutedText">(business hours)</span></td>
+            <td class="platCol">✔️ <span class="mutedText">(business + after hours)</span></td>
+          </tr>
+          <tr>
+            <td>14-day overdue chasing</td>
+            <td class="cross">—</td>
+            <td class="tick platCol">✔️</td>
+          </tr>
+          <tr>
+            <td>Alternative contacts</td>
+            <td class="cross">—</td>
+            <td class="tick platCol">✔️</td>
+          </tr>
+          <tr>
+            <td>Escalation / work calls</td>
+            <td class="cross">—</td>
+            <td class="tick platCol">✔️</td>
+          </tr>
+          <tr>
+            <td>Collections referral <span class="mutedText">(client discretion)</span></td>
+            <td class="cross">—</td>
+            <td class="tick platCol">✔️</td>
+          </tr>
+
+          <tr class="sectionRow">
+            <td colspan="3">Service</td>
+          </tr>
+          <tr>
+            <td>Priority handling</td>
+            <td class="tick">✔️</td>
+            <td class="tick platCol">✔️</td>
+          </tr>
+          <tr>
+            <td>Call recordings provided</td>
+            <td class="cross">—</td>
+            <td class="tick platCol">✔️</td>
+          </tr>
+          <tr>
+            <td>Notes logged</td>
+            <td class="tick">✔️</td>
+            <td class="tick platCol">✔️</td>
+          </tr>
+          <tr>
+            <td>Monthly recovery summary</td>
+            <td class="tick">✔️</td>
+            <td class="tick platCol">✔️</td>
+          </tr>
+          <tr>
+            <td>Stops immediately if disputed</td>
+            <td class="tick">✔️</td>
+            <td class="tick platCol">✔️</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="pricingNote">
+        Current estimate for <strong><span id="jobsValue2">20</span></strong> invoices/month:
+        Gold <strong>$<span id="goldMonthly2">395</span>/mo</strong>,
+        Platinum <strong>$<span id="platMonthly2">695</span>/mo</strong>.
+      </p>
     </div>
-  </div>
 
-  <!-- TABLE -->
-  <div class="pricingTableWrap">
-    <table class="pricingTable" aria-label="Invoice Chaser pricing table">
-      <thead>
-        <tr>
-          <th></th>
-
-          <!-- GOLD -->
-          <th>
-            <div class="planHead">
-              <div class="planName">Gold</div>
-              <div class="planPrice">
-                <span class="currency">$</span><span id="goldMonthly">395</span>
-                <span class="per">/ month</span>
-              </div>
-              <div class="planMini">+ $150 one-time setup fee (new clients only)</div>
-            </div>
-          </th>
-
-          <!-- PLATINUM (the "Platinum effect") -->
-          <th class="platCol">
-            <div class="planHead">
-              <div class="planTopPill">Best for cashflow discipline</div>
-              <div class="planName">Platinum</div>
-              <div class="planPrice">
-                <span class="currency">$</span><span id="platMonthly">695</span>
-                <span class="per">/ month</span>
-              </div>
-              <div class="planMini">No setup fee</div>
-            </div>
-          </th>
-
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr class="sectionRow">
-          <td colspan="3">Volume</td>
-        </tr>
-        <tr>
-          <td>Included invoices</td>
-          <td><strong>20</strong> / month</td>
-          <td class="platCol"><strong>40</strong> / month</td>
-        </tr>
-        <tr>
-          <td>Extra invoices</td>
-          <td><strong>$12</strong> each</td>
-          <td class="platCol"><strong>$10</strong> each</td>
-        </tr>
-
-        <tr class="sectionRow">
-          <td colspan="3">Follow-up process</td>
-        </tr>
-        <tr>
-          <td>Pre-due phone call</td>
-          <td class="tick">✔️</td>
-          <td class="tick platCol">✔️</td>
-        </tr>
-        <tr>
-          <td>3-day overdue calls</td>
-          <td>✔️ <span class="mutedText">(business hours)</span></td>
-          <td class="platCol">✔️ <span class="mutedText">(business + after hours)</span></td>
-        </tr>
-        <tr>
-          <td>7-day overdue calls</td>
-          <td>✔️ <span class="mutedText">(business hours)</span></td>
-          <td class="platCol">✔️ <span class="mutedText">(business + after hours)</span></td>
-        </tr>
-        <tr>
-          <td>14-day overdue chasing</td>
-          <td class="cross">—</td>
-          <td class="tick platCol">✔️</td>
-        </tr>
-        <tr>
-          <td>Alternative contacts</td>
-          <td class="cross">—</td>
-          <td class="tick platCol">✔️</td>
-        </tr>
-        <tr>
-          <td>Escalation / work calls</td>
-          <td class="cross">—</td>
-          <td class="tick platCol">✔️</td>
-        </tr>
-        <tr>
-          <td>Collections referral <span class="mutedText">(client discretion)</span></td>
-          <td class="cross">—</td>
-          <td class="tick platCol">✔️</td>
-        </tr>
-
-        <tr class="sectionRow">
-          <td colspan="3">Service</td>
-        </tr>
-        <tr>
-          <td>Priority handling</td>
-          <td class="tick">✔️</td>
-          <td class="tick platCol">✔️</td>
-        </tr>
-        <tr>
-  <td>Call recordings provided</td>
-  <td class="cross">—</td>
-  <td class="tick platCol">✔️</td>
-</tr>
-
-        <tr>
-          <td>Notes logged</td>
-          <td class="tick">✔️</td>
-          <td class="tick platCol">✔️</td>
-        </tr>
-        <tr>
-          <td>Monthly recovery summary</td>
-          <td class="tick">✔️</td>
-          <td class="tick platCol">✔️</td>
-        </tr>
-        <tr>
-          <td>Stops immediately if disputed</td>
-          <td class="tick">✔️</td>
-          <td class="tick platCol">✔️</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p class="pricingNote">
-      Current estimate for <strong><span id="jobsValue2">20</span></strong> invoices/month:
-      Gold <strong>$<span id="goldMonthly2">395</span>/mo</strong>,
-      Platinum <strong>$<span id="platMonthly2">695</span>/mo</strong>.
+    <p class="pricingFootnote">
+      Month-to-month. No lock-in. Disputed invoices are not chased. Platinum calls are recorded for quality and record-keeping.
     </p>
-  </div>
 
-  <p class="pricingFootnote">
-    Month-to-month. No lock-in. Disputed invoices are not chased. Higher volumes available on request.
-  </p>
+    <!-- Local pricing styles (safe to keep inline) -->
+    <style>
+      .pricingTableWrap { margin-top: 18px; }
 
-  <style>
-    /* ===== Pricing table styles ===== */
-    .pricingTableWrap { margin-top: 18px; }
-    .pricingTable{
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 16px;
-      overflow: hidden;
-      background: rgba(255,255,255,.03);
-    }
-    .pricingTable th, .pricingTable td{
-      padding: 14px;
-      border-bottom: 1px solid rgba(255,255,255,.10);
-      border-right: 1px solid rgba(255,255,255,.10);
-      text-align: left;
-      vertical-align: middle;
-    }
-    .pricingTable th:last-child, .pricingTable td:last-child{ border-right: 0; }
-    .pricingTable tr:last-child td{ border-bottom: 0; }
-    .pricingTable thead th{ background: rgba(255,255,255,.06); }
-
-    .planHead{ display: grid; gap: 6px; }
-    .planName{ font-weight: 900; font-size: 1.08rem; letter-spacing: .2px; }
-    .planPrice{ font-weight: 950; font-size: 1.4rem; letter-spacing: .2px; }
-    .planPrice .currency{ opacity: .9; margin-right: 2px; }
-    .planPrice .per{ font-weight: 600; font-size: .95rem; opacity: .8; margin-left: 6px; }
-    .planMini{ font-size: .95rem; opacity: .75; line-height: 1.35; }
-    .mutedText{ opacity: .75; font-size: .95rem; }
-
-    .sectionRow td{
-      background: rgba(255,255,255,.04);
-      font-weight: 900;
-      border-right: 0 !important;
-    }
-    .tick{ font-weight: 900; }
-    .cross{ opacity: .6; }
-
-    /* ===== The "Platinum effect" =====
-       1) Column glow
-       2) Slight raise
-       3) Top pill
-       4) Bolder borders
-    */
-    .platCol{
-      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
-      position: relative;
-    }
-    .pricingTable thead .platCol{
-      background: linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.06));
-    }
-    .pricingTable thead th.platCol{
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,.18);
-    }
-
-    .planTopPill{
-      display: inline-flex;
-      width: fit-content;
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.16);
-      font-size: .82rem;
-      font-weight: 800;
-      letter-spacing: .2px;
-      opacity: .95;
-    }
-
-    /* Make Platinum read "bigger" without changing layout */
-    .pricingTable thead th.platCol .planPrice{
-      font-size: 1.5rem;
-    }
-
-    /* Mobile tweak */
-    @media (max-width: 760px){
-      .planPrice{ font-size: 1.2rem; }
-      .pricingTable thead th.platCol .planPrice{ font-size: 1.25rem; }
-    }
-  </style>
-
-  <!-- PRICING LOGIC -->
-  <script>
-    // Ensures Platinum is ALWAYS > Gold by applying an enforced gap.
-    const slider = document.getElementById("jobsSlider");
-    const jobsValue = document.getElementById("jobsValue");
-    const jobsValue2 = document.getElementById("jobsValue2");
-    const sliderMeta = document.getElementById("sliderMeta");
-
-    const goldMonthly = document.getElementById("goldMonthly");
-    const platMonthly = document.getElementById("platMonthly");
-    const goldMonthly2 = document.getElementById("goldMonthly2");
-    const platMonthly2 = document.getElementById("platMonthly2");
-
-    const GOLD_BASE = 395;
-    const GOLD_INCLUDED = 20;
-    const GOLD_EXTRA = 12;
-
-    const PLAT_BASE = 695;
-    const PLAT_INCLUDED = 40;
-    const PLAT_EXTRA = 10;
-
-    // "Platinum effect" rule: Platinum must always be at least this much higher than Gold.
-    const PLAT_MIN_GAP = 150; // adjust (e.g., 200) if you want a stronger gap
-
-    function calcPlan(base, included, extra, jobs){
-      return base + Math.max(0, jobs - included) * extra;
-    }
-
-    function updatePricing(){
-      const jobs = Number(slider.value);
-      jobsValue.textContent = jobs;
-      jobsValue2.textContent = jobs;
-
-      sliderMeta.textContent = "Prices update based on included invoices + extras.";
-
-      const g = calcPlan(GOLD_BASE, GOLD_INCLUDED, GOLD_EXTRA, jobs);
-      let p = calcPlan(PLAT_BASE, PLAT_INCLUDED, PLAT_EXTRA, jobs);
-
-      // Enforce Platinum always higher than Gold by a minimum gap.
-      if(p <= g + PLAT_MIN_GAP){
-        p = g + PLAT_MIN_GAP;
+      .pricingTable{
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 16px;
+        overflow: hidden;
+        background: rgba(255,255,255,.03);
       }
 
-      goldMonthly.textContent = g;
-      platMonthly.textContent = p;
-      goldMonthly2.textContent = g;
-      platMonthly2.textContent = p;
-    }
+      .pricingTable th, .pricingTable td{
+        padding: 14px;
+        border-bottom: 1px solid rgba(255,255,255,.10);
+        border-right: 1px solid rgba(255,255,255,.10);
+        text-align: left;
+        vertical-align: middle;
+      }
 
-    slider.addEventListener("input", updatePricing);
-    updatePricing();
-  </script>
+      .pricingTable th:last-child, .pricingTable td:last-child{ border-right: 0; }
+      .pricingTable tr:last-child td{ border-bottom: 0; }
+      .pricingTable thead th{ background: rgba(255,255,255,.06); }
 
-</section>
+      .planHead{ display: grid; gap: 6px; }
+      .planName{ font-weight: 900; font-size: 1.08rem; letter-spacing: .2px; }
+      .planPrice{ font-weight: 950; font-size: 1.4rem; letter-spacing: .2px; }
+      .planPrice .currency{ opacity: .9; margin-right: 2px; }
+      .planPrice .per{ font-weight: 600; font-size: .95rem; opacity: .8; margin-left: 6px; }
+      .planMini{ font-size: .95rem; opacity: .75; line-height: 1.35; }
+      .mutedText{ opacity: .75; font-size: .95rem; }
 
+      .sectionRow td{
+        background: rgba(255,255,255,.04);
+        font-weight: 900;
+        border-right: 0 !important;
+      }
 
+      .tick{ font-weight: 900; }
+      .cross{ opacity: .6; }
+
+      /* Platinum column background */
+      .platCol{
+        background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
+        position: relative;
+      }
+      .pricingTable thead .platCol{
+        background: linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,.06));
+      }
+
+      /* Platinum emphasis border + lift */
+      .platHighlight{
+        position: relative;
+        border: 2px solid rgba(255,255,255,.35);
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,.18),
+          0 12px 30px rgba(0,0,0,.25);
+      }
+      .pricingTable thead th.platHighlight{
+        transform: translateY(-4px);
+      }
+
+      .planBadge{
+        display: inline-block;
+        width: fit-content;
+        margin-bottom: 6px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: .8rem;
+        font-weight: 900;
+        letter-spacing: .3px;
+        text-transform: uppercase;
+        background: linear-gradient(180deg, rgba(255,255,255,.25), rgba(255,255,255,.10));
+        border: 1px solid rgba(255,255,255,.35);
+      }
+
+      .pricingNote{ margin: 12px 2px 0; opacity: .9; }
+
+      @media (max-width: 760px){
+        .pricingTable thead th.platHighlight{ transform: none; }
+        .planPrice{ font-size: 1.2rem; }
+      }
+    </style>
+
+    <!-- PRICING LOGIC -->
+    <script>
+      // Ensures Platinum is ALWAYS > Gold by applying an enforced gap.
+      const slider = document.getElementById("jobsSlider");
+      const jobsValue = document.getElementById("jobsValue");
+      const jobsValue2 = document.getElementById("jobsValue2");
+      const sliderMeta = document.getElementById("sliderMeta");
+
+      const goldMonthly = document.getElementById("goldMonthly");
+      const platMonthly = document.getElementById("platMonthly");
+      const goldMonthly2 = document.getElementById("goldMonthly2");
+      const platMonthly2 = document.getElementById("platMonthly2");
+
+      const GOLD_BASE = 395;
+      const GOLD_INCLUDED = 20;
+      const GOLD_EXTRA = 12;
+
+      const PLAT_BASE = 695;
+      const PLAT_INCLUDED = 40;
+      const PLAT_EXTRA = 10;
+
+      // Platinum effect: minimum gap above Gold at all times.
+      const PLAT_MIN_GAP = 150; // increase to 200+ if you want a stronger separation
+
+      function calcPlan(base, included, extra, jobs){
+        return base + Math.max(0, jobs - included) * extra;
+      }
+
+      function updatePricing(){
+        const jobs = Number(slider.value);
+        jobsValue.textContent = jobs;
+        jobsValue2.textContent = jobs;
+
+        sliderMeta.textContent = "Prices update based on included invoices + extras.";
+
+        const g = calcPlan(GOLD_BASE, GOLD_INCLUDED, GOLD_EXTRA, jobs);
+        let p = calcPlan(PLAT_BASE, PLAT_INCLUDED, PLAT_EXTRA, jobs);
+
+        // Enforce Platinum always above Gold by at least PLAT_MIN_GAP
+        if(p <= g + PLAT_MIN_GAP){
+          p = g + PLAT_MIN_GAP;
+        }
+
+        goldMonthly.textContent = g;
+        platMonthly.textContent = p;
+        goldMonthly2.textContent = g;
+        platMonthly2.textContent = p;
+      }
+
+      slider.addEventListener("input", updatePricing);
+      updatePricing();
+    </script>
+
+  </section>
 
   <!-- FAQ -->
   <section id="faq">
     <h2>FAQ</h2>
     <details>
       <summary>Is this debt collection?</summary>
-      <p>No. We follow up politely and stop immediately if a job is disputed.</p>
+      <p>No. We follow up professionally and stop immediately if a job is disputed. Collections referral is available on Platinum at your discretion.</p>
     </details>
     <details>
       <summary>Do I need Xero?</summary>
       <p>No. We work from whatever you already use.</p>
+    </details>
+    <details>
+      <summary>Are calls recorded?</summary>
+      <p>Platinum calls are recorded for quality and record-keeping.</p>
     </details>
   </section>
 
