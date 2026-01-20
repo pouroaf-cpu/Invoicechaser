@@ -76,7 +76,7 @@
 
     <!-- PRICING TABLE -->
     <div class="pricingTableWrap">
-      <table class="pricingTable">
+      <table class="pricingTable platinumBoxed">
 
         <thead>
           <tr>
@@ -92,7 +92,7 @@
             </th>
 
             <!-- PLATINUM -->
-            <th class="platBox">
+            <th>
               <div class="planHead">
                 <div class="planBadge">Recommended</div>
                 <div class="planName">Platinum</div>
@@ -109,29 +109,29 @@
           <tr>
             <td>Included invoices</td>
             <td>20 / month</td>
-            <td class="platBox">40 / month</td>
+            <td>40 / month</td>
           </tr>
           <tr>
             <td>Extra invoices</td>
             <td>$12 each</td>
-            <td class="platBox">$10 each</td>
+            <td>$10 each</td>
           </tr>
 
           <tr class="sectionRow"><td colspan="3">Follow-up process</td></tr>
-          <tr><td>Pre-due phone call</td><td>✔️</td><td class="platBox">✔️</td></tr>
-          <tr><td>3-day overdue calls</td><td>✔️ (business hours)</td><td class="platBox">✔️ (business + after hours)</td></tr>
-          <tr><td>7-day overdue calls</td><td>✔️ (business hours)</td><td class="platBox">✔️ (business + after hours)</td></tr>
-          <tr><td>14-day overdue chasing</td><td>—</td><td class="platBox">✔️</td></tr>
-          <tr><td>Alternative contacts</td><td>—</td><td class="platBox">✔️</td></tr>
-          <tr><td>Escalation / work calls</td><td>—</td><td class="platBox">✔️</td></tr>
-          <tr><td>Collections referral (client discretion)</td><td>—</td><td class="platBox">✔️</td></tr>
+          <tr><td>Pre-due phone call</td><td>✔️</td><td>✔️</td></tr>
+          <tr><td>3-day overdue calls</td><td>✔️ (business hours)</td><td>✔️ (business + after hours)</td></tr>
+          <tr><td>7-day overdue calls</td><td>✔️ (business hours)</td><td>✔️ (business + after hours)</td></tr>
+          <tr><td>14-day overdue chasing</td><td>—</td><td>✔️</td></tr>
+          <tr><td>Alternative contacts</td><td>—</td><td>✔️</td></tr>
+          <tr><td>Escalation / work calls</td><td>—</td><td>✔️</td></tr>
+          <tr><td>Collections referral (client discretion)</td><td>—</td><td>✔️</td></tr>
 
           <tr class="sectionRow"><td colspan="3">Service</td></tr>
-          <tr><td>Priority handling</td><td>✔️</td><td class="platBox">✔️</td></tr>
-          <tr><td>Call recordings provided</td><td>—</td><td class="platBox">✔️</td></tr>
-          <tr><td>Notes logged</td><td>✔️</td><td class="platBox">✔️</td></tr>
-          <tr><td>Monthly recovery summary</td><td>✔️</td><td class="platBox">✔️</td></tr>
-          <tr><td>Stops immediately if disputed</td><td>✔️</td><td class="platBox">✔️</td></tr>
+          <tr><td>Priority handling</td><td>✔️</td><td>✔️</td></tr>
+          <tr><td>Call recordings provided</td><td>—</td><td>✔️</td></tr>
+          <tr><td>Notes logged</td><td>✔️</td><td>✔️</td></tr>
+          <tr><td>Monthly recovery summary</td><td>✔️</td><td>✔️</td></tr>
+          <tr><td>Stops immediately if disputed</td><td>✔️</td><td>✔️</td></tr>
 
         </tbody>
       </table>
@@ -142,7 +142,7 @@
       Platinum calls are recorded for quality and record-keeping.
     </p>
 
-    <!-- CLEAN PRICING STYLES -->
+    <!-- CLEAN PRICING STYLES (NO GAPS) -->
     <style>
       .pricingTable{
         width:100%;
@@ -168,28 +168,31 @@
       .planMini{font-size:.9rem;color:#666}
       .per{font-size:.9rem;color:#666}
 
-      /* PLATINUM BOX — clean rectangle */
-      .platBox{
-        border-left:2px solid #999 !important;
-        border-right:2px solid #999 !important;
-      }
-
-      thead .platBox{
-        border-top:2px solid #999 !important;
-      }
-
-      tbody tr:last-child .platBox{
-        border-bottom:2px solid #999 !important;
-      }
-
       .planBadge{
         display:inline-block;
         font-size:.75rem;
-        font-weight:700;
+        font-weight:800;
+        letter-spacing:.08em;
+        text-transform:uppercase;
         padding:4px 10px;
         border:1px solid #999;
         border-radius:999px;
         width:fit-content;
+      }
+
+      /* ===== Continuous Platinum box: 3rd column only ===== */
+      .platinumBoxed th:nth-child(3),
+      .platinumBoxed td:nth-child(3){
+        border-left:2px solid #999;
+        border-right:2px solid #999;
+      }
+
+      .platinumBoxed thead th:nth-child(3){
+        border-top:2px solid #999;
+      }
+
+      .platinumBoxed tbody tr:last-child td:nth-child(3){
+        border-bottom:2px solid #999;
       }
     </style>
 
