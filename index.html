@@ -92,165 +92,241 @@
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section id="pricing" class="pricingBlock">
+<!-- PRICING -->
+<section id="pricing" class="pricingBlock">
 
-    <header class="pricingHeader">
-      <h2>Pricing</h2>
-      <p>Set your invoice volume. We’ll show the total.</p>
-    </header>
+  <header class="pricingHeader">
+    <h2>Pricing</h2>
+    <p>Set your invoice volume. Prices adjust automatically.</p>
+  </header>
 
-    <!-- TOGGLE -->
-    <div class="pricingToggleRow">
-      <button class="toggleBtn isActive" id="btnFlat">Flat rate</button>
-      <button class="toggleBtn" id="btnPer">Per job</button>
-    </div>
-
-    <!-- SLIDER -->
-    <div class="sliderWrap">
-      <div class="sliderTop">
-        <div>
-          <div class="sliderLabel">Invoices per month</div>
-          <div class="sliderValue"><span id="jobsValue">20</span> invoices</div>
-        </div>
-        <div class="sliderMeta" id="sliderMeta">
-          Flat rate with fair use. Extras adjust automatically.
-        </div>
+  <!-- SLIDER -->
+  <div class="sliderWrap">
+    <div class="sliderTop">
+      <div>
+        <div class="sliderLabel">Invoices per month</div>
+        <div class="sliderValue"><span id="jobsValue">20</span> invoices</div>
       </div>
-
-      <input id="jobsSlider" class="slider" type="range" min="0" max="120" value="20" />
-      <div class="sliderTicks">
-        <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span><span>120</span>
+      <div class="sliderMeta" id="sliderMeta">
+        Monthly price updates based on included invoices + extras.
       </div>
     </div>
 
-    <!-- PLANS -->
-    <div class="plansRow">
-
-      <!-- GOLD -->
-      <article class="planCard highlight">
-        <h3 class="planTitle">Gold</h3>
-        <div class="wasRow">Usually $299</div>
-
-        <div class="nowLabel">Now</div>
-        <div class="nowRow">
-          <span class="currency">$</span>
-          <span class="nowPrice" id="goldPrice">199</span>
-        </div>
-
-        <div class="perLine">NZD / month</div>
-
-        <div class="savePill">
-          <strong>Potential time value saved</strong>
-          <span>~$<span id="goldTime">660</span> over 3 months*</span>
-        </div>
-
-        <p class="planDesc" id="goldSub">
-          Includes 20 invoices. Extra invoices $12 each.
-        </p>
-
-        <a class="learnMore" href="#faq">Learn more</a>
-        <a class="ctaBtn" href="#contact">Get started</a>
-      </article>
-
-      <!-- PLATINUM -->
-      <article class="planCard">
-        <h3 class="planTitle">Platinum</h3>
-        <div class="wasRow">Usually $499</div>
-
-        <div class="nowLabel">Now</div>
-        <div class="nowRow">
-          <span class="currency">$</span>
-          <span class="nowPrice" id="platPrice">349</span>
-        </div>
-
-        <div class="perLine">NZD / month</div>
-
-        <div class="savePill">
-          <strong>Potential time value saved</strong>
-          <span>~$<span id="platTime">1155</span> over 3 months*</span>
-        </div>
-
-        <p class="planDesc" id="platSub">
-          Includes 35 invoices. Extra invoices $10 each.
-        </p>
-
-        <a class="learnMore" href="#faq">Learn more</a>
-        <a class="ctaBtn" href="#contact">Get started</a>
-      </article>
-
+    <input id="jobsSlider" class="slider" type="range" min="0" max="200" value="20" />
+    <div class="sliderTicks">
+      <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span><span>150</span><span>200</span>
     </div>
+  </div>
 
-    <p class="pricingFootnote">
-      *Estimate based on owner time valued at $110/hr and ~6 minutes per invoice follow-up.
+  <!-- TABLE -->
+  <div class="pricingTableWrap">
+    <table class="pricingTable" aria-label="Invoice Chaser pricing table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>
+            <div class="planHead">
+              <div class="planName">Gold</div>
+              <div class="planPrice">
+                <span class="currency">$</span><span id="goldMonthly">395</span>
+                <span class="per">/ month</span>
+              </div>
+              <div class="planMini">+ $150 one-time setup fee (new clients only)</div>
+            </div>
+          </th>
+          <th>
+            <div class="planHead">
+              <div class="planName">Platinum</div>
+              <div class="planPrice">
+                <span class="currency">$</span><span id="platMonthly">695</span>
+                <span class="per">/ month</span>
+              </div>
+              <div class="planMini">No setup fee</div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="sectionRow">
+          <td colspan="3">Volume</td>
+        </tr>
+        <tr>
+          <td>Included invoices</td>
+          <td><strong>20</strong> / month</td>
+          <td><strong>40</strong> / month</td>
+        </tr>
+        <tr>
+          <td>Extra invoices</td>
+          <td><strong>$12</strong> each</td>
+          <td><strong>$10</strong> each</td>
+        </tr>
+
+        <tr class="sectionRow">
+          <td colspan="3">Follow-up process</td>
+        </tr>
+        <tr>
+          <td>Pre-due phone call</td>
+          <td class="tick">✔️</td>
+          <td class="tick">✔️</td>
+        </tr>
+        <tr>
+          <td>3-day overdue calls</td>
+          <td>✔️ <span class="mutedText">(business hours)</span></td>
+          <td>✔️ <span class="mutedText">(business + after hours)</span></td>
+        </tr>
+        <tr>
+          <td>7-day overdue calls</td>
+          <td>✔️ <span class="mutedText">(business hours)</span></td>
+          <td>✔️ <span class="mutedText">(business + after hours)</span></td>
+        </tr>
+        <tr>
+          <td>14-day overdue chasing</td>
+          <td class="cross">—</td>
+          <td class="tick">✔️</td>
+        </tr>
+        <tr>
+          <td>Alternative contacts</td>
+          <td class="cross">—</td>
+          <td class="tick">✔️</td>
+        </tr>
+        <tr>
+          <td>Escalation / work calls</td>
+          <td class="cross">—</td>
+          <td class="tick">✔️</td>
+        </tr>
+        <tr>
+          <td>Collections referral <span class="mutedText">(client discretion)</span></td>
+          <td class="cross">—</td>
+          <td class="tick">✔️</td>
+        </tr>
+
+        <tr class="sectionRow">
+          <td colspan="3">Service</td>
+        </tr>
+        <tr>
+          <td>Priority handling</td>
+          <td class="tick">✔️</td>
+          <td class="tick">✔️</td>
+        </tr>
+        <tr>
+          <td>Notes logged</td>
+          <td class="tick">✔️</td>
+          <td class="tick">✔️</td>
+        </tr>
+        <tr>
+          <td>Monthly recovery summary</td>
+          <td class="tick">✔️</td>
+          <td class="tick">✔️</td>
+        </tr>
+        <tr>
+          <td>Stops immediately if disputed</td>
+          <td class="tick">✔️</td>
+          <td class="tick">✔️</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="pricingNote">
+      Current estimate for <strong><span id="jobsValue2">20</span></strong> invoices/month:
+      Gold <strong>$<span id="goldMonthly2">395</span>/mo</strong>,
+      Platinum <strong>$<span id="platMonthly2">695</span>/mo</strong>.
     </p>
+  </div>
 
-    <!-- PRICING LOGIC -->
-    <script>
-      const OWNER_RATE = 110;
-      const MINS_PER_JOB = 6;
+  <p class="pricingFootnote">
+    Month-to-month. No lock-in. Disputed invoices are not chased. Higher volumes available on request.
+  </p>
 
-      const slider = document.getElementById("jobsSlider");
-      const jobsValue = document.getElementById("jobsValue");
-      const sliderMeta = document.getElementById("sliderMeta");
+  <style>
+    /* Pricing table styles (fits your existing page styling) */
+    .pricingTableWrap { margin-top: 18px; }
+    .pricingTable {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(255,255,255,.03);
+    }
+    .pricingTable th, .pricingTable td {
+      padding: 14px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      border-right: 1px solid rgba(255,255,255,.10);
+      text-align: left;
+      vertical-align: middle;
+    }
+    .pricingTable th:last-child, .pricingTable td:last-child { border-right: 0; }
+    .pricingTable tr:last-child td { border-bottom: 0; }
+    .pricingTable thead th { background: rgba(255,255,255,.06); }
+    .planHead { display: grid; gap: 6px; }
+    .planName { font-weight: 800; font-size: 1.05rem; }
+    .planPrice { font-weight: 900; font-size: 1.35rem; letter-spacing: .2px; }
+    .planPrice .currency { opacity: .9; margin-right: 2px; }
+    .planPrice .per { font-weight: 600; font-size: .95rem; opacity: .8; margin-left: 6px; }
+    .planMini { font-size: .95rem; opacity: .75; line-height: 1.35; }
+    .sectionRow td {
+      background: rgba(255,255,255,.04);
+      font-weight: 800;
+      border-right: 0 !important;
+    }
+    .tick { font-weight: 900; }
+    .cross { opacity: .6; }
+    .pricingNote { margin: 12px 2px 0; opacity: .9; }
+    @media (max-width: 760px){
+      .pricingTable th:first-child { width: 38%; }
+      .planPrice { font-size: 1.2rem; }
+    }
+  </style>
 
-      const goldPrice = document.getElementById("goldPrice");
-      const platPrice = document.getElementById("platPrice");
-      const goldSub = document.getElementById("goldSub");
-      const platSub = document.getElementById("platSub");
-      const goldTime = document.getElementById("goldTime");
-      const platTime = document.getElementById("platTime");
+  <!-- PRICING LOGIC -->
+  <script>
+    // Slider-driven monthly estimates for Gold/Platinum (subscription + extras)
+    const slider = document.getElementById("jobsSlider");
+    const jobsValue = document.getElementById("jobsValue");
+    const jobsValue2 = document.getElementById("jobsValue2");
+    const sliderMeta = document.getElementById("sliderMeta");
 
-      const btnFlat = document.getElementById("btnFlat");
-      const btnPer = document.getElementById("btnPer");
+    const goldMonthly = document.getElementById("goldMonthly");
+    const platMonthly = document.getElementById("platMonthly");
+    const goldMonthly2 = document.getElementById("goldMonthly2");
+    const platMonthly2 = document.getElementById("platMonthly2");
 
-      let mode = "flat";
+    const GOLD_BASE = 395;
+    const GOLD_INCLUDED = 20;
+    const GOLD_EXTRA = 12;
 
-      function timeValue(jobs){
-        return Math.round(((jobs * MINS_PER_JOB) / 60) * OWNER_RATE * 3);
-      }
+    const PLAT_BASE = 695;
+    const PLAT_INCLUDED = 40;
+    const PLAT_EXTRA = 10;
 
-      function update(){
-        const jobs = Number(slider.value);
-        jobsValue.textContent = jobs;
+    function calcPlan(base, included, extra, jobs){
+      return base + Math.max(0, jobs - included) * extra;
+    }
 
-        goldTime.textContent = timeValue(jobs);
-        platTime.textContent = timeValue(jobs);
+    function updatePricing(){
+      const jobs = Number(slider.value);
+      jobsValue.textContent = jobs;
+      jobsValue2.textContent = jobs;
 
-        if(mode === "flat"){
-          sliderMeta.textContent = "Flat rate with fair use. Extras adjust automatically.";
-          goldPrice.textContent = 199 + Math.max(0, jobs - 20) * 12;
-          platPrice.textContent = 349 + Math.max(0, jobs - 35) * 10;
-          goldSub.textContent = "Includes 20 invoices. Extra invoices $12 each.";
-          platSub.textContent = "Includes 35 invoices. Extra invoices $10 each.";
-        } else {
-          sliderMeta.textContent = "Per-invoice pricing. Slider shows monthly estimate.";
-          goldPrice.textContent = Math.max(99, jobs * 15);
-          platPrice.textContent = Math.max(149, jobs * 22);
-          goldSub.textContent = "Per invoice $15. Minimum $99/month.";
-          platSub.textContent = "Per invoice $22. Minimum $149/month.";
-        }
-      }
+      sliderMeta.textContent = "Monthly price updates based on included invoices + extras.";
 
-      btnFlat.onclick = () => {
-        mode = "flat";
-        btnFlat.classList.add("isActive");
-        btnPer.classList.remove("isActive");
-        update();
-      };
+      const g = calcPlan(GOLD_BASE, GOLD_INCLUDED, GOLD_EXTRA, jobs);
+      const p = calcPlan(PLAT_BASE, PLAT_INCLUDED, PLAT_EXTRA, jobs);
 
-      btnPer.onclick = () => {
-        mode = "per";
-        btnPer.classList.add("isActive");
-        btnFlat.classList.remove("isActive");
-        update();
-      };
+      goldMonthly.textContent = g;
+      platMonthly.textContent = p;
+      goldMonthly2.textContent = g;
+      platMonthly2.textContent = p;
+    }
 
-      slider.oninput = update;
-      update();
-    </script>
+    slider.addEventListener("input", updatePricing);
+    updatePricing();
+  </script>
 
-  </section>
+</section>
+
 
   <!-- FAQ -->
   <section id="faq">
