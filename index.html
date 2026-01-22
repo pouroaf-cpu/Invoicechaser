@@ -1,362 +1,154 @@
 <!DOCTYPE html>
 <html lang="en-NZ">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
+  <title>Tradeflow — We Chase Unpaid Invoices</title>
+  <meta name="description" content="Tradeflow calls your customers to collect unpaid invoices. Human-run, no software, no chasing. Tradies get paid faster." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>TradeFlow — Tradie Payment Follow-Up Service</title>
-  <meta name="description" content="We personally follow up unpaid invoices so tradies get paid faster. You stay on the tools — we handle professional phone follow-ups and stop immediately if a job is disputed." />
-
-  <link rel="icon" href="/favicon.JPG" type="image/jpeg" />
+  <link rel="icon" href="/favicon.jpg" />
   <link rel="stylesheet" href="/styles.css" />
-  <script src="https://analytics.ahrefs.com/analytics.js" data-key="EpzxUqdAaDbvRZAYv4LBOw" async></script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17894261185"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17894261185');
-</script>
 </head>
 
 <body>
-<div class="wrap">
 
-  <!-- NAV -->
-  <header class="nav">
-    <div class="brandRow">
-      <img src="/Logo.png" alt="TradeFlow logo" class="logo" />
-      <div class="brandName">TradeFlow</div>
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <img src="/logo.jpg" alt="Tradeflow logo" class="logo">
+      <span class="brand-name">Tradeflow</span>
     </div>
 
-    <nav class="navlinks">
-      <a href="#how-it-works">How it works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Get started</a>
-      <a class="navCta" href="tel:+64272214375">Call now</a>
-    </nav>
-  </header>
+    <div class="nav-actions">
+      <a href="tel:0272214375" class="btn-call">Call now</a>
+    </div>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
+<!-- HERO -->
+<section class="tradeflow-hero">
+  <div class="tradeflow-container">
 
-    <!-- LEFT: COPY -->
-    <div class="heroCard">
-      <div class="tagline">HUMAN-RUN • NOT SOFTWARE</div>
-
-      <h1>We chase the payments.<br>You stay on the tools.</h1>
-
-      <p class="sub">
-        Late invoices kill cashflow. We handle professional phone follow-ups and stop immediately if a job is disputed.
-      </p>
-
-      <div class="heroPoints">
-        <span class="pill">Pre-due + overdue calls</span>
-        <span class="pill">Works with what you already use</span>
-        <span class="pill">No disputes handled</span>
-      </div>
-
-      <div class="ctaRow">
-        <a class="btn btnSolid" href="#contact">Request a callback</a>
-        <a class="btn" href="#pricing">See pricing</a>
-      </div>
-
-      <p class="fine">
-        Simple promise: <strong>you stop chasing invoices</strong>.
-      </p>
+    <div class="tradeflow-badge">
+      HUMAN-RUN · NOT SOFTWARE
     </div>
 
-    <!-- RIGHT: IMAGE -->
-    <aside class="heroImage">
-      <img
-        src="/tradie.png"
-        alt="Stressed tradie dealing with unpaid invoices"
-        loading="eager"
-      />
-    </aside>
+    <h1>
+      We chase your unpaid invoices.<br>
+      You stay on the tools.
+    </h1>
 
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section id="how-it-works">
-    <h2>How it works</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>1. Share your invoice list</h3>
-        <p>Export a list or share access. No new software required.</p>
-      </div>
-      <div class="card">
-        <h3>2. We follow up by phone</h3>
-        <p>Pre-due call, then overdue calls at 3, 7, and 14 days.</p>
-      </div>
-      <div class="card">
-        <h3>3. You get paid</h3>
-        <p>Cashflow improves without you losing time chasing debtors.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing" class="pricingBlock">
-
-    <header class="pricingHeader">
-      <h2>Pricing</h2>
-      <p>Set your invoice volume. Platinum is recommended.</p>
-    </header>
-
-    <!-- SLIDER -->
-    <div class="sliderWrap">
-      <div class="sliderTop">
-        <div>
-          <div class="sliderLabel">Invoices per month</div>
-          <div class="sliderValue"><span id="jobsValue">20</span> invoices</div>
-        </div>
-        <div class="sliderMeta" id="sliderMeta">Prices update automatically.</div>
-      </div>
-      <input id="jobsSlider" class="slider" type="range" min="0" max="200" value="20" />
-    </div>
-
-    <!-- MODERN COMPARISON (NO TABLE) -->
-    <div class="pricingCompare">
-
-      <!-- Plan cards -->
-      <div class="planGrid">
-        <div class="planSpacer" aria-hidden="true"></div>
-
-        <div class="planCardLite">
-          <div class="planTop">
-            <div class="planTitleLite">Gold</div>
-            <div class="planPriceLite">
-              <span class="currency">$</span><span id="goldMonthly">395</span>
-              <span class="per">/ month</span>
-            </div>
-            <div class="planSubLite">+ $150 one-time setup fee (new clients)</div>
-          </div>
-        </div>
-
-        <div class="planCardLite isPlatinum">
-          <div class="planTop">
-            <div class="planBadgeLite">Recommended</div>
-            <div class="planTitleLite">Platinum</div>
-            <div class="planPriceLite">
-              <span class="currency">$</span><span id="platMonthly">695</span>
-              <span class="per">/ month</span>
-            </div>
-            <div class="planSubLite">No setup fee • Calls recorded</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Features -->
-      <div class="compareBody">
-
-        <div class="compareGroup">
-          <div class="groupTitle">Volume</div>
-
-          <div class="compareRow">
-            <div class="featureLabel">Included invoices</div>
-            <div class="featureVal">20 / month</div>
-            <div class="featureVal platCol">40 / month</div>
-          </div>
-
-          <div class="compareRow">
-            <div class="featureLabel">Extra invoices</div>
-            <div class="featureVal">$12 each</div>
-            <div class="featureVal platCol">$10 each</div>
-          </div>
-        </div>
-
-        <div class="compareGroup">
-          <div class="groupTitle">Follow-up process</div>
-
-          <div class="compareRow">
-            <div class="featureLabel">Pre-due phone call (payment timing check)</div>
-            <div class="featureVal"><span class="tick">✓</span></div>
-            <div class="featureVal platCol"><span class="tick">✓</span></div>
-          </div>
-
-          <div class="compareRow">
-            <div class="featureLabel">3-day overdue calls</div>
-            <div class="featureVal"><span class="tick">✓</span> <span class="note">(business hours)</span></div>
-            <div class="featureVal platCol"><span class="tick">✓</span> <span class="note">(business + after hours)</span></div>
-          </div>
-
-          <div class="compareRow">
-            <div class="featureLabel">7-day overdue calls</div>
-            <div class="featureVal"><span class="tick">✓</span> <span class="note">(business hours)</span></div>
-            <div class="featureVal platCol"><span class="tick">✓</span> <span class="note">(business + after hours)</span></div>
-          </div>
-
-          <div class="compareRow">
-            <div class="featureLabel">14-day overdue chasing</div>
-            <div class="featureVal"><span class="dash">—</span></div>
-            <div class="featureVal platCol"><span class="tick">✓</span> <span class="note">(inc. alternative contacts)</span></div>
-          </div>
-
-          <div class="compareRow">
-            <div class="featureLabel">Alternative contacts</div>
-            <div class="featureVal"><span class="dash">—</span></div>
-            <div class="featureVal platCol"><span class="tick">✓</span></div>
-          </div>
-
-          <div class="compareRow">
-            <div class="featureLabel">Escalation / work calls</div>
-            <div class="featureVal"><span class="dash">—</span></div>
-            <div class="featureVal platCol"><span class="tick">✓</span></div>
-          </div>
-
-          <div class="compareRow">
-            <div class="featureLabel">Collections referral (client discretion)</div>
-            <div class="featureVal"><span class="dash">—</span></div>
-            <div class="featureVal platCol"><span class="tick">✓</span></div>
-          </div>
-        </div>
-
-        <div class="compareGroup">
-          <div class="groupTitle">Service</div>
-
-          <div class="compareRow">
-            <div class="featureLabel">Priority handling</div>
-            <div class="featureVal"><span class="tick">✓</span></div>
-            <div class="featureVal platCol"><span class="tick">✓</span></div>
-          </div>
-
-          <div class="compareRow">
-            <div class="featureLabel">Call recordings provided</div>
-            <div class="featureVal"><span class="dash">—</span></div>
-            <div class="featureVal platCol"><span class="tick">✓</span></div>
-          </div>
-
-          <div class="compareRow">
-            <div class="featureLabel">Notes logged</div>
-            <div class="featureVal"><span class="tick">✓</span></div>
-            <div class="featureVal platCol"><span class="tick">✓</span></div>
-          </div>
-
-          <div class="compareRow">
-            <div class="featureLabel">Monthly recovery summary</div>
-            <div class="featureVal"><span class="tick">✓</span></div>
-            <div class="featureVal platCol"><span class="tick">✓</span></div>
-          </div>
-
-          <div class="compareRow">
-            <div class="featureLabel">Stops immediately if disputed</div>
-            <div class="featureVal"><span class="tick">✓</span></div>
-            <div class="featureVal platCol"><span class="tick">✓</span></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <p class="pricingFootnote">
-      Month-to-month. No lock-in. Disputed invoices are not chased.
-      Platinum calls are recorded for quality and record-keeping.
+    <p class="tradeflow-sub">
+      Professional phone follow-ups before and after due date.
+      We stop immediately if a job is disputed.
     </p>
 
-    <!-- CLOSE THE DEAL -->
-    <div class="pricingCta" id="contact">
-      <div class="pricingCtaCard">
-        <div class="ctaTopRow">
-          <a class="btn btnSolid callNowBtn" href="tel:+64272214375">Call now: 027 221 4375</a>
-          <div class="callNowNote">Speak with our Director of Sales.</div>
-        </div>
-
-        <h3>Request a callback</h3>
-        <p>We’ll call you back, confirm volume, and start quickly.</p>
-
-        <form class="miniForm" action="mailto:hello@tradeflow.kiwi" method="post">
-          <div class="miniGrid">
-            <label class="field">
-              <span class="fieldLabel">Name</span>
-              <input name="Name" placeholder="Your name" required />
-            </label>
-            <label class="field">
-              <span class="fieldLabel">Phone</span>
-              <input name="Phone" placeholder="027 xxx xxxx" required />
-            </label>
-          </div>
-
-          <div class="miniGrid">
-            <label class="field">
-              <span class="fieldLabel">Business</span>
-              <input name="Business" placeholder="Business name" required />
-            </label>
-            <label class="field">
-              <span class="fieldLabel">Invoices / month</span>
-              <input name="Invoices" placeholder="Approx volume" />
-            </label>
-          </div>
-
-          <label class="field">
-            <span class="fieldLabel">Notes</span>
-            <textarea name="Message" placeholder="Biggest customers, typical terms, problem payers, anything important."></textarea>
-          </label>
-
-          <button class="btn btnSolid" type="submit">Request callback</button>
-          <p class="miniFine">Fast response. Priority handling for all clients.</p>
-        </form>
-      </div>
+    <div class="tradeflow-actions">
+      <a href="#callback" class="btn-primary">Request a callback</a>
+      <a href="#pricing" class="btn-secondary">See pricing</a>
     </div>
 
-    <!-- PRICING LOGIC -->
-    <script>
-      const slider = document.getElementById("jobsSlider");
-      const jobsValue = document.getElementById("jobsValue");
-      const goldMonthly = document.getElementById("goldMonthly");
-      const platMonthly = document.getElementById("platMonthly");
+    <div class="tradeflow-promise">
+      Simple promise: <strong>you never chase invoices again.</strong>
+    </div>
 
-      const GOLD_BASE = 395, GOLD_INC = 20, GOLD_EXTRA = 12;
-      const PLAT_BASE = 695, PLAT_INC = 40, PLAT_EXTRA = 10;
-      const MIN_GAP = 150;
+  </div>
+</section>
 
-      function calc(base, inc, extra, jobs){
-        return base + Math.max(0, jobs - inc) * extra;
-      }
+<!-- PROBLEM -->
+<section class="section light">
+  <div class="container">
+    <h2>Late invoices kill cashflow</h2>
+    <p>
+      Most tradies don’t have time to chase money.  
+      Customers forget. Emails get ignored.  
+      Phone calls get results — but you’re on site earning, not chasing.
+    </p>
+  </div>
+</section>
 
-      function update(){
-        const jobs = +slider.value;
-        jobsValue.textContent = jobs;
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="container grid-3">
 
-        const g = calc(GOLD_BASE, GOLD_INC, GOLD_EXTRA, jobs);
-        let p = calc(PLAT_BASE, PLAT_INC, PLAT_EXTRA, jobs);
-        if(p <= g + MIN_GAP) p = g + MIN_GAP;
+    <div class="card">
+      <h3>You send us the invoice</h3>
+      <p>Forward the overdue job or upload a list. We work with whatever system you already use.</p>
+    </div>
 
-        goldMonthly.textContent = g;
-        platMonthly.textContent = p;
-      }
+    <div class="card">
+      <h3>We call the customer</h3>
+      <p>Real people, real phone calls. We politely but firmly chase payment.</p>
+    </div>
 
-      slider.oninput = update;
-      update();
-    </script>
+    <div class="card">
+      <h3>You get paid</h3>
+      <p>Once it’s paid or disputed, we stop. You get status updates so you stay in control.</p>
+    </div>
 
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section id="faq">
-    <h2>FAQ</h2>
-    <details>
-      <summary>Is this debt collection?</summary>
-      <p>No. We follow up politely and stop immediately if a job is disputed.</p>
-    </details>
-    <details>
-      <summary>Do I need special software?</summary>
-      <p>No. We work from what you already use.</p>
-    </details>
-  </section>
+<!-- PRICING -->
+<section id="pricing" class="section light">
+  <div class="container">
+    <h2>Simple pricing</h2>
 
-  <footer>
-    © <span id="y"></span> TradeFlow
-  </footer>
+    <div class="pricing-box">
+      <h3>Done-For-You Follow-Up</h3>
+      <div class="price">$395 / month</div>
+      <ul>
+        <li>20 jobs included</li>
+        <li>Human phone calls</li>
+        <li>Pre-due & overdue follow-ups</li>
+        <li>Stop if disputed</li>
+        <li>Monthly summary</li>
+      </ul>
+      <p class="small">Extra jobs $12 each</p>
+    </div>
+  </div>
+</section>
 
-</div>
+<!-- CALLBACK FORM -->
+<section id="callback" class="section">
+  <div class="container">
+    <h2>Request a callback</h2>
+    <form class="callback-form">
 
-<script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
+      <label>
+        Name
+        <input type="text" required>
+      </label>
+
+      <label>
+        Phone
+        <input type="tel" required>
+      </label>
+
+      <label>
+        Business name
+        <input type="text">
+      </label>
+
+      <label>
+        Approx invoices per month
+        <input type="number">
+      </label>
+
+      <button type="submit" class="btn-primary">Get me paid faster</button>
+
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>Tradeflow — Professional invoice follow-up for tradies</p>
+    <p>Call <a href="tel:0272214375">027 221 4375</a></p>
+  </div>
+</footer>
 
 </body>
 </html>
