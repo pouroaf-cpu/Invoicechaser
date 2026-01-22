@@ -9,13 +9,15 @@
 
   <link rel="icon" href="/favicon.JPG" type="image/jpeg" />
   <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Microsoft Clarity -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "v58z7rt6m9");
-</script>
+  </script>
 </head>
 
 <body>
@@ -28,7 +30,7 @@
       <div class="brandName">TradeFlow</div>
     </div>
 
-    <nav class="navlinks">
+    <nav class="navlinks" aria-label="Primary">
       <a href="#how-it-works">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
@@ -39,12 +41,11 @@
 
   <!-- HERO -->
   <section class="hero">
-
     <!-- LEFT: COPY -->
     <div class="heroCard">
       <div class="tagline">HUMAN-RUN • NOT SOFTWARE</div>
 
-      <h1>We chase the payments.<br>You stay on the tools.</h1>
+      <h1>We chase the payments.<br />You stay on the tools.</h1>
 
       <p class="sub">
         Late invoices kill cashflow. We handle professional phone follow-ups and stop immediately if a job is disputed.
@@ -74,21 +75,23 @@
         loading="eager"
       />
     </aside>
-
   </section>
 
   <!-- HOW IT WORKS -->
   <section id="how-it-works">
     <h2>How it works</h2>
+
     <div class="grid">
       <div class="card">
         <h3>1. Share your invoice list</h3>
         <p>Export a list or share access. No new software required.</p>
       </div>
+
       <div class="card">
         <h3>2. We follow up by phone</h3>
         <p>Pre-due call, then overdue calls at 3, 7, and 14 days.</p>
       </div>
+
       <div class="card">
         <h3>3. You get paid</h3>
         <p>Cashflow improves without you losing time chasing debtors.</p>
@@ -116,7 +119,7 @@
       <input id="jobsSlider" class="slider" type="range" min="0" max="200" value="20" />
     </div>
 
-    <!-- MODERN COMPARISON (NO TABLE) -->
+    <!-- MODERN COMPARISON -->
     <div class="pricingCompare">
 
       <!-- Plan cards -->
@@ -257,45 +260,52 @@
     <!-- CLOSE THE DEAL -->
     <div class="pricingCta" id="contact">
       <div class="pricingCtaCard">
+
         <div class="ctaTopRow">
           <a class="btn btnSolid callNowBtn" href="tel:+64272214375">Call now: 027 221 4375</a>
           <div class="callNowNote">Speak with our Director of Sales.</div>
         </div>
 
-        <h3>Request a callback</h3>
-        <p>We’ll call you back, confirm volume, and start quickly.</p>
+        <h3 class="formTitle">Request a callback</h3>
+        <p class="formSub">We’ll call you back, confirm volume, and start quickly.</p>
 
-        <form class="miniForm" action="mailto:hello@tradeflow.kiwi" method="post">
-          <div class="miniGrid">
-            <label class="field">
-              <span class="fieldLabel">Name</span>
-              <input name="Name" placeholder="Your name" required />
+        <!-- NOTE: mailto forms can feel "cheap". If you want, I’ll convert this to Netlify Forms. -->
+        <form class="proForm" action="mailto:hello@tradeflow.kiwi" method="post">
+          <div class="proGrid">
+
+            <label class="proField">
+              <span class="proLabel">Name</span>
+              <input class="proInput" name="Name" placeholder="Your name" required />
             </label>
-            <label class="field">
-              <span class="fieldLabel">Phone</span>
-              <input name="Phone" placeholder="027 xxx xxxx" required />
+
+            <label class="proField">
+              <span class="proLabel">Phone</span>
+              <input class="proInput" name="Phone" placeholder="027 xxx xxxx" required />
             </label>
+
+            <label class="proField">
+              <span class="proLabel">Business</span>
+              <input class="proInput" name="Business" placeholder="Business name" required />
+            </label>
+
+            <label class="proField">
+              <span class="proLabel">Invoices per month</span>
+              <input class="proInput" name="Invoices" placeholder="Approx volume" inputmode="numeric" />
+            </label>
+
           </div>
 
-          <div class="miniGrid">
-            <label class="field">
-              <span class="fieldLabel">Business</span>
-              <input name="Business" placeholder="Business name" required />
-            </label>
-            <label class="field">
-              <span class="fieldLabel">Invoices / month</span>
-              <input name="Invoices" placeholder="Approx volume" />
-            </label>
-          </div>
-
-          <label class="field">
-            <span class="fieldLabel">Notes</span>
-            <textarea name="Message" placeholder="Biggest customers, typical terms, problem payers, anything important."></textarea>
+          <label class="proField proFieldFull">
+            <span class="proLabel">Notes</span>
+            <textarea class="proTextarea" name="Message" placeholder="Biggest customers, typical terms, problem payers, anything important."></textarea>
           </label>
 
-          <button class="btn btnSolid" type="submit">Request callback</button>
-          <p class="miniFine">Fast response. Priority handling for all clients.</p>
+          <div class="proActions">
+            <button class="btn btnSolid proSubmit" type="submit">Request callback</button>
+            <p class="proFine">Fast response. Priority handling for all clients.</p>
+          </div>
         </form>
+
       </div>
     </div>
 
@@ -335,10 +345,12 @@
   <!-- FAQ -->
   <section id="faq">
     <h2>FAQ</h2>
+
     <details>
       <summary>Is this debt collection?</summary>
       <p>No. We follow up politely and stop immediately if a job is disputed.</p>
     </details>
+
     <details>
       <summary>Do I need special software?</summary>
       <p>No. We work from what you already use.</p>
