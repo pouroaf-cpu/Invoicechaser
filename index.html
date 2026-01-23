@@ -41,7 +41,6 @@
 
   <!-- HERO -->
   <section class="hero">
-    <!-- LEFT: COPY -->
     <div class="heroCard">
       <div class="tagline">HUMAN-RUN • NOT SOFTWARE</div>
 
@@ -67,7 +66,6 @@
       </p>
     </div>
 
-    <!-- RIGHT: IMAGE -->
     <aside class="heroImage">
       <img
         src="/tradie.png"
@@ -262,47 +260,43 @@
       <div class="pricingCtaCard">
 
         <div class="ctaTopRow">
-          <a class="btn btnSolid callNowBtn" href="tel:+64272214375">Call now: 027 221 4375</a>
-          <div class="callNowNote">Speak with our Director of Sales.</div>
+          <a class="btn btnSolid callNowBtn" href="tel:+64272214375">Call now</a>
         </div>
 
         <h3 class="formTitle">Request a callback</h3>
         <p class="formSub">We’ll call you back, confirm volume, and start quickly.</p>
 
-        <!-- NOTE: mailto forms can feel "cheap". If you want, I’ll convert this to Netlify Forms. -->
-        <form class="proForm" action="mailto:hello@tradeflow.kiwi" method="post">
-          <div class="proGrid">
+        <form class="tfForm" action="mailto:hello@tradeflow.kiwi" method="post">
+          <div class="tfGrid">
+            <div class="tfField">
+              <label class="tfLabel" for="tf-name">Name</label>
+              <input class="tfInput" id="tf-name" name="Name" placeholder="Your name" autocomplete="name" required />
+            </div>
 
-            <label class="proField">
-              <span class="proLabel">Name</span>
-              <input class="proInput" name="Name" placeholder="Your name" required />
-            </label>
+            <div class="tfField">
+              <label class="tfLabel" for="tf-phone">Phone</label>
+              <input class="tfInput" id="tf-phone" name="Phone" placeholder="027 xxx xxxx" inputmode="tel" autocomplete="tel" required />
+            </div>
 
-            <label class="proField">
-              <span class="proLabel">Phone</span>
-              <input class="proInput" name="Phone" placeholder="027 xxx xxxx" required />
-            </label>
+            <div class="tfField">
+              <label class="tfLabel" for="tf-business">Business</label>
+              <input class="tfInput" id="tf-business" name="Business" placeholder="Business name" autocomplete="organization" required />
+            </div>
 
-            <label class="proField">
-              <span class="proLabel">Business</span>
-              <input class="proInput" name="Business" placeholder="Business name" required />
-            </label>
+            <div class="tfField">
+              <label class="tfLabel" for="tf-invoices">Invoices per month</label>
+              <input class="tfInput" id="tf-invoices" name="Invoices" placeholder="Approx volume" inputmode="numeric" />
+            </div>
 
-            <label class="proField">
-              <span class="proLabel">Invoices per month</span>
-              <input class="proInput" name="Invoices" placeholder="Approx volume" inputmode="numeric" />
-            </label>
-
+            <div class="tfField tfFull">
+              <label class="tfLabel" for="tf-notes">Notes</label>
+              <textarea class="tfTextarea" id="tf-notes" name="Message" placeholder="Biggest customers, typical terms, problem payers, anything important."></textarea>
+            </div>
           </div>
 
-          <label class="proField proFieldFull">
-            <span class="proLabel">Notes</span>
-            <textarea class="proTextarea" name="Message" placeholder="Biggest customers, typical terms, problem payers, anything important."></textarea>
-          </label>
-
-          <div class="proActions">
-            <button class="btn btnSolid proSubmit" type="submit">Request callback</button>
-            <p class="proFine">Fast response. Priority handling for all clients.</p>
+          <div class="tfActions">
+            <button class="btn btnSolid tfSubmit" type="submit">Request callback</button>
+            <p class="tfFine">Fast response. Priority handling for all clients.</p>
           </div>
         </form>
 
