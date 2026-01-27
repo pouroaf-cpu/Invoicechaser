@@ -10,6 +10,37 @@
   <link rel="icon" href="/favicon.JPG" type="image/jpeg" />
   <link rel="stylesheet" href="/styles.css" />
 
+  <!-- PATCH: Move pricing cards INSIDE the comparison box (A) -->
+  <style>
+    /* This patch is intentionally small so it won’t fight your main styles.css */
+    .pricingCompare .compareBody { padding: 0; }
+
+    .pricingCompare .compareHeadRow{
+      display:grid;
+      grid-template-columns: 1.2fr 1fr 1fr; /* label | gold | platinum */
+      gap:16px;
+      padding:16px;
+      border-bottom:1px solid var(--line, #e7eaf3);
+      background: transparent;
+    }
+    .pricingCompare .compareHeadSpacer{ min-height: 1px; }
+
+    .pricingCompare .comparePlanCell{
+      width:100%;
+      margin:0;
+      height:100%;
+    }
+    .pricingCompare .compareGroup{ padding: 0 16px 16px; }
+
+    @media (max-width: 860px){
+      .pricingCompare .compareHeadRow{
+        grid-template-columns: 1fr;
+        gap:12px;
+      }
+      .pricingCompare .compareHeadSpacer{ display:none; }
+    }
+  </style>
+
   <!-- Microsoft Clarity -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -99,7 +130,6 @@
 
   <!-- PRICING -->
   <section id="pricing" class="pricingBlock">
-
     <header class="pricingHeader">
       <h2>Pricing</h2>
       <p>Set your invoice volume. Platinum is recommended.</p>
@@ -117,40 +147,39 @@
       <input id="jobsSlider" class="slider" type="range" min="0" max="200" value="20" />
     </div>
 
-    <!-- MODERN COMPARISON -->
+    <!-- COMPARISON (Plan cards are INSIDE this box) -->
     <div class="pricingCompare">
-
-      <!-- Plan cards -->
-      <div class="planGrid">
-        <div class="planSpacer" aria-hidden="true"></div>
-
-        <div class="planCardLite">
-          <div class="planTop">
-            <div class="planTitleLite">Gold</div>
-            <div class="planPriceLite">
-              <span class="currency">$</span><span id="goldMonthly">395</span>
-              <span class="per">/ month</span>
-            </div>
-            <div class="planSubLite">+ $150 one-time setup fee (new clients)</div>
-          </div>
-        </div>
-
-        <div class="planCardLite isPlatinum">
-          <div class="planTop">
-            <div class="planBadgeLite">Recommended</div>
-            <div class="planTitleLite">Platinum</div>
-            <div class="planPriceLite">
-              <span class="currency">$</span><span id="platMonthly">695</span>
-              <span class="per">/ month</span>
-            </div>
-            <div class="planSubLite">No setup fee • Calls recorded</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Features -->
       <div class="compareBody">
 
+        <!-- PLAN CARDS ROW (moved inside the compare box) -->
+        <div class="compareHeadRow">
+          <div class="compareHeadSpacer" aria-hidden="true"></div>
+
+          <div class="planCardLite comparePlanCell">
+            <div class="planTop">
+              <div class="planTitleLite">Gold</div>
+              <div class="planPriceLite">
+                <span class="currency">$</span><span id="goldMonthly">395</span>
+                <span class="per">/ month</span>
+              </div>
+              <div class="planSubLite">+ $150 one-time setup fee (new clients)</div>
+            </div>
+          </div>
+
+          <div class="planCardLite isPlatinum comparePlanCell">
+            <div class="planTop">
+              <div class="planBadgeLite">Recommended</div>
+              <div class="planTitleLite">Platinum</div>
+              <div class="planPriceLite">
+                <span class="currency">$</span><span id="platMonthly">695</span>
+                <span class="per">/ month</span>
+              </div>
+              <div class="planSubLite">No setup fee • Calls recorded</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FEATURES -->
         <div class="compareGroup">
           <div class="groupTitle">Volume</div>
 
@@ -258,7 +287,6 @@
     <!-- CLOSE THE DEAL -->
     <div class="pricingCta" id="contact">
       <div class="pricingCtaCard">
-
         <div class="ctaTopRow">
           <a class="btn btnSolid callNowBtn" href="tel:+64272214375">Call now</a>
         </div>
@@ -299,7 +327,6 @@
             <p class="tfFine">Fast response. Priority handling for all clients.</p>
           </div>
         </form>
-
       </div>
     </div>
 
@@ -324,16 +351,15 @@
 
         const g = calc(GOLD_BASE, GOLD_INC, GOLD_EXTRA, jobs);
         let p = calc(PLAT_BASE, PLAT_INC, PLAT_EXTRA, jobs);
-        if(p <= g + MIN_GAP) p = g + MIN_GAP;
+        if (p <= g + MIN_GAP) p = g + MIN_GAP;
 
         goldMonthly.textContent = g;
         platMonthly.textContent = p;
       }
 
-      slider.oninput = update;
+      slider.addEventListener("input", update);
       update();
     </script>
-
   </section>
 
   <!-- FAQ -->
