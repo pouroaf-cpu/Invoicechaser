@@ -621,3 +621,43 @@ footer{
     grid-template-columns: 1fr;
   }
 }
+/* Put the plan cards INSIDE the comparison box */
+.compareBody {
+  /* keep whatever you already have, but ensure padding exists */
+  padding: 0;
+}
+
+/* First row inside compareBody that holds the plan cards */
+.compareHeadRow{
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr; /* label, gold, plat */
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Empty first column so cards align with the two plan columns */
+.compareHeadSpacer{
+  min-height: 1px;
+}
+
+/* Make the cards behave like cells */
+.comparePlanCell{
+  width: 100%;
+  margin: 0;
+}
+
+/* If your plan cards were sized for the old layout, force them to fill nicely */
+.planCardLite{
+  height: 100%;
+}
+
+/* If your compare rows rely on padding, keep them consistent */
+.compareGroup{
+  padding: 0 16px 16px;
+}
+
+/* Optional: tighten group title spacing after the new header row */
+.compareGroup .groupTitle{
+  margin-top: 16px;
+}
