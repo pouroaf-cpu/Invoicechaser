@@ -10,7 +10,6 @@
   --brand2:#2f6fe6;
   --soft:#eef4ff;
   --max:1400px;
-  --radius:22px;
   --shadow:0 18px 45px rgba(15,35,65,.08);
 }
 
@@ -28,37 +27,44 @@ a{text-decoration:none;color:inherit}
 .wrap{width:100%}
 .container{width:min(calc(100% - 40px),var(--max));margin:0 auto}
 
+/* NAV */
 .navShell{background:#fff;border-bottom:1px solid rgba(13,27,42,.06)}
+.nav.container{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:0 40px;
+}
 .nav{
-  min-height:92px;
+  min-height:100px;
   display:grid;
   grid-template-columns:auto 1fr auto;
   align-items:center;
   gap:24px;
 }
-.brandRow{display:flex;align-items:center;gap:14px}
-.logo{height:56px;width:auto;object-fit:contain}
+.brandRow{display:flex;align-items:center;justify-content:flex-start}
+.logo{height:72px;width:auto;object-fit:contain}
 .navlinks{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:30px;
-  font-size:17px;
+  gap:40px;
+  font-size:19px;
   color:#334155;
 }
 .navlinks a{padding:6px 0}
-.navlinks a:hover{color:var(--text)}
 .navCta{
   background:linear-gradient(135deg,var(--brand),var(--brand2));
   color:#fff!important;
   padding:16px 24px;
   border-radius:14px;
   font-weight:800;
-  font-size:17px;
+  font-size:20px;
   white-space:nowrap;
   box-shadow:0 12px 24px rgba(47,111,230,.22);
 }
 
+/* HERO */
 .hero{background:#fff}
 .heroGrid{
   display:grid;
@@ -69,98 +75,92 @@ a{text-decoration:none;color:inherit}
   background:linear-gradient(135deg,var(--panel),var(--panel2));
   color:#fff;
   display:flex;
-  align-items:flex-start;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
 .heroPanelInner{
   width:100%;
-  max-width:720px;
-  padding:56px 40px;
+  max-width:640px;
+  padding:48px 36px;
 }
 .tagline{
   display:inline-block;
-  margin-bottom:16px;
-  padding:9px 14px;
+  margin-bottom:18px;
+  padding:10px 16px;
   border-radius:999px;
   background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.12);
-  font-size:12px;
+  font-size:13px;
   font-weight:800;
   letter-spacing:.08em;
 }
 .heroPanel h1{
-  margin:0 0 12px;
-  font-size:clamp(40px,4vw,60px);
+  margin:0 0 14px;
+  font-size:clamp(50px,5vw,72px);
   line-height:.95;
   letter-spacing:-.05em;
   font-weight:900;
-  max-width:560px;
 }
 .heroLead{
-  margin:0 0 18px;
-  font-size:20px;
+  margin:0 0 20px;
+  font-size:24px;
   line-height:1.5;
   color:rgba(255,255,255,.96);
-  max-width:580px;
 }
 .heroHighlight{color:#7fb0ff;font-weight:800}
-.ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 16px}
+.ctaRow{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:0 0 18px}
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:54px;
-  padding:0 24px;
+  min-height:56px;
+  padding:0 26px;
   border-radius:14px;
   font-weight:800;
-  font-size:18px;
+  font-size:20px;
 }
 .btnSolid{
   color:#fff;
   background:linear-gradient(135deg,var(--brand),var(--brand2));
   box-shadow:0 14px 28px rgba(47,111,230,.28);
 }
-.heroPoints{display:flex;flex-wrap:wrap;gap:10px}
+.heroPoints{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
 .pill{
   padding:10px 14px;
   border-radius:999px;
   background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.12);
-  font-size:14px;
+  font-size:15px;
   color:rgba(255,255,255,.96);
   font-weight:700;
 }
-.heroImage{
-  height:520px;
-  background:#e8eef7;
-}
-.heroImage img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+.heroImage{height:520px;background:#e8eef7}
+.heroImage img{width:100%;height:100%;object-fit:cover}
 
+/* GENERAL */
 section{padding:38px 0}
 .sectionHead{text-align:center;margin-bottom:22px}
 .sectionHead h2{
   margin:0 0 8px;
-  font-size:clamp(34px,4vw,46px);
+  font-size:clamp(40px,4vw,54px);
   line-height:1.05;
   letter-spacing:-.04em;
 }
-.sectionHead p{margin:0;font-size:17px;color:var(--muted)}
+.sectionHead p{margin:0;font-size:20px;color:var(--muted)}
 
 .introBlock,.pricingBlock,.ctaBlock,footer{background:#fff}
-.introBlock{padding:32px 0 16px}
-.introInner{width:min(calc(100% - 40px),920px);margin:0 auto;text-align:center}
+.introBlock{padding:40px 0 20px}
+.introInner{width:min(calc(100% - 40px),980px);margin:0 auto;text-align:center}
 .introInner h2{
   margin:0 0 12px;
-  font-size:clamp(34px,4vw,44px);
+  font-size:clamp(42px,4vw,56px);
   line-height:1.06;
   letter-spacing:-.04em;
 }
-.introInner p{margin:0;font-size:20px;line-height:1.6;color:#334155}
+.introInner p{margin:0;font-size:24px;line-height:1.6;color:#334155}
 
-.pricingBlock{padding:18px 0 28px}
+.pricingBlock{padding:24px 0 34px}
 .pricingLayout{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
 .pricingCardMain,.valuePanel,.card,details{
   background:#fff;
@@ -169,19 +169,27 @@ section{padding:38px 0}
   padding:24px;
   box-shadow:var(--shadow);
 }
+.planLabel{font-size:22px;font-weight:900;margin-bottom:14px}
+.planPrice{font-size:64px;line-height:1;letter-spacing:-.05em;font-weight:900;margin-bottom:10px}
+.planMinimum{font-size:22px;font-weight:800;margin-bottom:18px;color:#22354a}
+.sliderValue{font-size:26px;font-weight:900}
+.estimateValue{font-size:36px;font-weight:900;letter-spacing:-.04em}
+.valuePanel h3{margin:0 0 16px;font-size:34px;line-height:1.08;letter-spacing:-.03em}
+.valueItem{font-size:19px;line-height:1.5;font-weight:700}
 
+/* MOBILE */
 @media (max-width:1080px){
   .nav{grid-template-columns:auto auto;justify-content:space-between}
-  .navlinks,.valuePanel{display:none}
+  .navlinks{display:none}
   .heroGrid,.pricingLayout{grid-template-columns:1fr}
   .heroImage{height:340px}
 }
-
 @media (max-width:680px){
-  .container{width:min(calc(100% - 24px),var(--max))}
+  .nav.container{padding:0 20px}
+  .logo{height:58px}
   .heroPanelInner{padding:34px 22px}
-  .heroPanel h1{font-size:52px}
-  .heroLead{font-size:22px;line-height:1.55}
+  .heroPanel h1{font-size:54px}
+  .heroLead{font-size:22px}
   .btn{width:100%}
   .heroImage{height:260px}
 }
