@@ -1,178 +1,599 @@
-<!-- HERO (SPLIT LIKE MRS TRADIE) -->
-<section class="hero">
+:root{
+  --bg:#f5f7fb;
+  --text:#0d1b2a;
+  --muted:#56657a;
+  --line:#d9e1ec;
+  --panel:#162736;
+  --panel2:#1d3144;
+  --card:#ffffff;
+  --brand:#4f8cff;
+  --brand2:#2f6fe6;
+  --soft:#eef4ff;
+  --max:1400px;
+  --radius:22px;
+  --shadow:0 18px 45px rgba(15,35,65,.08);
+}
 
-  <!-- LEFT -->
-  <div class="heroCard">
-    <div class="tagline">HUMAN-RUN • NOT SOFTWARE</div>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--text);
+  background:var(--bg);
+}
 
-    <h1>Stop chasing invoices.</h1>
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.wrap{width:100%}
+.container{width:min(calc(100% - 40px),var(--max));margin:0 auto}
 
-    <p class="sub">
-      <strong style="color: var(--brand);">
-        Get paid faster with real phone follow-ups.
-      </strong>
-      We call your customers before and after invoices are due so you don’t have to.
-    </p>
+.navShell{
+  background:#fff;
+  border-bottom:1px solid rgba(13,27,42,.06);
+}
 
-    <div class="ctaRow">
-      <a class="btn btnSolid" href="#contact">Stop chasing invoices</a>
-    </div>
+.nav{
+  min-height:92px;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:24px;
+}
 
-    <div class="heroPoints">
-      <span class="pill">Pre-due + overdue calls</span>
-      <span class="pill">No new software needed</span>
-      <span class="pill">Works with your system</span>
-    </div>
-  </div>
+.brandRow{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
 
-  <!-- RIGHT -->
-  <aside class="heroImage">
-    <img src="/tradie.png" alt="Tradie dealing with invoices" />
-  </aside>
+.logo{
+  height:56px;
+  width:auto;
+  object-fit:contain;
+}
 
-</section>
+.navlinks{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:30px;
+  font-size:17px;
+  color:#334155;
+}
 
+.navlinks a{
+  padding:6px 0;
+}
 
-<!-- INTRO (LIKE THEIR BOOKKEEPING BLOCK) -->
-<section id="intro">
-  <h2>Get paid faster without chasing</h2>
+.navlinks a:hover{
+  color:var(--text);
+}
 
-  <p style="max-width:700px; margin:auto; text-align:center;">
-    TradeFlow follows up your invoices with a structured system of phone calls before
-    and after they’re due. You stay focused on your work while we handle the follow-up professionally.
-  </p>
-</section>
+.navCta{
+  background:linear-gradient(135deg,var(--brand),var(--brand2));
+  color:#fff !important;
+  padding:16px 24px;
+  border-radius:14px;
+  font-weight:800;
+  font-size:17px;
+  white-space:nowrap;
+  box-shadow:0 12px 24px rgba(47,111,230,.22);
+}
 
+.hero{
+  background:#fff;
+}
 
-<!-- HOW IT WORKS -->
-<section id="how-it-works">
-  <h2>How it works</h2>
+.heroGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:340px;
+}
 
-  <div class="grid">
+.heroPanel{
+  background:linear-gradient(135deg,var(--panel),var(--panel2));
+  color:#fff;
+  display:flex;
+  align-items:center;
+}
 
-    <div class="card">
-      <h3>1. Share your invoices</h3>
-      <p>Export a list or give access — no new software.</p>
-    </div>
+.heroPanelInner{
+  width:min(100%,620px);
+  padding:26px 28px;
+}
 
-    <div class="card">
-      <h3>2. We follow up</h3>
-      <p>Pre-due + 3, 7, 14 day calls.</p>
-    </div>
+.tagline{
+  display:inline-block;
+  margin-bottom:16px;
+  padding:9px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+}
 
-    <div class="card">
-      <h3>3. You get paid</h3>
-      <p>Faster cashflow, less admin.</p>
-    </div>
+.heroPanel h1{
+  margin:0 0 12px;
+  font-size:clamp(40px,4vw,56px);
+  line-height:.95;
+  letter-spacing:-.05em;
+  font-weight:900;
+  max-width:520px;
+}
 
-  </div>
-</section>
+.heroLead{
+  margin:0 0 16px;
+  font-size:20px;
+  line-height:1.5;
+  color:rgba(255,255,255,.96);
+  max-width:560px;
+}
 
+.heroHighlight{
+  color:#7fb0ff;
+  font-weight:800;
+}
 
-<!-- PRICING (SPLIT — FIXES "LONELY") -->
-<section id="pricing" class="pricingBlock">
+.ctaRow{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:0 0 16px;
+}
 
-  <header class="pricingHeader">
-    <h2>Pricing</h2>
-    <p>Simple pricing. One plan. No lock-in.</p>
-  </header>
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:54px;
+  padding:0 24px;
+  border-radius:14px;
+  font-weight:800;
+  font-size:18px;
+}
 
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+.btnSolid{
+  color:#fff;
+  background:linear-gradient(135deg,var(--brand),var(--brand2));
+  box-shadow:0 14px 28px rgba(47,111,230,.28);
+}
 
-    <!-- LEFT: PRICE -->
-    <div class="card">
+.heroPoints{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
 
-      <h3>TradeFlow Plan</h3>
+.pill{
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  font-size:14px;
+  color:rgba(255,255,255,.96);
+  font-weight:700;
+}
 
-      <div style="font-size:40px; font-weight:900;">
-        $15 <span style="font-size:16px; color:var(--muted)">per invoice</span>
-      </div>
+.heroImage{
+  min-height:340px;
+  background:#e8eef7;
+}
 
-      <p><strong>Minimum $199/month</strong></p>
+.heroImage img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-      <!-- SLIDER -->
-      <div class="sliderWrap">
-        <div class="sliderTop">
-          <div>
-            <div class="sliderLabel">Invoices per month</div>
-            <div class="sliderValue"><span id="jobsValue">20</span></div>
-          </div>
-          <div class="sliderMeta">Estimated monthly cost</div>
-        </div>
+section{
+  padding:38px 0;
+}
 
-        <input id="jobsSlider" class="slider" type="range" min="0" max="200" value="20" />
+.sectionHead{
+  text-align:center;
+  margin-bottom:22px;
+}
 
-        <div class="sliderValue">
-          $<span id="estimatedMonthly">300</span>
-        </div>
-      </div>
+.sectionHead h2{
+  margin:0 0 8px;
+  font-size:clamp(34px,4vw,46px);
+  line-height:1.05;
+  letter-spacing:-.04em;
+}
 
-      <a class="btn btnSolid" href="#contact">Stop chasing invoices</a>
+.sectionHead p{
+  margin:0;
+  font-size:17px;
+  color:var(--muted);
+}
 
-    </div>
+.introBlock{
+  background:#fff;
+  padding:32px 0 16px;
+}
 
+.introInner{
+  width:min(calc(100% - 40px),920px);
+  margin:0 auto;
+  text-align:center;
+}
 
-    <!-- RIGHT: VALUE -->
-    <div class="card">
+.introInner h2{
+  margin:0 0 12px;
+  font-size:clamp(34px,4vw,44px);
+  line-height:1.06;
+  letter-spacing:-.04em;
+}
 
-      <h3>What this means for you</h3>
+.introInner p{
+  margin:0;
+  font-size:20px;
+  line-height:1.6;
+  color:#334155;
+}
 
-      <ul style="line-height:1.8; padding-left:18px;">
-        <li>Get paid 10–20 days faster</li>
-        <li>Stop chasing invoices at night</li>
-        <li>Keep customer relationships intact</li>
-        <li>Free up hours every week</li>
-      </ul>
+.pricingBlock{
+  background:#fff;
+  padding:18px 0 28px;
+}
 
-    </div>
+.pricingLayout{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:18px;
+  align-items:stretch;
+}
 
-  </div>
+.pricingCardMain,
+.valuePanel{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:24px;
+  box-shadow:var(--shadow);
+}
 
-</section>
+.pricingCardMain{
+  background:linear-gradient(180deg,#fff,#f8fbff);
+}
 
+.planLabel{
+  font-size:19px;
+  font-weight:900;
+  margin-bottom:14px;
+}
 
-<!-- FAQ -->
-<section id="faq">
-  <h2>FAQ</h2>
+.planPrice{
+  font-size:52px;
+  line-height:1;
+  letter-spacing:-.05em;
+  font-weight:900;
+  margin-bottom:10px;
+}
 
-  <details>
-    <summary>Is this debt collection?</summary>
-    <p>No. We follow up professionally and stop immediately if disputed.</p>
-  </details>
+.planPrice .currency{
+  font-size:.52em;
+  vertical-align:top;
+  margin-right:6px;
+}
 
-  <details>
-    <summary>Do I need software?</summary>
-    <p>No. We work with what you already use.</p>
-  </details>
+.planPrice .per{
+  font-size:.34em;
+  color:var(--muted);
+  font-weight:700;
+  margin-left:10px;
+}
 
-  <details>
-    <summary>How much does it cost?</summary>
-    <p>$15 per invoice, minimum $199/month.</p>
-  </details>
-</section>
+.planMinimum{
+  font-size:20px;
+  font-weight:800;
+  margin-bottom:18px;
+  color:#22354a;
+}
 
+.sliderWrap{
+  padding:18px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  margin-bottom:18px;
+}
 
-<!-- FINAL CTA -->
-<section id="contact" style="text-align:center; padding:40px 0;">
-  <h2>Ready to stop chasing invoices?</h2>
-  <a class="btn btnSolid" href="tel:+64272214375">Stop chasing invoices</a>
-</section>
+.sliderTop{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:12px;
+  align-items:end;
+}
 
+.sliderLabel{
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:4px;
+}
 
-<!-- SCRIPT -->
-<script>
-  const slider = document.getElementById("jobsSlider");
-  const jobsValue = document.getElementById("jobsValue");
-  const estimatedMonthly = document.getElementById("estimatedMonthly");
+.sliderValue{
+  font-size:22px;
+  font-weight:900;
+}
 
-  function updateEstimate(){
-    const jobs = Number(slider.value);
-    const estimate = Math.max(199, jobs * 15);
+.sliderMeta{
+  font-size:14px;
+  color:var(--muted);
+  text-align:right;
+}
 
-    jobsValue.textContent = jobs;
-    estimatedMonthly.textContent = estimate;
+.slider{
+  width:100%;
+  accent-color:var(--brand2);
+  margin:8px 0 14px;
+}
+
+.estimateValue{
+  font-size:30px;
+  font-weight:900;
+  letter-spacing:-.04em;
+}
+
+.valuePanel{
+  background:linear-gradient(135deg,#eef5ff,#f8fbff);
+}
+
+.valuePanel h3{
+  margin:0 0 16px;
+  font-size:30px;
+  line-height:1.08;
+  letter-spacing:-.03em;
+}
+
+.valueList{
+  display:grid;
+  gap:12px;
+}
+
+.valueItem{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px 16px 16px 46px;
+  position:relative;
+  font-size:17px;
+  line-height:1.5;
+  color:#25364a;
+  font-weight:700;
+}
+
+.valueItem::before{
+  content:"✓";
+  position:absolute;
+  left:16px;
+  top:15px;
+  width:20px;
+  height:20px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#dff0e8;
+  color:#17814d;
+  font-size:13px;
+  font-weight:900;
+}
+
+.howBlock,
+.faqBlock{
+  background:var(--bg);
+  padding:30px 0;
+}
+
+.grid.threeCol{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+
+.cardStep{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  border-radius:999px;
+  background:var(--soft);
+  color:var(--brand2);
+  font-weight:900;
+  margin-bottom:14px;
+}
+
+.card h3{
+  margin:0 0 8px;
+  font-size:24px;
+  line-height:1.15;
+  letter-spacing:-.03em;
+}
+
+.card p{
+  margin:0;
+  font-size:17px;
+  line-height:1.6;
+  color:var(--muted);
+}
+
+.faqList{
+  width:min(calc(100% - 40px),940px);
+  margin:0 auto;
+  display:grid;
+  gap:12px;
+}
+
+details{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:0 22px;
+  box-shadow:var(--shadow);
+}
+
+summary{
+  list-style:none;
+  cursor:pointer;
+  padding:20px 0;
+  font-size:19px;
+  font-weight:800;
+  position:relative;
+}
+
+summary::-webkit-details-marker{
+  display:none;
+}
+
+summary::after{
+  content:"+";
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:28px;
+  color:var(--brand2);
+  font-weight:500;
+}
+
+details[open] summary::after{
+  content:"−";
+}
+
+details p{
+  margin:0;
+  padding:0 0 20px;
+  font-size:16px;
+  line-height:1.65;
+  color:var(--muted);
+}
+
+.ctaBlock{
+  background:#fff;
+  padding:18px 0 34px;
+}
+
+.ctaBlockInner{
+  width:min(calc(100% - 40px),1080px);
+  margin:0 auto;
+  background:linear-gradient(135deg,var(--panel),var(--panel2));
+  border-radius:28px;
+  padding:32px 24px;
+  text-align:center;
+  color:#fff;
+  box-shadow:var(--shadow);
+}
+
+.ctaBlockInner h2{
+  margin:0 0 16px;
+  font-size:clamp(34px,4vw,46px);
+  line-height:1.06;
+  letter-spacing:-.04em;
+}
+
+footer{
+  padding:24px 20px 34px;
+  text-align:center;
+  color:var(--muted);
+  font-size:15px;
+  background:#fff;
+}
+
+@media (max-width:1080px){
+  .nav{
+    grid-template-columns:auto auto;
+    justify-content:space-between;
   }
 
-  slider.addEventListener("input", updateEstimate);
-  updateEstimate();
-</script>
+  .navlinks{
+    display:none;
+  }
+
+  .heroGrid,
+  .pricingLayout,
+  .grid.threeCol{
+    grid-template-columns:1fr;
+  }
+
+  .heroImage{
+    min-height:360px;
+  }
+}
+
+@media (max-width:680px){
+  .container{
+    width:min(calc(100% - 24px),var(--max));
+  }
+
+  .nav{
+    min-height:84px;
+  }
+
+  .logo{
+    height:48px;
+  }
+
+  .heroPanelInner{
+    padding:34px 22px;
+  }
+
+  .heroPanel h1{
+    font-size:52px;
+  }
+
+  .heroLead{
+    font-size:22px;
+    line-height:1.55;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .heroPoints{
+    gap:8px;
+  }
+
+  .pill{
+    font-size:13px;
+  }
+
+  section{
+    padding:30px 0;
+  }
+
+  .introInner p{
+    font-size:18px;
+  }
+
+  .sliderTop{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .estimateValue{
+    font-size:28px;
+  }
+
+  .valuePanel h3{
+    font-size:28px;
+  }
+
+  .ctaBlockInner{
+    padding:28px 20px;
+  }
+}
